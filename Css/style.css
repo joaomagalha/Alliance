@@ -1036,6 +1036,102 @@ border: 0.05rem solid var(--yellow);
 }
 
 
+/* ================================
+   Responsividade — Tablet (≥ 768px)
+   ================================ */
+
+@media (min-width: 768px) {
+
+  :root {
+    --containerLateralPadding: 48px;
+  }
+
+  .classCardSectionContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* =================================
+   Responsividade — Desktop (≥ 1024px)
+   ================================= */
+
+@media (min-width: 1024px) {
+
+  /* Tipografia */
+  h1 {
+    font-size: 3.2rem;
+    letter-spacing: -1.2px;
+  }
+
+  h2 {
+    font-size: 2.4rem;
+    letter-spacing: -0.9px;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+  }
+
+  /* Espaçamento horizontal */
+  :root {
+    --containerLateralPadding: 80px;
+  }
+
+  .sideContainer {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Seção História — layout lado a lado */
+  .historySection {
+    background: var(--Gray-Linear, linear-gradient(127deg, #333 60.36%, #565656 101.43%));
+    display: flex;
+    align-items: stretch;
+  }
+
+  .historySectionText {
+    flex: 1;
+    padding: 80px 64px 80px 80px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .historySectionText h2 {
+    color: var(--white);
+  }
+
+  .historySectionText h4 {
+    color: var(--whiteOpacity);
+  }
+
+  .historySectionImg {
+    flex: 0 0 44%;
+    background: transparent;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .historySectionImg img {
+    height: 50rem;
+  }
+
+  /* Cards de aulas — 3 colunas */
+  .classCardSectionContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .classCard {
+    height: 32rem;
+  }
+}
+
+
 
 
 
