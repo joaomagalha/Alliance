@@ -317,6 +317,7 @@ ul {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 
 .historySectionText h2{
@@ -332,6 +333,7 @@ ul {
 .yellowLine{
     display: block;
     height: 0.1rem;
+    width: 100%;
     max-width: 34rem;
     background: rgba(254, 188, 17, 0.50);
     margin: var(--16) 0;
@@ -418,14 +420,19 @@ ul {
 .benefitsSectionContainer {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     gap: var(--32);
-
 }
 
 .benefitCard {
     display: flex;
     gap: var(--24);
+}
+
+.benefitCard img {
+    width: 4rem;
+    height: 4rem;
+    flex-shrink: 0;
 }
 
 .benefitCardText h4{
@@ -1073,9 +1080,9 @@ border: 0.05rem solid var(--yellow);
     flex: 1;
     padding: 48px 40px 48px 48px;
     text-align: left;
-    display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
   }
 
   .historySectionText h2 {
