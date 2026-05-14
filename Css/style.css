@@ -300,10 +300,6 @@ ul {
     background: rgba(51, 51, 51, 0.05);
 }
 
-.gurgelQuoteSection {
-    padding: var(--containerSuperiorMax) var(--containerLateralPadding);
-}
-
 .gurgelQuoteSection p{
     margin: var(--32) 0;
     font-weight: 300;
@@ -691,6 +687,8 @@ details[open] .faqContent h4 {
     color: var(--white);
     border-radius: var(--16);
     z-index: -1;
+    font-weight: 500;
+    font-size: 1.1rem;
 }
 
 .pricingSvg{
@@ -972,7 +970,7 @@ details[open] .faqContent h4 {
     position: relative;
     cursor: pointer;
     transition: 0.3s;
-    padding: var(--8) var(--24);
+    padding: var(--8) var(--16);
     text-transform: uppercase;
     font-weight: bold;
     color: var(--placeholderColor);
@@ -1008,7 +1006,6 @@ details[open] .faqContent h4 {
     justify-content: space-between;
     border-bottom: 1px solid var(--placeholderColor);
     margin-bottom: var(--16);
-
 }
 
 .scheduleSectionTimes {
@@ -1223,6 +1220,23 @@ border: 0.05rem solid var(--yellow);
   .testimonialSectionContainer {
     grid-template-columns: repeat(4, 1fr);
   }
+
+  /* Pricing — 3 colunas, mais popular no centro */
+  .pricingSectionContainer {
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  .pricingCard {
+    flex: 1;
+    max-width: 28rem;
+  }
+
+  /* Reordena: Recorrente (1º no DOM) vai para o meio */
+  .pricingCard:nth-child(1) { order: 2; }
+  .pricingCard:nth-child(2) { order: 1; }
+  .pricingCard:nth-child(3) { order: 3; }
 
 }
 

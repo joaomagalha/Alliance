@@ -344,6 +344,7 @@ ul {
   margin: var(--8) 0 var(--40) 0;
 }
 .container {
+  max-width: none;
   padding: var(--containerSuperiorMax) var(--containerLateralPadding);
 }
 .sideContainer {
