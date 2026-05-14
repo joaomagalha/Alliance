@@ -577,7 +577,7 @@ ul {
     cursor: pointer;
 }
 
-.faqSectionSummary h5{
+.faqSectionSummary h4{
     font-weight: 500;
     color: var(--gray);
 }
@@ -620,7 +620,7 @@ details[open] .faqContent {
 
 }
 
-details[open] .faqContent h5 {
+details[open] .faqContent h4 {
   opacity: 1;
   transform: translateY(0);
 }
