@@ -572,7 +572,7 @@ ul {
 .benefitsSectionContainer {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: center;
   gap: var(--32);
 }
 .benefitCard {
@@ -1097,6 +1097,7 @@ details[open] .faqContent h4 {
   .benefitsSectionContainer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    align-items: start;
   }
   .historySection {
     background: var(--Gray-Linear, linear-gradient(127deg, #333 60.36%, #565656 101.43%));
@@ -1165,6 +1166,12 @@ details[open] .faqContent h4 {
   }
   .benefitCard {
     flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: var(--lightYellow);
+    padding: var(--24);
+    border-radius: var(--mediumRadius);
+    border: 1px solid var(--yellow);
   }
 }
 @property --tw-rotate-x {

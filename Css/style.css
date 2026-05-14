@@ -426,6 +426,7 @@ ul {
 
 .benefitCard {
     display: flex;
+    justify-content: center;
     gap: var(--24);
 }
 
@@ -460,9 +461,14 @@ ul {
     gap: var(--32);
 }
 
+.gymImageSectionContainer picture {
+    display: block;
+}
+
 .gymImageSectionImg{
-    height: 26rem;
+    display: block;
     width: 100%;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: var(--16);
 }
