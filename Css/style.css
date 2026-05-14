@@ -1135,6 +1135,15 @@ border: 0.05rem solid var(--yellow);
   .historySectionImg img {
     height: 38rem;
   }
+
+  /* Testimonials — 2 colunas no tablet */
+  .testimonialSectionContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 6.4rem;
+    column-gap: var(--32);
+    align-items: start;
+  }
 }
 
 
