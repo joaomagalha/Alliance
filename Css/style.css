@@ -1162,6 +1162,15 @@ border: 0.05rem solid var(--yellow);
   .classCard {
     height: 32rem;
   }
+
+  /* Benefits — 4 colunas verticais no desktop */
+  .benefitsSectionContainer {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .benefitCard {
+    flex-direction: column;
+  }
 }
 
 
