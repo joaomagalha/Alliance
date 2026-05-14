@@ -1073,6 +1073,7 @@ border: 0.05rem solid var(--yellow);
   .benefitsSectionContainer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    align-items: start;
   }
 
   /* Seção História — lado a lado a partir do tablet */
