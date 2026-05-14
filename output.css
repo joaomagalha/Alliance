@@ -1195,36 +1195,33 @@ details[open] .faqContent h4 {
     transform: scale(1.02);
   }
   .teachersSection {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 64px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 64px;
   }
   .teachersSectionText {
-    grid-column: 1;
-    grid-row: 1;
+    flex: 1;
     text-align: left;
-    align-self: start;
+  }
+  .teacherSectionBtn {
+    display: block;
+    margin: var(--24) 0 0;
   }
   .teacherSectionContainer {
-    grid-column: 2;
-    grid-row: 1 / 3;
-    display: flex;
-    flex-direction: column;
-    min-height: 44rem;
+    flex: 0 0 40rem;
+    height: 40rem;
+    display: block;
   }
   .teacherSectionContainer picture {
-    flex: 1;
     display: block;
+    width: 100%;
+    height: 100%;
   }
   .teacherSectionImg {
     width: 100%;
     height: 100%;
-  }
-  .teacherSectionBtn {
-    grid-column: 1;
-    grid-row: 2;
-    margin: 0;
-    align-self: end;
+    object-fit: cover;
   }
 }
 @property --tw-rotate-x {
