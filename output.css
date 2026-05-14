@@ -577,6 +577,7 @@ ul {
 }
 .benefitCard {
   display: flex;
+  justify-content: center;
   gap: var(--24);
 }
 .benefitCard img {
@@ -604,9 +605,13 @@ ul {
 .gymImageSectionContainer {
   gap: var(--32);
 }
+.gymImageSectionContainer picture {
+  display: block;
+}
 .gymImageSectionImg {
-  height: 26rem;
+  display: block;
   width: 100%;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: var(--16);
 }
@@ -1098,6 +1103,16 @@ details[open] .faqContent h4 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: start;
+  }
+  .gymImageSectionContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gymImageSectionContainer > picture:last-child {
+    grid-column: 1 / -1;
+  }
+  .gymImageSectionContainer > picture:last-child .gymImageSectionImg {
+    aspect-ratio: 2 / 1;
   }
   .historySection {
     background: var(--Gray-Linear, linear-gradient(127deg, #333 60.36%, #565656 101.43%));
