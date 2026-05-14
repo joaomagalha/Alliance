@@ -597,11 +597,15 @@ ul {
   font-weight: 300;
   line-height: var(--smallLineHeight);
 }
+.gymImageSectionText {
+  text-align: center;
+}
 .gymImageSectionText h2 {
   color: var(--gray);
 }
 .gymImageSectionText h4 {
-  max-width: 16rem;
+  margin: var(--8) auto var(--40);
+  max-width: 28rem;
 }
 .gymImageSectionContainer {
   gap: var(--32);
@@ -672,10 +676,12 @@ ul {
   object-fit: cover;
   position: absolute;
   top: -3rem;
-  left: 42%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .testimonialCardQuote {
-  width: 295px;
+  max-width: 295px;
+  width: 90%;
   margin: 0 auto;
   font-weight: 300;
   line-height: var(--largeLineHeight);
@@ -693,9 +699,6 @@ ul {
 }
 .scheduleSectionText h2 {
   color: var(--gray);
-}
-.scheduleSectionText h4 {
-  width: 25rem;
 }
 .faqSection {
   background: var(--Gray-Linear, linear-gradient(127deg, var(--Gray, #333) 60.36%, #565656 101.43%));
@@ -1144,6 +1147,13 @@ details[open] .faqContent h4 {
   .historySectionImg img {
     height: 38rem;
   }
+  .testimonialSectionContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 6.4rem;
+    column-gap: var(--32);
+    align-items: start;
+  }
 }
 @media (min-width: 1024px) {
   h1 {
@@ -1193,6 +1203,9 @@ details[open] .faqContent h4 {
   .benefitCard:hover {
     box-shadow: 0 12px 20px 0 rgba(254, 188, 17, 0.20);
     transform: scale(1.02);
+  }
+  .testimonialSectionContainer {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 @property --tw-rotate-x {

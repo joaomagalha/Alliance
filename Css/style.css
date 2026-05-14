@@ -137,7 +137,8 @@ ul {
 }
 
 .container {
-    padding: var(--containerSuperiorMax) var(--containerLateralPadding); 
+    max-width: none;
+    padding: var(--containerSuperiorMax) var(--containerLateralPadding);
 }
 
 .sideContainer {
