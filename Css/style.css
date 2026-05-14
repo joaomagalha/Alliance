@@ -1069,6 +1069,12 @@ border: 0.05rem solid var(--yellow);
     grid-template-columns: repeat(2, 1fr);
   }
 
+  /* Benefits — 2 colunas no tablet */
+  .benefitsSectionContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   /* Seção História — lado a lado a partir do tablet */
   .historySection {
     background: var(--Gray-Linear, linear-gradient(127deg, #333 60.36%, #565656 101.43%));
