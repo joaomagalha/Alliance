@@ -450,12 +450,17 @@ ul {
     line-height: var(--smallLineHeight);
 }
 
+.gymImageSectionText {
+    text-align: center;
+}
+
 .gymImageSectionText h2 {
     color: var(--gray);
 }
 
 .gymImageSectionText h4{
-    max-width: 16rem;
+    margin: var(--8) auto var(--40);
+    max-width: 28rem;
 }
 
 .gymImageSectionContainer{
@@ -533,18 +538,20 @@ ul {
     width: 100%;
 }
 
-.testimonialCardImg { 
+.testimonialCardImg {
     height: 6.1rem;
     width: 6.1rem;
     border-radius: 100rem;
     object-fit: cover;
     position: absolute;
     top: -3rem;
-    left: 42%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .testimonialCardQuote{
-    width: 295px;
+    max-width: 295px;
+    width: 90%;
     margin: 0 auto;
     font-weight: 300;
     line-height: var(--largeLineHeight);
@@ -566,10 +573,6 @@ ul {
 
 .scheduleSectionText h2 {
     color: var(--gray);
-}
-
-.scheduleSectionText h4{
-    width: 25rem;
 }
 
 .faqSection {
