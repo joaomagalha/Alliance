@@ -45,6 +45,26 @@ npx tailwindcss -i ./Css/style.css -o ./output.css
 - Font Awesome 6.5.0 — icons
 - Google Fonts — Roboto
 
+## GitHub Repository
+
+Repositório: **https://github.com/joaomagalha/alliance-website**
+
+O `gh` CLI está instalado em `~/bin/gh`. Para operações manuais:
+
+```bash
+# Ver status
+git status
+
+# Push manual (normalmente automático)
+git add -A && git commit -m "mensagem" && git push origin main
+```
+
+### Auto-push configurado
+
+Um hook `PostToolUse` em `.claude/settings.local.json` faz commit e push automaticamente após cada edição de arquivo feita pelo Claude Code. O commit recebe a mensagem `chore: auto-save <data hora>`.
+
+Isso significa que **toda alteração feita via Claude Code é enviada ao GitHub automaticamente** — sem necessidade de rodar git manualmente.
+
 ## Conventions
 
 - Tailwind utility classes and custom CSS variables are used together — Tailwind handles layout/spacing utilities, while `style.css` variables own the brand tokens and typographic scale.
