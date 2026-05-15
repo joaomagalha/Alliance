@@ -1142,23 +1142,6 @@ border: 0.05rem solid var(--yellow);
     column-gap: var(--32);
     align-items: start;
   }
-
-  /* Pricing — 3 colunas, mais popular no centro */
-  .pricingSectionContainer {
-    flex-direction: row;
-    justify-content: center;
-    align-items: stretch;
-  }
-
-  .pricingCard {
-    flex: 1;
-    max-width: 28rem;
-  }
-
-  /* Reordena: Recorrente (1º no DOM) vai para o meio */
-  .pricingCard:nth-child(1) { order: 2; }
-  .pricingCard:nth-child(2) { order: 1; }
-  .pricingCard:nth-child(3) { order: 3; }
 }
 
 
