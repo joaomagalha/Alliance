@@ -1207,24 +1207,6 @@ details[open] .faqContent h4 {
   .testimonialSectionContainer {
     grid-template-columns: repeat(4, 1fr);
   }
-  .pricingSectionContainer {
-    flex-direction: row;
-    justify-content: center;
-    align-items: stretch;
-  }
-  .pricingCard {
-    flex: 1;
-    max-width: 28rem;
-  }
-  .pricingCard:nth-child(1) {
-    order: 2;
-  }
-  .pricingCard:nth-child(2) {
-    order: 1;
-  }
-  .pricingCard:nth-child(3) {
-    order: 3;
-  }
 }
 @property --tw-rotate-x {
   syntax: "*";
