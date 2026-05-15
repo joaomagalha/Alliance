@@ -1121,6 +1121,11 @@ border: 0.05rem solid var(--yellow);
   /* Seção História — lado a lado a partir do tablet */
   .historySection {
     background: var(--Gray-Linear, linear-gradient(127deg, #333 60.36%, #565656 101.43%));
+  }
+
+  .historySectionInner {
+    max-width: 112rem;
+    margin: 0 auto;
     display: flex;
     align-items: stretch;
   }
