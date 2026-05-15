@@ -1216,7 +1216,7 @@ border: 0.05rem solid var(--yellow);
 
   /* História — ajuste de proporção para desktop */
   .historySectionText {
-    padding: 80px 64px 80px 80px;
+    padding: 80px 64px 80px 0px;
   }
 
   .historySectionImg img {

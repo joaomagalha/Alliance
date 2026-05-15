@@ -572,6 +572,8 @@ ul {
   flex-direction: column;
   align-items: center;
   gap: var(--32);
+  max-width: 112rem;
+  margin: 0 auto;
 }
 .benefitCard {
   display: flex;
@@ -656,6 +658,8 @@ ul {
   flex-direction: column;
   gap: 6.1em;
   align-items: center;
+  max-width: 130rem;
+  margin: 0 auto;
 }
 .testimonialCard {
   position: relative;
@@ -694,6 +698,8 @@ ul {
 }
 .scheduleSection {
   padding: 0 var(--containerLateralPadding) var(--containerSuperiorMax);
+  max-width: 128rem;
+  margin: 0 auto;
 }
 .scheduleSectionText h2 {
   color: var(--gray);
@@ -709,6 +715,8 @@ ul {
   display: flex;
   flex-direction: column;
   gap: var(--16);
+  max-width: 112rem;
+  margin: 0 auto;
 }
 .faqSectionCard {
   background-color: var(--white);
@@ -772,6 +780,8 @@ details[open] .faqContent h4 {
   flex-direction: column;
   align-items: center;
   gap: var(--32);
+  max-width: 112rem;
+  margin: 0 auto;
 }
 .pricingCard {
   display: flex;
@@ -853,6 +863,8 @@ details[open] .faqContent h4 {
 }
 .map {
   width: 100%;
+  max-width: 112rem;
+  margin: 0 auto;
   border-radius: var(--mediumRadius);
 }
 .field {
@@ -945,6 +957,10 @@ details[open] .faqContent h4 {
 }
 .textArea::placeholder {
   color: var(--placeholderColor);
+}
+.form {
+  max-width: 112rem;
+  margin: 0 auto;
 }
 .form .btn {
   color: white;
@@ -1123,6 +1139,10 @@ details[open] .faqContent h4 {
   }
   .historySection {
     background: var(--Gray-Linear, linear-gradient(127deg, #333 60.36%, #565656 101.43%));
+  }
+  .historySectionInner {
+    max-width: 112rem;
+    margin: 0 auto;
     display: flex;
     align-items: stretch;
   }
