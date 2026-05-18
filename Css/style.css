@@ -1096,7 +1096,7 @@ details[open] .faqContent p {
   left: 0;
   width: 0%;
   height: 2px;
-  background: #FEBC11;
+  background: var(--yellow);
   transition: 0.3s;
 }
 
@@ -1176,7 +1176,7 @@ border: 0.05rem solid var(--yellow);
 }
 
 .scheduleTables::-webkit-scrollbar-thumb {
-  background: #FEBC11;
+  background: var(--yellow);
   border-radius: 10px;
 }
 
