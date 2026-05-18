@@ -1368,9 +1368,20 @@ border: 0.05rem solid var(--yellow);
     transform: scale(1.02);
   }
 
-  /* Testimonials — 4 colunas no desktop */
+  /* Testimonials — 4 colunas no desktop, cards de altura uniforme */
   .testimonialSectionContainer {
     grid-template-columns: repeat(4, 1fr);
+    align-items: stretch;
+  }
+
+  .testimonialCard {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ancora nome e função na base; o espaço extra fica entre a citação e o nome */
+  .testimonialCard .testimonialCardName {
+    margin-top: auto;
   }
 
   /* Pricing — 3 colunas, mais popular no centro */

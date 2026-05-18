@@ -1286,7 +1286,7 @@ details[open] .faqContent p {
     --containerLateralPadding: 80px;
   }
   .sideContainer {
-    max-width: 1280px;
+    max-width: var(--maxContent);
     margin-left: auto;
     margin-right: auto;
   }
