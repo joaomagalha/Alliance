@@ -793,7 +793,7 @@ details[open] .faqContent p {
 }
 
 .xmark{
-    color: #E83636;
+    color: var(--red);
 }
 
 .pricingCardBenefits div p{
