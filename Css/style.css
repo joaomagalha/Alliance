@@ -671,7 +671,7 @@ details[open] .faqContent {
 
 }
 
-details[open] .faqContent h4 {
+details[open] .faqContent p {
   opacity: 1;
   transform: translateY(0);
 }
