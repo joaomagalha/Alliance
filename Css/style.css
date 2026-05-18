@@ -739,7 +739,7 @@ details[open] .faqContent p {
     padding-top: 0.6rem;
     height: 6.7rem;
     width: 13rem;
-    background-color: #72A184;
+    background-color: var(--green);
     color: var(--white);
     border-radius: var(--16);
     z-index: -1;
