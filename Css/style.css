@@ -500,11 +500,11 @@ ul {
     border-radius: var(--16);
 }
 
-.gymImageSectionImg:nth-child(1){
+.gymImageSectionContainer > picture:nth-child(1) .gymImageSectionImg{
     object-position: center 30%;
 }
 
-.gymImageSectionImg:nth-child(2){
+.gymImageSectionContainer > picture:nth-child(2) .gymImageSectionImg{
     object-position: center 10%;
 }
 
@@ -1026,8 +1026,20 @@ details[open] .faqContent p {
     opacity: 0.2;
 }
 
-.footerCopy {
+.footerContainerInfo {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.footerCopy, .footerDeveloper {
     text-align: center;
+}
+
+.footerDeveloper a {
+    text-decoration: underline 0.1px solid var(--whiteOpacity);
+    text-underline-offset: 3px;
+    color: white;
+
 }
 
 .tab {

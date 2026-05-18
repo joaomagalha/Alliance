@@ -973,6 +973,10 @@ details[open] .faqContent p {
 .checkboxCard input:checked + .customBox i {
   opacity: 1;
 }
+.checkboxCard input:focus-visible + .customBox {
+  outline: 2px solid var(--gray);
+  outline-offset: 2px;
+}
 .textArea {
   padding: var(--16);
   height: 20rem;
@@ -1064,8 +1068,17 @@ details[open] .faqContent p {
 .footerLogo {
   opacity: 0.2;
 }
-.footerCopy {
+.footerContainerInfo {
+  display: flex;
+  justify-content: space-evenly;
+}
+.footerCopy, .footerDeveloper {
   text-align: center;
+}
+.footerDeveloper a {
+  text-decoration: underline 0.1px solid var(--whiteOpacity);
+  text-underline-offset: 3px;
+  color: white;
 }
 .tab {
   position: relative;
