@@ -635,7 +635,7 @@ ul {
     cursor: pointer;
 }
 
-.faqSectionSummary h4{
+.faqSectionSummary h3{
     font-weight: 500;
     color: var(--gray);
 }
