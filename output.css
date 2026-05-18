@@ -469,6 +469,8 @@ ul {
   width: 100%;
   height: 0.1rem;
   background: rgba(51, 51, 51, 0.05);
+  max-width: 112rem;
+  margin: 0 auto;
 }
 .gurgelQuoteSection p {
   margin: var(--32) 0;
@@ -633,11 +635,14 @@ ul {
   color: var(--gray);
 }
 .teacherSectionImg {
-  height: 26rem;
+  display: block;
   width: 100%;
+  max-width: 112rem;
+  height: clamp(26rem, 38vw, 52rem);
   object-fit: cover;
   object-position: center 35%;
   border-radius: var(--mediumRadius);
+  margin: 0 auto;
 }
 .teacherSectionBtn {
   display: block;
@@ -1257,6 +1262,9 @@ details[open] .faqContent h4 {
   .pricingCard:nth-child(3) {
     grid-column: 3;
     grid-row: 1;
+  }
+  .footerSectionInner {
+    padding: var(--containerSuperiorMax) 0 var(--containerSuperiorMin);
   }
 }
 @property --tw-rotate-x {

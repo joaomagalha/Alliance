@@ -45,23 +45,29 @@ const openBtn = document.getElementById("headerMenu");
 const closeBtn = document.getElementById("closeBtn");
 const mobileMenu = document.getElementById("mobileMenu");
 
-openBtn.addEventListener("click", () => {
-    mobileMenu.classList.add("active");
-});
+// O menu mobile só existe na index.html. Sem esta guarda, openBtn/closeBtn
+// são null nas páginas internas e .addEventListener lança TypeError.
+if (openBtn && closeBtn && mobileMenu) {
 
-closeBtn.addEventListener("click", () => {
-    mobileMenu.classList.remove("active");
-});
+    openBtn.addEventListener("click", () => {
+        mobileMenu.classList.add("active");
+    });
 
-document.addEventListener("click", (event) => {
-
-    const clickedOutside =
-        !mobileMenu.contains(event.target) &&
-        !openBtn.contains(event.target);
-
-    if (clickedOutside) {
+    closeBtn.addEventListener("click", () => {
         mobileMenu.classList.remove("active");
-    }
+    });
 
-});
+    document.addEventListener("click", (event) => {
+
+        const clickedOutside =
+            !mobileMenu.contains(event.target) &&
+            !openBtn.contains(event.target);
+
+        if (clickedOutside) {
+            mobileMenu.classList.remove("active");
+        }
+
+    });
+
+}
 
