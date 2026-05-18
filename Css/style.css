@@ -1257,6 +1257,10 @@ border: 0.05rem solid var(--yellow);
     font-size: 1.6rem;
   }
 
+  .textH3 {
+    font-size: 1.6rem;
+  }
+
   /* Preço: mantém o letter-spacing que antes herdava de h1 */
   .pricingCardValue {
     letter-spacing: -1.2px;
