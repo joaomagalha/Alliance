@@ -418,7 +418,7 @@ ul {
     color: var(--white);
 }
 
-.manifestSection h4{
+.manifestSection p{
     margin: var(--16) auto var(--24);
     font-weight: 300;
     width: 30rem;
