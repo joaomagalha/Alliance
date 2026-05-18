@@ -868,6 +868,16 @@ details[open] .faqContent p {
 
 .labelMarginMax{
     margin-bottom: 1.2rem;
+    font-size: 1.2rem;
+    line-height: 130%;
+    letter-spacing: -0.32px;
+    color: var(--gray);
+}
+
+/* fieldset que agrupa os radios de período — sem estilo visual próprio */
+.periodGroup {
+    display: flex;
+    flex-direction: column;
 }
 
 .date {
