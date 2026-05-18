@@ -966,7 +966,7 @@ details[open] .faqContent h4 {
     color: var(--secondaryTextGray);
 }
 
-.footerDownloadLinks h5 {
+.footerDownloadLinks p {
     color: var(--gray);
 }
 
