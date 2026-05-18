@@ -641,6 +641,16 @@ ul {
     cursor: pointer;
 }
 
+/* foco do FAQ: o anel vai no card inteiro, não só na linha do summary */
+.faqSectionSummary:focus-visible {
+    outline: none;
+}
+
+.faqSectionCard:has(.faqSectionSummary:focus-visible) {
+    outline: 2px solid var(--yellow);
+    outline-offset: 2px;
+}
+
 .faqSectionSummary h3{
     font-weight: 500;
     color: var(--gray);
@@ -917,8 +927,8 @@ details[open] .faqContent p {
 
 /* foco visível por teclado: o radio é invisível, então o anel vai na caixa */
 .checkboxCard input:focus-visible + .customBox {
-  outline: 2px solid var(--gray);
-  outline-offset: 2px;
+    outline: 2px solid var(--yellow);
+    outline-offset: 2px;
 }
 
 .textArea {
