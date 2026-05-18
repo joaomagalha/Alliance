@@ -987,8 +987,11 @@ details[open] .faqContent p {
     font-size: 2.8rem;
 }
 
-.footerDownloadLinks h6 {
+.footerDownloadLinks .downloadLabel {
     color: var(--secondaryTextGray);
+    font-size: 1rem;
+    line-height: 150%;
+    letter-spacing: -0.26px;
 }
 
 .footerDownloadLinks p {
