@@ -10,6 +10,8 @@
     --font-weight-extralight: 200;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
+    --default-transition-duration: 150ms;
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -750,6 +752,13 @@ ul {
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+}
+.faqSectionSummary:focus-visible {
+  outline: none;
+}
+.faqSectionCard:has(.faqSectionSummary:focus-visible) {
+  outline: 2px solid var(--yellow);
+  outline-offset: 2px;
 }
 .faqSectionSummary h3 {
   font-weight: 500;
