@@ -7,7 +7,6 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --spacing: 0.25rem;
     --font-weight-extralight: 200;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
@@ -365,9 +364,12 @@ ul {
 .headerNavText {
   font-family: Helvetica, sans-serif;
 }
-.headerNavText h1 {
+.headerNavText .headerNavTitle {
   font-size: 0.8rem;
   letter-spacing: 0.1rem;
+  line-height: 130%;
+  text-transform: uppercase;
+  margin-top: 0;
 }
 .headerNavText p {
   font-size: 0.6rem;
@@ -828,6 +830,9 @@ details[open] .faqContent h4 {
   font-size: 4.4rem;
   font-weight: 500;
   color: var(--gray);
+  line-height: 130%;
+  letter-spacing: -0.84px;
+  text-transform: uppercase;
 }
 .pricingCardValue span {
   font-size: 2.8rem;
@@ -1204,6 +1209,9 @@ details[open] .faqContent h4 {
   }
   h3 {
     font-size: 1.6rem;
+  }
+  .pricingCardValue {
+    letter-spacing: -1.2px;
   }
   :root {
     --containerLateralPadding: 80px;
