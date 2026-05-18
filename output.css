@@ -10,8 +10,6 @@
     --font-weight-extralight: 200;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
-    --default-transition-duration: 150ms;
-    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -684,7 +682,7 @@ ul {
   flex-direction: column;
   gap: 6.1em;
   align-items: center;
-  max-width: 130rem;
+  max-width: var(--maxContent);
   margin: 0 auto;
 }
 .testimonialCard {

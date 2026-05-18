@@ -606,7 +606,7 @@ ul {
 
 .scheduleSection {
     padding: 0 var(--containerLateralPadding) var(--containerSuperiorMax);
-    max-width: 128rem;
+    max-width: var(--maxContent);
     margin: 0 auto;
 }
 
