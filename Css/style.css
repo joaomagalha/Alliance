@@ -81,7 +81,7 @@ h4 {
     letter-spacing: -0.32px;
 }
 
-h5 {
+.textSmall {
     font-size: 1.1rem;
     line-height: normal;
     letter-spacing: -0.28px;
