@@ -49,12 +49,22 @@ const mobileMenu = document.getElementById("mobileMenu");
 // são null nas páginas internas e .addEventListener lança TypeError.
 if (openBtn && closeBtn && mobileMenu) {
 
-    openBtn.addEventListener("click", () => {
+    const openMenu = () => {
         mobileMenu.classList.add("active");
-    });
+        openBtn.setAttribute("aria-expanded", "true");
+        closeBtn.focus(); // move o foco para dentro do menu
+    };
+
+    const closeMenu = () => {
+        mobileMenu.classList.remove("active");
+        openBtn.setAttribute("aria-expanded", "false");
+    };
+
+    openBtn.addEventListener("click", openMenu);
 
     closeBtn.addEventListener("click", () => {
-        mobileMenu.classList.remove("active");
+        closeMenu();
+        openBtn.focus(); // devolve o foco a quem abriu o menu
     });
 
     document.addEventListener("click", (event) => {
@@ -64,9 +74,16 @@ if (openBtn && closeBtn && mobileMenu) {
             !openBtn.contains(event.target);
 
         if (clickedOutside) {
-            mobileMenu.classList.remove("active");
+            closeMenu();
         }
 
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && mobileMenu.classList.contains("active")) {
+            closeMenu();
+            openBtn.focus();
+        }
     });
 
 }
