@@ -411,7 +411,7 @@ ul {
     font-size: 2.2rem;
     padding: 1.1rem 1.3rem;
     color: var(--white);
-    background-color: #febb11;
+    background-color: var(--yellow);
     border-radius: 100rem;
     z-index: 2;
 }
