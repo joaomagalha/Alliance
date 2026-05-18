@@ -253,6 +253,8 @@
   --24: 24px;
   --32: 32px;
   --40: 40px;
+  --48: 48px;
+  --56: 56px;
   --smallRadius: 8px;
   --mediumRadius: 16px;
   --largeRadius: 24px;
@@ -826,6 +828,9 @@ details[open] .faqContent p {
   width: 100%;
   max-width: 37.4rem;
 }
+.pricingCard:nth-child(1) {
+  margin-top: var(--24);
+}
 .mostPopular {
   position: absolute;
   text-align: center;
@@ -1081,6 +1086,7 @@ details[open] .faqContent p {
   align-items: center;
   padding: 1rem;
   border: 1px solid var(--placeholderColor);
+  max-width: 20rem;
 }
 .footerLine {
   width: 100%;
@@ -1260,6 +1266,9 @@ details[open] .faqContent p {
     align-items: start;
     justify-items: center;
   }
+  .pricingCard:nth-child(2) {
+    margin-top: var(--24);
+  }
   .pricingCard:nth-child(3) {
     grid-column: 1 / -1;
   }
@@ -1286,7 +1295,7 @@ details[open] .faqContent p {
     --containerLateralPadding: 80px;
   }
   .sideContainer {
-    max-width: var(--maxContent);
+    max-width: calc(var(--maxContent) + 2 * var(--containerLateralPadding));
     margin-left: auto;
     margin-right: auto;
   }
@@ -1316,7 +1325,7 @@ details[open] .faqContent p {
     transition: all 0.4s ease-in-out;
   }
   .benefitCard:hover {
-    box-shadow: 0 12px 20px 0 rgba(254, 188, 17, 0.20);
+    box-shadow: 0 12px 20px 0 rgba(254, 187, 17, 0.203);
     transform: scale(1.02);
   }
   .testimonialSectionContainer {
@@ -1347,6 +1356,15 @@ details[open] .faqContent p {
   }
   .scheduleSection {
     padding: 0 0 var(--containerSuperiorMax);
+  }
+  .pricingCard:nth-child(1) {
+    box-shadow: 0 12px 20px 0 rgba(254, 187, 17, 0.203);
+  }
+  .pricingCard:nth-child(2) {
+    margin-top: var(--56);
+  }
+  .pricingCard:nth-child(3) {
+    margin-top: var(--56);
   }
 }
 @property --tw-rotate-x {

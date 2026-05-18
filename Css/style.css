@@ -31,6 +31,8 @@
     --24: 24px; 
     --32: 32px;
     --40: 40px;
+    --48: 48px;
+    --56: 56px;
 
     /* Radius */
     --smallRadius: 8px;
@@ -734,6 +736,10 @@ details[open] .faqContent p {
     max-width: 37.4rem;
 }
 
+.pricingCard:nth-child(1) {
+    margin-top: var(--24);
+}
+
 .mostPopular{
     position: absolute;
     text-align: center;
@@ -1045,6 +1051,7 @@ details[open] .faqContent p {
     align-items: center;
     padding: 1rem;
     border: 1px solid var(--placeholderColor);
+    max-width: 20rem;
 }
 
 .footerLine {
@@ -1282,6 +1289,10 @@ border: 0.05rem solid var(--yellow);
     justify-items: center;
   }
 
+  .pricingCard:nth-child(2) {
+    margin-top: var(--24);
+}
+
   .pricingCard:nth-child(3) {
     grid-column: 1 / -1;
   }
@@ -1365,7 +1376,7 @@ border: 0.05rem solid var(--yellow);
   }
 
   .benefitCard:hover {
-    box-shadow: 0 12px 20px 0 rgba(254, 188, 17, 0.20);
+    box-shadow: 0 12px 20px 0 rgba(254, 187, 17, 0.203);
     transform: scale(1.02);
   }
 
@@ -1391,10 +1402,35 @@ border: 0.05rem solid var(--yellow);
 
   .footerSectionInner {
     padding: var(--containerSuperiorMax) 0 var(--containerSuperiorMin);
-}
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* logo, linha e bloco de copyright ocupam a largura toda, abaixo das 6 seções */
+  .footerLogo,
+  .footerLine,
+  .footerContainerInfo {
+    grid-column: 1 / -1;
+  }
+
+  .footerLogo {
+    justify-self: center;
+  }
 
 .scheduleSection {
     padding: 0 0 var(--containerSuperiorMax);
+}
+
+.pricingCard:nth-child(1) {
+    box-shadow: 0 12px 20px 0 rgba(254, 187, 17, 0.203);
+    
+}
+
+.pricingCard:nth-child(2) {
+    margin-top: var(--56);
+}
+.pricingCard:nth-child(3) {
+    margin-top: var(--56);
 }
 
 }
