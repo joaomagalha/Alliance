@@ -1124,7 +1124,7 @@ details[open] .faqContent p {
   left: 0;
   width: 0%;
   height: 2px;
-  background: #FEBC11;
+  background: var(--yellow);
   transition: 0.3s;
 }
 .tab.active::after {
@@ -1184,7 +1184,7 @@ details[open] .faqContent p {
   width: 6px;
 }
 .scheduleTables::-webkit-scrollbar-thumb {
-  background: #FEBC11;
+  background: var(--yellow);
   border-radius: 10px;
 }
 .scheduleTable.active {

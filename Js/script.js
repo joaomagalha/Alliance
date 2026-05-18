@@ -31,12 +31,9 @@ tabs.forEach(tab => {
     const target = tab.dataset.tab;
     document.getElementById(target).classList.add("active");
 
-  });
-});
-
-document.querySelectorAll(".tab").forEach(tab => {
-  tab.addEventListener("click", () => {
+    // volta a rolagem da tabela para o topo
     document.querySelector(".scheduleTables").scrollTop = 0;
+
   });
 });
 
