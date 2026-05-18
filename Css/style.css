@@ -444,7 +444,7 @@ ul {
     margin-bottom: 2px;
 }
 
-.benefitCardText h5{
+.benefitCardText p{
     color: var(--secondaryTextGray);
     max-width: 20rem;
     font-weight: 300;
