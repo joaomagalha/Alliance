@@ -1044,7 +1044,7 @@ details[open] .faqContent h4 {
     gap: var(--8);
 }
 
-.scheduleSectionTimes h5 {
+.scheduleSectionTimes p {
     padding: var(--24) 0;
 }
 
