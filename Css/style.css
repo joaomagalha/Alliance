@@ -21,6 +21,9 @@
     --containerSuperiorMin: 32px;
     --containerSuperiorMax: 64px;
 
+    /* Largura máxima do conteúdo central das seções */
+    --maxContent: 112rem;
+
     /* Espacamento */
     --0: 0px;
     --8: 8px;
