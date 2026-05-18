@@ -96,7 +96,7 @@
     color: var(--gray);
 }
 
-.faqSectionText h4 {
+.faqSectionText p {
     color: var(--secondaryTextGray);
 }
 
