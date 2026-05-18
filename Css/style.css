@@ -465,7 +465,7 @@ ul {
     color: var(--gray);
 }
 
-.gymImageSectionText h4{
+.gymImageSectionText p{
     margin: var(--8) auto var(--40);
     max-width: 28rem;
 }
