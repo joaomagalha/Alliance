@@ -525,7 +525,7 @@ ul {
     color: var(--white);
 }
 
-.testimonialsSectionText h4{
+.testimonialsSectionText p{
     color: var(--white);
     margin-bottom: 6.5rem;
 }
