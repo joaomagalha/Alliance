@@ -909,6 +909,12 @@ details[open] .faqContent p {
   opacity: 1;
 }
 
+/* foco visível por teclado: o radio é invisível, então o anel vai na caixa */
+.checkboxCard input:focus-visible + .customBox {
+  outline: 2px solid var(--gray);
+  outline-offset: 2px;
+}
+
 .textArea {
     padding: var(--16);
     height: 20rem;
