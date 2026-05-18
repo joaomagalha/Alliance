@@ -87,6 +87,13 @@ h4 {
     letter-spacing: -0.28px;
 }
 
+/* tipografia equivalente à tag <h4> — para textos corridos que deixaram de ser heading */
+.textBase {
+    font-size: 1.2rem;
+    line-height: 150%;
+    letter-spacing: -0.32px;
+}
+
 h6 {
     font-size: 1rem;
     line-height: 150%; 

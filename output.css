@@ -338,6 +338,9 @@ ul {
   color: var(--secondaryTextGray);
   font-weight: 300;
   margin: var(--8) 0 var(--40) 0;
+  font-size: 1.2rem;
+  line-height: 150%;
+  letter-spacing: -0.32px;
 }
 .container {
   max-width: none;
@@ -604,7 +607,7 @@ ul {
 .gymImageSectionText h2 {
   color: var(--gray);
 }
-.gymImageSectionText h4 {
+.gymImageSectionText p {
   margin: var(--8) auto var(--40);
   max-width: 28rem;
 }
@@ -653,7 +656,7 @@ ul {
   background: var(--Gray-Linear, linear-gradient(127deg, var(--Gray, #333) 60.36%, #565656 101.43%));
   color: var(--white);
 }
-.testimonialsSectionText h4 {
+.testimonialsSectionText p {
   color: var(--white);
   margin-bottom: 6.5rem;
 }
@@ -712,7 +715,7 @@ ul {
   background: var(--Gray-Linear, linear-gradient(127deg, var(--Gray, #333) 60.36%, #565656 101.43%));
   color: var(--white);
 }
-.faqSectionText h4 {
+.faqSectionText p {
   color: var(--white);
 }
 .faqSectionContainer {
@@ -938,7 +941,9 @@ details[open] .faqContent h4 {
   margin: 0;
 }
 .checkboxCard input {
-  display: none;
+  position: absolute;
+  opacity: 0;
+  width: 0;
 }
 .customBox {
   width: 3rem;
