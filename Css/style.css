@@ -94,6 +94,13 @@ h4 {
     letter-spacing: -0.32px;
 }
 
+/* tipografia equivalente à tag <h3> — para textos que deixaram de ser heading */
+.textH3 {
+    font-size: 1.4rem;
+    line-height: 130%;
+    letter-spacing: -0.36px;
+}
+
 h6 {
     font-size: 1rem;
     line-height: 150%; 
