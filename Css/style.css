@@ -458,7 +458,7 @@ ul {
     flex-shrink: 0;
 }
 
-.benefitCardText h4{
+.benefitCardText h3{
     font-weight: 500;
     color: var(--gray);
     margin-bottom: 2px;
