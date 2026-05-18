@@ -771,7 +771,7 @@ details[open] .faqContent p {
     color: #E83636;
 }
 
-.pricingCardBenefits div h4{
+.pricingCardBenefits div p{
     color: var(--secondaryTextGray);
 }
 
