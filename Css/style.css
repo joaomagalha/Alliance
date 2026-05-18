@@ -142,7 +142,7 @@ ul {
     font-weight: bold;
     letter-spacing: -0.48px;
     text-transform: uppercase;
-    background: var(--buttton-yellow, linear-gradient(90deg, #FEBC11 0%, #FFCC47 100%));
+    background: var(--buttton-yellow, linear-gradient(90deg, var(--yellow) 0%, var(--yellowLight) 100%));
     box-shadow: 0 12px 20px 0 rgba(254, 188, 17, 0.20);
     border-radius: 4px;
     padding: var(--8) var(--32);
