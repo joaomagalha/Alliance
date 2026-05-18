@@ -408,7 +408,7 @@ ul {
     z-index: 2;
 }
 
-.classCard h4{
+.classCard h3{
     position: absolute;
     left: var(--16);
     bottom: var(--8);

@@ -303,6 +303,11 @@ h4 {
   line-height: 150%;
   letter-spacing: -0.32px;
 }
+.textH3 {
+  font-size: 1.4rem;
+  line-height: 130%;
+  letter-spacing: -0.36px;
+}
 h6 {
   font-size: 1rem;
   line-height: 150%;
@@ -467,7 +472,7 @@ ul {
 .heroSectionText {
   color: var(--white);
 }
-.heroSectionText h3 {
+.heroSectionText p {
   margin: var(--8) 0 var(--24);
   max-width: 26rem;
 }
@@ -1231,6 +1236,9 @@ details[open] .faqContent p {
     letter-spacing: -0.9px;
   }
   h3 {
+    font-size: 1.6rem;
+  }
+  .textH3 {
     font-size: 1.6rem;
   }
   .pricingCardValue {
