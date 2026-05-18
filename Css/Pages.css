@@ -117,11 +117,13 @@
   
 }
 
-.footerCard h1 {
+.footerCard .footerCardTitle {
     font-size: 1.6rem;
     letter-spacing: 0.2rem;
     font-weight: bold;
     color: var(--whiteOpacity);
+    line-height: 130%;
+    text-transform: uppercase;
 }
 
 .footerCard p {
