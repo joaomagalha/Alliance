@@ -51,12 +51,14 @@ if (openBtn && closeBtn && mobileMenu) {
 
     const openMenu = () => {
         mobileMenu.classList.add("active");
+        mobileMenu.removeAttribute("inert"); // reativa antes de focar
         openBtn.setAttribute("aria-expanded", "true");
         closeBtn.focus(); // move o foco para dentro do menu
     };
 
     const closeMenu = () => {
         mobileMenu.classList.remove("active");
+        mobileMenu.setAttribute("inert", ""); // tira links escondidos do tab/leitor de tela
         openBtn.setAttribute("aria-expanded", "false");
     };
 
