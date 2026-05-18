@@ -168,9 +168,12 @@ ul {
     font-family: Helvetica, sans-serif;
 }
 
-.headerNavText h1 {
+.headerNavText .headerNavTitle {
     font-size: 0.8rem;
     letter-spacing: 0.1rem;
+    line-height: 130%;
+    text-transform: uppercase;
+    margin-top: 0;
 }
 
 .headerNavText p {
