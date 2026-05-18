@@ -560,7 +560,7 @@ ul {
     flex-direction: column;
     gap: 6.1em;
     align-items: center;
-    max-width: 130rem;
+    max-width: var(--maxContent);
     margin: 0 auto;
 }
 
