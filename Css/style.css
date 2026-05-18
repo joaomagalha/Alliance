@@ -336,7 +336,7 @@ ul {
     color: var(--gray);
 }
 
-.historySectionText h4{
+.historySectionText p{
     color: var(--secondaryTextGray);
     font-weight: 300;
     max-width: 47rem;
