@@ -1368,9 +1368,9 @@ border: 0.05rem solid var(--yellow);
     transform: scale(1.02);
   }
 
-  /* Testimonials — 4 colunas no desktop, cards de altura uniforme */
+  /* Testimonials — grade 2x2 no desktop, cards de altura uniforme */
   .testimonialSectionContainer {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     align-items: stretch;
   }
 
