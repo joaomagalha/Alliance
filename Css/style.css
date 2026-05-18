@@ -308,7 +308,7 @@ ul {
     color: var(--white);
 }
 
-.heroSectionText h3{
+.heroSectionText p{
     margin: var(--8) 0 var(--24);
     max-width: 26rem;
 }
