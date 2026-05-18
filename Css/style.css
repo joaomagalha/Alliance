@@ -134,6 +134,9 @@ ul {
     color: var(--secondaryTextGray);
     font-weight: 300;
     margin: var(--8) 0 var(--40) 0;
+    font-size: 1.2rem;
+    line-height: 150%;
+    letter-spacing: -0.32px;
 }
 
 .container {
@@ -866,7 +869,9 @@ details[open] .faqContent h4 {
 }
 
 .checkboxCard input {
-    display: none;
+    position: absolute;
+    opacity: 0;
+    width: 0;
 }
 
 .customBox {
