@@ -42,6 +42,11 @@
     /* Line Height */
     --smallLineHeight: 130%;
     --largeLineHeight: 150%;
+
+    /* Diversos (valores arredondados, antes magic numbers do Figma) */
+    --blur: 6px;
+    --cardBorder: 2px;
+    --testimonialsGap: 6rem;
 }
 
 * {
@@ -429,7 +434,7 @@ ul {
     text-transform: uppercase;
     font-weight: bold;
     z-index: 1000;
-    letter-spacing: 10%;
+    letter-spacing: 0.2rem;
 }
 
 .manifestSection{
