@@ -48,6 +48,13 @@
     --blur: 6px;
     --cardBorder: 2px;
     --testimonialsGap: 6rem;
+
+    /* Z-index — escala coerente */
+    --z-behind: -1;
+    --z-overlay: 1;
+    --z-card-icon: 2;
+    --z-card-label: 3;
+    --z-menu: 100;
 }
 
 * {
