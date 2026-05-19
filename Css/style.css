@@ -441,7 +441,7 @@ ul {
     color: var(--whiteOpacity);
     text-transform: uppercase;
     font-weight: bold;
-    z-index: 1000;
+    z-index: var(--z-card-label);
     letter-spacing: 0.2rem;
 }
 

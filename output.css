@@ -568,7 +568,7 @@ ul {
   color: var(--white);
   background-color: var(--yellow);
   border-radius: 100rem;
-  z-index: 2;
+  z-index: var(--z-card-icon);
 }
 .classCard h3 {
   position: absolute;
