@@ -1308,6 +1308,23 @@ border: 0.05rem solid var(--yellow);
   .pricingCard:nth-child(3) {
     grid-column: 1 / -1;
   }
+
+  /* Footer — grade 2 colunas no tablet */
+  .footerSectionInner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* logo, linha e bloco de copyright ocupam a largura toda */
+  .footerLogo,
+  .footerLine,
+  .footerContainerInfo {
+    grid-column: 1 / -1;
+  }
+
+  .footerLogo {
+    justify-self: center;
+  }
 }
 
 
