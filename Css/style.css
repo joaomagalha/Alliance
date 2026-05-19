@@ -1294,7 +1294,7 @@ border: 0.05rem solid var(--yellow);
   .testimonialSectionContainer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    row-gap: 6.4rem;
+    row-gap: var(--64);
     column-gap: var(--32);
     align-items: start;
   }

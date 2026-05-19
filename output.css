@@ -1175,7 +1175,7 @@ details[open] .faqContent p {
   color: var(--gray);
 }
 .scheduleRow {
-  padding: 0.8rem;
+  padding: var(--8);
   border-radius: var(--smallRadius);
   font-weight: 400;
   border: 0.05rem solid rgb(232, 232, 232);
