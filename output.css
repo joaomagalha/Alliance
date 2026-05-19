@@ -9,6 +9,8 @@
       "Courier New", monospace;
     --font-weight-extralight: 200;
     --font-weight-bold: 700;
+    --default-transition-duration: 150ms;
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -255,6 +257,9 @@
   --largeRadius: 24px;
   --smallLineHeight: 130%;
   --largeLineHeight: 150%;
+  --blur: 6px;
+  --cardBorder: 2px;
+  --testimonialsGap: 6rem;
 }
 * {
   box-sizing: border-box;
@@ -682,7 +687,7 @@ ul {
 .testimonialSectionContainer {
   display: flex;
   flex-direction: column;
-  gap: 6.1em;
+  gap: var(--testimonialsGap);
   align-items: center;
   max-width: var(--maxContent);
   margin: 0 auto;

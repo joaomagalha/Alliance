@@ -572,7 +572,7 @@ ul {
 .testimonialSectionContainer {
     display: flex;
     flex-direction: column;
-    gap: 6.1em;
+    gap: var(--testimonialsGap);
     align-items: center;
     max-width: var(--maxContent);
     margin: 0 auto;
