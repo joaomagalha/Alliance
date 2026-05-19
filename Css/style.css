@@ -251,7 +251,7 @@ ul {
 
     padding: 2rem;
 
-    z-index: 9999;
+    z-index: var(--z-menu);
 
     transition: transform 0.4s ease;
 
