@@ -1372,6 +1372,25 @@ border: 0.05rem solid var(--yellow);
     font-size: 1.6rem;
   }
 
+  /* Texto de leitura um pouco maior no desktop (não afeta o layout) */
+  p,
+  a,
+  label,
+  .textBase,
+  .subtitle {
+    font-size: 1.4rem;
+  }
+
+  .textSmall,
+  .scheduleSectionTimes td,
+  .scheduleSectionTimes th {
+    font-size: 1.3rem;
+  }
+
+  h6 {
+    font-size: 1.2rem;
+  }
+
   /* Preço: mantém o letter-spacing que antes herdava de h1 */
   .pricingCardValue {
     letter-spacing: -1.2px;

@@ -385,7 +385,7 @@ ul {
 }
 .headerNavLogo {
   height: 2.5rem;
-  width: 4rem;
+  width: auto;
 }
 .headerNavText {
   font-family: Helvetica, sans-serif;
