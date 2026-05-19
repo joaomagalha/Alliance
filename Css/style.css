@@ -582,7 +582,7 @@ ul {
     position: relative;
     text-align: center;
     padding: 6rem 0 2rem;
-    border: 1.914px solid rgba(255, 255, 255, 0.77);
+    border: var(--cardBorder) solid rgba(255, 255, 255, 0.77);
     border-radius: var(--mediumRadius);
     background: rgba(255, 255, 255, 0.13);
     backdrop-filter: blur(6.37930965423584px);
