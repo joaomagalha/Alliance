@@ -1317,6 +1317,15 @@ details[open] .faqContent p {
   .textH3 {
     font-size: 1.6rem;
   }
+  p, a, label, .textBase, .subtitle {
+    font-size: 1.4rem;
+  }
+  .textSmall, .scheduleSectionTimes td, .scheduleSectionTimes th {
+    font-size: 1.3rem;
+  }
+  h6 {
+    font-size: 1.2rem;
+  }
   .pricingCardValue {
     letter-spacing: -1.2px;
   }
