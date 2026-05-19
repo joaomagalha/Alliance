@@ -377,6 +377,7 @@ ul {
 
 .historySectionImg img{
     height: 32rem;
+    width: auto; /* anula o atributo width="456"; mantém a proporção via aspect-ratio */
 }
 
 .classCardsSectionText h2 {
