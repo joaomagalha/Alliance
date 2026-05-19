@@ -740,7 +740,7 @@ details[open] .faqContent p {
     display: flex;
     position: relative;
     flex-direction: column;
-    gap: 4rem;
+    gap: var(--40);
     padding: var(--40) var(--40);
     box-shadow: 3px 3px 50px 8px rgba(0, 0, 0, 0.10);
     border-radius: var(--16);
