@@ -9,8 +9,6 @@
       "Courier New", monospace;
     --font-weight-extralight: 200;
     --font-weight-bold: 700;
-    --default-transition-duration: 150ms;
-    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -699,7 +697,7 @@ ul {
   border: var(--cardBorder) solid rgba(255, 255, 255, 0.77);
   border-radius: var(--mediumRadius);
   background: rgba(255, 255, 255, 0.13);
-  backdrop-filter: blur(6.37930965423584px);
+  backdrop-filter: blur(var(--blur));
   width: 100%;
 }
 .testimonialCardImg {
