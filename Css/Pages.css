@@ -4,6 +4,8 @@
     align-items: center;
     justify-content: center;
     gap: var(--32);
+    max-width: 112rem;
+    margin: 0 auto
 }
 
 .differentialCard {
@@ -19,6 +21,7 @@
     height: 32rem;
     border-radius: var(--mediumRadius);
     box-shadow: 3px 3px 50px 8px rgba(0, 0, 0, 0.10);
+
 }
 
 .benefitsSectionText h2 {
@@ -157,5 +160,15 @@
     color: var(--yellow);
     border: 1px solid rgba(0, 0, 0, 0.07);
     box-shadow: 2px 2px 5.5px 0 rgba(0, 0, 0, 0.128);
+}
+
+@media (min-width: 768px) {
+
+    .differentialCards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: start;
+    }
+
 }
 

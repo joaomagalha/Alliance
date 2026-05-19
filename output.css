@@ -8,7 +8,6 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --font-weight-extralight: 200;
-    --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
@@ -218,10 +217,6 @@
   .font-extralight {
     --tw-font-weight: var(--font-weight-extralight);
     font-weight: var(--font-weight-extralight);
-  }
-  .font-semibold {
-    --tw-font-weight: var(--font-weight-semibold);
-    font-weight: var(--font-weight-semibold);
   }
   .uppercase {
     text-transform: uppercase;
@@ -583,8 +578,13 @@ ul {
 }
 .manifestSection p {
   margin: var(--16) auto var(--24);
-  font-weight: 300;
   width: 30rem;
+}
+.manifestParagraph {
+  color: var(--whiteOpacity);
+}
+.gurgelName {
+  font-weight: 600;
 }
 .benefitsSection {
   padding: var(--containerSuperiorMax) var(--containerLateralPadding) 0;
@@ -741,7 +741,7 @@ ul {
   display: flex;
   flex-direction: column;
   gap: var(--16);
-  max-width: var(--maxContent);
+  max-width: 55rem;
   margin: 0 auto;
 }
 .faqSectionCard {
@@ -926,6 +926,7 @@ details[open] .faqContent p {
   border-radius: var(--smallRadius);
   padding-left: var(--16);
   font-size: 1.2rem;
+  max-width: 56rem;
 }
 .field input::placeholder {
   color: var(--placeholderColor);
@@ -936,12 +937,14 @@ details[open] .faqContent p {
 .contactSectionInfo input {
   margin-bottom: var(--16);
   height: 4.8rem;
+  max-width: 56rem;
 }
 .contactSectionInfo input:last-child {
   margin: 0;
 }
 .contactSectionDate {
   margin: var(--40) 0;
+  max-width: 56rem;
 }
 .labelMarginMax {
   margin-bottom: 1.2rem;
@@ -1094,6 +1097,7 @@ details[open] .faqContent p {
   background-color: white;
 }
 .footerLogo {
+  margin: 0 auto;
   opacity: 0.2;
 }
 .footerContainerInfo {
@@ -1320,12 +1324,12 @@ details[open] .faqContent p {
     text-align: center;
     padding: var(--24);
     border-radius: var(--mediumRadius);
-    border: 1px solid var(--yellow);
+    box-shadow: 3px 3px 10px 3px rgba(254, 184, 20, 0.15);
     background-color: transparent;
     transition: all 0.4s ease-in-out;
   }
   .benefitCard:hover {
-    box-shadow: 0 12px 20px 0 rgba(254, 187, 17, 0.203);
+    box-shadow: 5px 5px 10px 3px rgba(254, 184, 20, 0.25);
     transform: scale(1.02);
   }
   .testimonialSectionContainer {
@@ -1353,6 +1357,14 @@ details[open] .faqContent p {
   }
   .footerSectionInner {
     padding: var(--containerSuperiorMax) 0 var(--containerSuperiorMin);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .footerLogo, .footerLine, .footerContainerInfo {
+    grid-column: 1 / -1;
+  }
+  .footerLogo {
+    justify-self: center;
   }
   .scheduleSection {
     padding: 0 0 var(--containerSuperiorMax);

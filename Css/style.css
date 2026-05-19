@@ -440,8 +440,15 @@ ul {
 
 .manifestSection p{
     margin: var(--16) auto var(--24);
-    font-weight: 300;
     width: 30rem;
+}
+
+.manifestParagraph {
+    color: var(--whiteOpacity);
+}
+
+.gurgelName {
+    font-weight: 600;
 }
 
 .benefitsSection {
@@ -629,7 +636,7 @@ ul {
     display: flex;
     flex-direction: column;
     gap: var(--16);
-    max-width: var(--maxContent);
+    max-width: 55rem;
     margin: 0 auto;
 }
 
@@ -854,6 +861,7 @@ details[open] .faqContent p {
     border-radius:  var(--smallRadius);
     padding-left: var(--16);
     font-size: 1.2rem;
+    max-width: 56rem;
 }
 
 .field input::placeholder{
@@ -867,6 +875,7 @@ details[open] .faqContent p {
 .contactSectionInfo input{
     margin-bottom: var(--16);
     height: 4.8rem;
+    max-width: 56rem;
 }
 
 .contactSectionInfo input:last-child{
@@ -875,6 +884,8 @@ details[open] .faqContent p {
 
 .contactSectionDate{
     margin: var(--40) 0;
+    max-width: 56rem;
+
 }
 
 .labelMarginMax{
@@ -1061,6 +1072,7 @@ details[open] .faqContent p {
 }
 
 .footerLogo {
+    margin: 0 auto;
     opacity: 0.2;
 }
 
@@ -1370,13 +1382,13 @@ border: 0.05rem solid var(--yellow);
     text-align: center;
     padding: var(--24);
     border-radius: var(--mediumRadius);
-    border: 1px solid var(--yellow);
+    box-shadow: 3px 3px 10px 3px rgba(254, 184, 20, 0.15);
     background-color: transparent;
     transition: all 0.4s ease-in-out;
   }
 
   .benefitCard:hover {
-    box-shadow: 0 12px 20px 0 rgba(254, 187, 17, 0.203);
+    box-shadow: 5px 5px 10px 3px rgba(254, 184, 20, 0.25);
     transform: scale(1.02);
   }
 
@@ -1400,21 +1412,10 @@ border: 0.05rem solid var(--yellow);
   .pricingCard:nth-child(2) { grid-column: 1; grid-row: 1; }
   .pricingCard:nth-child(3) { grid-column: 3; grid-row: 1; }
 
+  /* Footer — 3 colunas no desktop (o grid e o span já vêm do tablet) */
   .footerSectionInner {
     padding: var(--containerSuperiorMax) 0 var(--containerSuperiorMin);
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
-  }
-
-  /* logo, linha e bloco de copyright ocupam a largura toda, abaixo das 6 seções */
-  .footerLogo,
-  .footerLine,
-  .footerContainerInfo {
-    grid-column: 1 / -1;
-  }
-
-  .footerLogo {
-    justify-self: center;
   }
 
 .scheduleSection {
