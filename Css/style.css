@@ -859,7 +859,7 @@ details[open] .faqContent p {
 }
 
 .labelMargin {
-    margin-bottom: 0.4rem;
+    margin-bottom: var(--4);
 }
 
 .field input, textarea{
