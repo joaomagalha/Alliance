@@ -771,7 +771,7 @@ details[open] .faqContent p {
     background-color: var(--green);
     color: var(--white);
     border-radius: var(--16);
-    z-index: -1;
+    z-index: var(--z-behind);
     font-weight: 500;
     font-size: 1.1rem;
 }
