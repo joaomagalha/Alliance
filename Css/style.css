@@ -225,8 +225,9 @@ ul {
 .mobileMenu {
     position: fixed;
     top: 0;
-    right: -100%;
-    
+    right: 0;
+    transform: translateX(100%); /* escondido fora da tela sem criar scroll horizontal */
+
     width: 100%;
     max-width: 28rem;
     height: 100vh;
