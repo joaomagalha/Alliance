@@ -585,7 +585,7 @@ ul {
     border: var(--cardBorder) solid rgba(255, 255, 255, 0.77);
     border-radius: var(--mediumRadius);
     background: rgba(255, 255, 255, 0.13);
-    backdrop-filter: blur(6.37930965423584px);
+    backdrop-filter: blur(var(--blur));
     width: 100%;
 }
 
