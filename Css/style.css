@@ -331,6 +331,9 @@ ul {
 
 .heroSectionText{
     color: var(--white);
+    width: 100%;
+    max-width: var(--maxContent);
+    margin: 0 auto;
 }
 
 .heroSectionText p{
