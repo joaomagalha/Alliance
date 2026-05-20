@@ -992,7 +992,7 @@ details[open] .faqContent p {
 }
 
 .form {
-    max-width: var(--maxContent);
+    max-width: 56rem;
     margin: 0 auto;
 }
 
