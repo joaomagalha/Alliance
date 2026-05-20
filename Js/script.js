@@ -16,26 +16,40 @@ detalhes.forEach((item) => {
 
 const tabs = document.querySelectorAll(".tab");
 const tables = document.querySelectorAll(".scheduleTable");
+const tablist = document.querySelector(".scheduleSectionDays");
+
+function activateTab(tab) {
+  tabs.forEach(t => {
+    const isActive = t === tab;
+    t.classList.toggle("active", isActive);
+    t.setAttribute("aria-selected", isActive ? "true" : "false");
+    t.setAttribute("tabindex", isActive ? "0" : "-1");
+  });
+  tables.forEach(t => t.classList.remove("active"));
+  document.getElementById(tab.dataset.tab).classList.add("active");
+  document.querySelector(".scheduleTables").scrollTop = 0;
+}
 
 tabs.forEach(tab => {
-  tab.addEventListener("click", () => {
-
-    // remove ativos
-    tabs.forEach(t => t.classList.remove("active"));
-    tables.forEach(t => t.classList.remove("active"));
-
-    // ativa botão
-    tab.classList.add("active");
-
-    // ativa tabela correspondente
-    const target = tab.dataset.tab;
-    document.getElementById(target).classList.add("active");
-
-    // volta a rolagem da tabela para o topo
-    document.querySelector(".scheduleTables").scrollTop = 0;
-
-  });
+  tab.addEventListener("click", () => activateTab(tab));
 });
+
+// navegação por teclado entre tabs (padrão ARIA APG — automatic activation)
+if (tablist) {
+  tablist.addEventListener("keydown", (e) => {
+    const idx = Array.from(tabs).indexOf(document.activeElement);
+    if (idx === -1) return;
+    let next = idx;
+    if (e.key === "ArrowRight")     next = (idx + 1) % tabs.length;
+    else if (e.key === "ArrowLeft") next = (idx - 1 + tabs.length) % tabs.length;
+    else if (e.key === "Home")      next = 0;
+    else if (e.key === "End")       next = tabs.length - 1;
+    else return;
+    e.preventDefault();
+    activateTab(tabs[next]);
+    tabs[next].focus();
+  });
+}
 
 
 const openBtn = document.getElementById("headerMenu");
