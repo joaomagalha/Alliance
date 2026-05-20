@@ -506,12 +506,12 @@
 
         <div class="scheduleSectionContainer">
 
-            <div class="scheduleSectionDays">
+            <div class="scheduleSectionDays" role="tablist" aria-label="Tipo de aulas">
 
-                <button class="tab active" data-tab="all">Todas</button>
-                <button class="tab" data-tab="adult">Adultos</button>
-                <button class="tab" data-tab="kids">Kids</button>
-                <button class="tab" data-tab="nogi">No-Gi</button>
+                <button class="tab active" role="tab" id="tab-all" aria-selected="true" aria-controls="all" data-tab="all">Todas</button>
+                <button class="tab" role="tab" id="tab-adult" aria-selected="false" aria-controls="adult" tabindex="-1" data-tab="adult">Adultos</button>
+                <button class="tab" role="tab" id="tab-kids" aria-selected="false" aria-controls="kids" tabindex="-1" data-tab="kids">Kids</button>
+                <button class="tab" role="tab" id="tab-nogi" aria-selected="false" aria-controls="nogi" tabindex="-1" data-tab="nogi">No-Gi</button>
 
             </div>
 
