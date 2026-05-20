@@ -1354,6 +1354,11 @@ border: 0.05rem solid var(--yellow);
 
 @media (min-width: 1024px) {
 
+  /* Hero: altura maior no desktop para a imagem ter proporção natural */
+  .heroSection {
+    height: 60rem;
+  }
+
   /* Tipografia */
   h1 {
     font-size: 3.2rem;
