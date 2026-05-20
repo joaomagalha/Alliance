@@ -894,7 +894,6 @@ details[open] .faqContent p {
 .contactSectionInfo input{
     margin-bottom: var(--16);
     height: 4.8rem;
-    max-width: 56rem;
 }
 
 .contactSectionInfo input:last-child{
