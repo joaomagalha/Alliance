@@ -649,7 +649,7 @@ ul {
     display: flex;
     flex-direction: column;
     gap: var(--16);
-    max-width: 112rem;
+    max-width: 56rem;
     margin: 0 auto;
 }
 
@@ -658,7 +658,6 @@ ul {
     padding: var(--24) var(--16);
     border-radius: var(--8);
     overflow: hidden;
-
 }
 
 .faqSectionSummary{
@@ -1231,6 +1230,11 @@ border: 0.05rem solid var(--yellow);
 
   :root {
     --containerLateralPadding: 48px;
+  }
+
+  /* Hero: altura maior no tablet para acomodar a imagem de fundo */
+  .heroSection {
+    height: 50rem;
   }
 
   .classCardSectionContainer {
