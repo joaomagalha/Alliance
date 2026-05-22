@@ -508,6 +508,10 @@ ul {
 .heroBadge i {
   font-size: 1.1rem;
 }
+.heroSectionText .btn i {
+  margin-left: var(--8);
+  color: var(--white);
+}
 .heroStats {
   display: flex;
   margin: var(--24) 0 0;
