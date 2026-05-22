@@ -938,21 +938,6 @@ details[open] .faqContent p {
   font-size: 2.8rem;
   font-weight: 500;
 }
-.pricingOldValue {
-  margin: 0 0 var(--4);
-  font-size: 1.4rem;
-  color: rgb(177, 177, 177);
-}
-.pricingOldValue s {
-  text-decoration: line-through;
-}
-.pricingSavings {
-  margin: var(--4) 0 0;
-  color: var(--green);
-  font-weight: 600;
-  font-size: 1.2rem;
-  letter-spacing: -0.32px;
-}
 .pricingCardBenefits {
   display: flex;
   flex-direction: column;
