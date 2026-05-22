@@ -1296,6 +1296,35 @@ border: 0.05rem solid var(--yellow);
     height: 50rem;
   }
 
+  /* Hero: badge e estatísticas voltam ao tamanho cheio fora do mobile */
+  .heroBadge {
+    gap: var(--8);
+    margin-bottom: var(--16);
+    padding: var(--8) var(--16);
+    font-size: 1.2rem;
+  }
+
+  .heroBadge i {
+    font-size: 1.3rem;
+  }
+
+  .heroStats {
+    margin-top: var(--32);
+  }
+
+  .heroStat {
+    padding: 0 var(--16);
+  }
+
+  .heroStatNumber {
+    font-size: 2.4rem;
+    letter-spacing: -0.84px;
+  }
+
+  .heroStatLabel {
+    font-size: 1.1rem;
+  }
+
   .classCardSectionContainer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
