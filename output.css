@@ -9,8 +9,6 @@
       "Courier New", monospace;
     --font-weight-extralight: 200;
     --font-weight-bold: 700;
-    --default-transition-duration: 150ms;
-    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -496,28 +494,28 @@ ul {
 .heroBadge {
   display: inline-flex;
   align-items: center;
-  gap: var(--8);
-  margin-bottom: var(--16);
-  padding: var(--8) var(--16);
+  gap: var(--4);
+  margin-bottom: var(--8);
+  padding: var(--4) var(--16);
   color: var(--yellow);
   background: rgba(254, 188, 17, 0.12);
   border-radius: 999px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: -0.32px;
   text-transform: uppercase;
 }
 .heroBadge i {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }
 .heroStats {
   display: flex;
-  margin: var(--32) 0 0;
+  margin: var(--24) 0 0;
   padding: 0;
 }
 .heroStat {
   flex: 1;
-  padding: 0 var(--16);
+  padding: 0 var(--8);
   text-align: center;
 }
 .heroStat:first-child {
@@ -530,15 +528,15 @@ ul {
 .heroStatNumber {
   display: block;
   color: var(--yellow);
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   font-weight: 700;
   line-height: 1.2;
-  letter-spacing: -0.84px;
+  letter-spacing: -0.66px;
 }
 .heroStatLabel {
   display: block;
   color: var(--whiteOpacity);
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   line-height: normal;
 }
 .quoteLine {
@@ -1271,6 +1269,28 @@ details[open] .faqContent p {
   }
   .heroSection {
     height: 50rem;
+  }
+  .heroBadge {
+    gap: var(--8);
+    margin-bottom: var(--16);
+    padding: var(--8) var(--16);
+    font-size: 1.2rem;
+  }
+  .heroBadge i {
+    font-size: 1.3rem;
+  }
+  .heroStats {
+    margin-top: var(--32);
+  }
+  .heroStat {
+    padding: 0 var(--16);
+  }
+  .heroStatNumber {
+    font-size: 2.4rem;
+    letter-spacing: -0.84px;
+  }
+  .heroStatLabel {
+    font-size: 1.1rem;
   }
   .classCardSectionContainer {
     display: grid;
