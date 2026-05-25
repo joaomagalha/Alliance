@@ -324,7 +324,7 @@ ul {
   height: 38rem;
   width: 100%;
   background-color: rgb(85, 85, 85);
-  padding: var(--containerSuperiorMax) var(--containerLateralPadding);
+  padding: var(--containerSuperiorMax) var(--containerLateralPadding) var(--containerSuperiorMin);
   display: flex;
   align-items: flex-end;
 }
