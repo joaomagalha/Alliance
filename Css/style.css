@@ -816,8 +816,8 @@ details[open] .faqContent p {
     display: flex;
     position: relative;
     flex-direction: column;
-    gap: var(--40);
-    padding: var(--40) var(--40);
+    gap: var(--32);
+    padding: var(--32) var(--32);
     box-shadow: 3px 3px 50px 8px rgba(0, 0, 0, 0.10);
     border-radius: var(--16);
     background-color: var(--white);
@@ -850,13 +850,20 @@ details[open] .faqContent p {
     width: fit-content;
 }
 
-.pricingCardText h3{
+.pricingCardTitle{
+    display: flex;
+    flex-direction: column;
+    gap: var(--24);
+}
+
+.pricingCardTitle h3{
     text-transform: uppercase;
     font-weight: 500;
     color: rgb(177, 177, 177);
+    font-size: 1.6rem;
 }   
 
-.pricingCardText span{
+.pricingCardTitle span{
     color: var(--gray);
 }   
 
@@ -870,22 +877,24 @@ details[open] .faqContent p {
 }
 
 .pricingCardValue span{
-    font-size: 2.8rem;
-    font-weight: 500;
+    font-size: 1.6rem;
+    font-weight: 400;
+    text-transform: lowercase;
+    color: rgb(177, 177, 177);
 }
 
 .pricingOldValue{
-    margin: 0 0 var(--4);
     font-size: 1.6rem;
     color: rgb(177, 177, 177);
     text-decoration: line-through;
+    font-weight: 400;
+
 }
 
 .pricingSavings{
     display: inline-block;
-    margin-top: var(--16);
-    padding: var(--4) var(--16);
-    background: rgba(114, 161, 132, 0.18);
+    padding: var(--8) var(--16);
+    background: rgba(0, 255, 98, 0.107);
     color: var(--green);
     font-weight: 600;
     font-size: 1.1rem;
