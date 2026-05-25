@@ -920,8 +920,8 @@ details[open] .faqContent p {
 }
 .pricingCardTitle {
   display: flex;
-  flex-direction: column;
-  gap: var(--24);
+  justify-content: space-between;
+  align-items: center;
 }
 .pricingCardTitle h3 {
   text-transform: uppercase;

@@ -846,14 +846,14 @@ details[open] .faqContent p {
 }
 
 .pricingSvg{
-    height: 4rem;
+    height: 2rem;
     width: fit-content;
 }
 
 .pricingCardTitle{
     display: flex;
-    flex-direction: column;
-    gap: var(--24);
+    justify-content: space-between;
+    align-items: center;
 }
 
 .pricingCardTitle h3{
