@@ -874,6 +874,25 @@ details[open] .faqContent p {
     font-weight: 500;
 }
 
+.pricingOldValue{
+    margin: 0 0 var(--4);
+    font-size: 1.6rem;
+    color: rgb(177, 177, 177);
+    text-decoration: line-through;
+}
+
+.pricingSavings{
+    display: inline-block;
+    margin-top: var(--16);
+    padding: var(--4) var(--16);
+    background: rgba(114, 161, 132, 0.18);
+    color: var(--green);
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: -0.32px;
+    border-radius: var(--smallRadius);
+}
+
 .pricingCardBenefits{
     display: flex;
     flex-direction: column;
