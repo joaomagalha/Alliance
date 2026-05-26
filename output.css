@@ -9,7 +9,6 @@
       "Courier New", monospace;
     --font-weight-extralight: 200;
     --font-weight-bold: 700;
-    --perspective-normal: 500px;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
@@ -249,16 +248,20 @@
 }
 :root {
   --yellow: #FEBC11;
+  --yellowDark: #997000;
+  --lightYellow: #FFFCF5;
   --black: #191919;
   --gray: #333333;
-  --white: #FFFFFF;
-  --whiteOpacity: #ffffffbf;
   --secondaryTextGray: #333333a6;
   --placeholderColor: #00000026;
-  --lightYellow: #FFFCF5;
+  --white: #FFFFFF;
+  --whiteOpacity: #ffffffbf;
   --red: #E83636;
   --green: #72A184;
-  --yellowLight: #FFCC47;
+  --lightGreen: #00ff1e17;
+  --greenPulse: #00C853;
+  --lineGray: rgba(255, 255, 255, 0.15);
+  --grayGradient: linear-gradient(127deg, var(--Gray, #333) 60.36%, #565656 101.43%);
   --containerLateralPadding: 24px;
   --containerSuperiorCabecalho: 16px;
   --containerSuperiorMin: 32px;
@@ -369,7 +372,7 @@ ul {
   font-weight: bold;
   letter-spacing: -0.48px;
   text-transform: uppercase;
-  background: var(--buttton-yellow, linear-gradient(90deg, var(--yellow) 0%, var(--yellowLight) 100%));
+  background: var(--buttton-yellow, linear-gradient(90deg, var(--yellow) 0%, #FFCC47 100%));
   box-shadow: 0 12px 20px 0 rgba(254, 188, 17, 0.20);
   border-radius: 4px;
   padding: var(--8) var(--32);
@@ -399,7 +402,7 @@ ul {
   line-height: var(--largeLineHeight);
 }
 .header {
-  background: var(--Gray-Linear-Header, linear-gradient(127deg, var(--Gray, #333) 43.4%, #565656 86.8%));
+  background: var(--grayGradient);
   color: var(--whiteOpacity);
   padding: var(--containerSuperiorCabecalho) var(--containerLateralPadding);
 }
@@ -549,7 +552,7 @@ ul {
   text-align: left;
 }
 .heroStat:not(:last-child) {
-  border-right: 1px solid rgba(255, 255, 255, 0.15);
+  border-right: 1px solid var(--lineGray);
 }
 .heroStatNumber {
   display: block;
@@ -605,7 +608,7 @@ ul {
   margin: var(--16) 0;
 }
 .historySectionImg {
-  background: var(--Gray-Linear, linear-gradient(127deg, var(--Gray, #333) 60.36%, #565656 101.43%));
+  background: var(--grayGradient);
 }
 .historySectionImg img {
   height: 32rem;
@@ -758,7 +761,7 @@ ul {
   width: fit-content;
 }
 .testimonialsSection {
-  background: var(--Gray-Linear, linear-gradient(127deg, var(--Gray, #333) 60.36%, #565656 101.43%));
+  background: var(--grayGradient);
   color: var(--white);
 }
 .testimonialsSectionText p {
@@ -777,9 +780,9 @@ ul {
   position: relative;
   text-align: center;
   padding: 6rem 0 2rem;
-  border: var(--cardBorder) solid rgba(255, 255, 255, 0.77);
+  border: var(--cardBorder) solid var(--lineGray);
   border-radius: var(--mediumRadius);
-  background: rgba(255, 255, 255, 0.13);
+  background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(var(--blur));
   width: 100%;
 }
@@ -817,7 +820,7 @@ ul {
   color: var(--gray);
 }
 .faqSection {
-  background: var(--Gray-Linear, linear-gradient(127deg, var(--Gray, #333) 60.36%, #565656 101.43%));
+  background: var(--grayGradient);
   color: var(--white);
 }
 .faqSectionText p {
@@ -977,7 +980,7 @@ details[open] .faqContent p {
 .pricingSavings {
   display: inline-block;
   padding: var(--8) var(--16);
-  background: rgba(0, 255, 30, 0.091);
+  background: var(--lightGreen);
   color: var(--green);
   font-weight: 600;
   font-size: 1.1rem;
@@ -1131,12 +1134,12 @@ details[open] .faqContent p {
   margin: 0 auto;
 }
 .form .btn {
-  color: white;
+  color: var(--white);
   display: block;
   margin: var(--40) auto 0;
 }
 .footerSection {
-  background: var(--Gray-Linear, linear-gradient(127deg, var(--Gray, #333) 60.36%, #565656 101.43%));
+  background: var(--grayGradient);
   color: var(--whiteOpacity);
 }
 .footerSectionInner {
@@ -1206,7 +1209,7 @@ details[open] .faqContent p {
 .footerLine {
   width: 100%;
   height: 0.1rem;
-  background-color: white;
+  background-color: var(--white);
 }
 .footerLogo {
   margin: 0 auto;
@@ -1222,7 +1225,7 @@ details[open] .faqContent p {
 .footerDeveloper a {
   text-decoration: underline 0.1px solid var(--whiteOpacity);
   text-underline-offset: 3px;
-  color: white;
+  color: var(--white);
 }
 .tab {
   position: relative;
@@ -1483,12 +1486,12 @@ details[open] .faqContent p {
     text-align: center;
     padding: var(--24);
     border-radius: var(--mediumRadius);
-    box-shadow: 3px 3px 10px 3px rgba(254, 184, 20, 0.15);
+    box-shadow: 3px 3px 10px 3px rgba(254, 188, 17, 0.15);
     background-color: transparent;
     transition: all 0.4s ease-in-out;
   }
   .benefitCard:hover {
-    box-shadow: 5px 5px 10px 3px rgba(254, 184, 20, 0.25);
+    box-shadow: 5px 5px 10px 3px rgba(254, 188, 17, 0.25);
     transform: scale(1.02);
   }
   .testimonialSectionContainer {
@@ -1522,7 +1525,7 @@ details[open] .faqContent p {
     padding: 0 0 var(--containerSuperiorMax);
   }
   .pricingCard:nth-child(1) {
-    box-shadow: 0 12px 20px 0 rgba(254, 187, 17, 0.203);
+    box-shadow: 0 12px 20px 0 rgba(254, 188, 17, 0.203);
   }
   .pricingCard:nth-child(2) {
     margin-top: var(--56);

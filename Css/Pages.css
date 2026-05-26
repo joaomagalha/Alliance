@@ -108,7 +108,7 @@
 }
 
 .professor-card {
-    background: #ffffff;
+    background: var(--white);
     border-radius: 16px;
     overflow: hidden;
     width: 100%;
@@ -126,7 +126,7 @@
     .professor-photo {
       position: relative;
       height: 320px;
-      background: #1a1a1a;
+      background: var(--gray);
       overflow: hidden;
     }
 
@@ -145,7 +145,7 @@
       left: 0;
       right: 0;
       height: 4px;
-      background: linear-gradient(to right, var(--gray)0%, var(--gray)50%, #FFB800 50%, #FFB800 100%);
+      background: linear-gradient(to right, var(--gray)0%, var(--gray)50%, var(--yellow)50%, var(--yellow)100%);
       z-index: 2;
     }
 
@@ -167,13 +167,13 @@
       left: 12px;
       background: #333333ca;
       backdrop-filter: blur(8px);
-      color: #ffffff;
+      color: var(--white);
     }
 
     .badge-status .dot {
       width: 7px;
       height: 7px;
-      background: #00C853;
+      background: var(--greenPulse);
       border-radius: 50%;
       animation: pulse 2s infinite;
     }
@@ -186,7 +186,7 @@
     .badge-highlight {
       top: 12px;
       right: 12px;
-      background: #FFB800;
+      background: var(--yellow);
       color: var(--gray);
     }
 
@@ -221,7 +221,7 @@
     }
 
     .professor-rating .star {
-      color: #FFB800;
+      color: var(--yellow);
       font-size: 14px;
     }
 
@@ -251,7 +251,7 @@
 
     .tag-primary {
       background: var(--gray);
-      color: #ffffff;
+      color: var(--white);
       font-weight: 600;
     }
 
@@ -262,8 +262,8 @@
 
     /* Box de especialidade */
     .specialty-box {
-      background: #FFF9E6;
-      border-left: 3px solid #FFB800;
+      background: var(--lightYellow);
+      border-left: 3px solid var(--yellow);
       padding: 10px 12px;
       border-radius: 0 6px 6px 0;
       margin-bottom: 14px;
@@ -271,7 +271,7 @@
 
     .specialty-label {
       font-size: 1rem;
-      color: #997000;
+      color: var(--yellowDark);
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.05em;
@@ -280,40 +280,8 @@
 
     .specialty-value {
       font-size: 13px;
-      color: #4a3500;
+      color: var(--gray);
       font-weight: 600;
-    }
-
-    /* Métricas */
-    .professor-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      margin-bottom: 16px;
-      padding: 10px 0;
-      border-top: 1px solid #eee;
-      border-bottom: 1px solid #eee;
-    }
-
-    .stat {
-      text-align: center;
-    }
-
-    .stat:not(:last-child) {
-      border-right: 1px solid #eee;
-    }
-
-    .stat-value {
-      font-size: 15px;
-      font-weight: 700;
-      color: #0a0a0a;
-      margin-bottom: 2px;
-    }
-
-    .stat-label {
-      font-size: 10px;
-      color: #888;
-      font-weight: 500;
     }
 
     /* CTAs */
@@ -334,13 +302,12 @@
     }
 
     .btn-primary {
-      background: var(--buttton-yellow, linear-gradient(90deg, var(--yellow) 0%, var(--yellowLight) 100%));
+      background: var(--buttton-yellow, linear-gradient(90deg, var(--yellow) 0%, #FFCC47 100%));
       color: var(--white);
       margin-bottom: 8px;
     }
 
     .btn-primary:hover {
-      background: #e6a600;
       transform: translateY(-1px);
     }
 

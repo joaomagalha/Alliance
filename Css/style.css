@@ -4,16 +4,32 @@
 
     /* Cores */
     --yellow: #FEBC11;
+    --yellowDark: #997000;
+    --lightYellow: #FFFCF5;
+
     --black: #191919;
     --gray: #333333;
-    --white: #FFFFFF;
-    --whiteOpacity: #ffffffbf;
     --secondaryTextGray: #333333a6;
     --placeholderColor: #00000026;
-    --lightYellow: #FFFCF5;
+
+    --white: #FFFFFF;
+    --whiteOpacity: #ffffffbf;
+
+
     --red: #E83636;
+
     --green: #72A184;
-    --yellowLight: #FFCC47;
+    --lightGreen: #00ff1e17;
+    --greenPulse: #00C853;
+
+    /* Cor das Linhas */
+    --lineGray: rgba(255, 255, 255, 0.15);
+
+    /* Gradientes */
+    --grayGradient: linear-gradient(127deg, var(--Gray, #333) 60.36%, #565656 101.43%);
+    
+
+
 
     /* Container */
     --containerLateralPadding: 24px;
@@ -158,7 +174,7 @@ ul {
     font-weight: bold;
     letter-spacing: -0.48px;
     text-transform: uppercase;
-    background: var(--buttton-yellow, linear-gradient(90deg, var(--yellow) 0%, var(--yellowLight) 100%));
+    background: var(--buttton-yellow, linear-gradient(90deg, var(--yellow) 0%, #FFCC47 100%));
     box-shadow: 0 12px 20px 0 rgba(254, 188, 17, 0.20);
     border-radius: 4px;
     padding: var(--8) var(--32);
@@ -195,7 +211,7 @@ ul {
 }
 
 .header {
-    background: var(--Gray-Linear-Header, linear-gradient(127deg, var(--Gray, #333) 43.4%, #565656 86.8%));
+    background: var(--grayGradient);
     color: var(--whiteOpacity);
     padding: var(--containerSuperiorCabecalho) var(--containerLateralPadding);
 }
@@ -382,8 +398,8 @@ ul {
     text-align: left;
 }
 
-.heroStat:not(:last-child){
-    border-right: 1px solid rgba(255, 255, 255, 0.15);
+.heroStat:not(:last-child){        
+    border-right: 1px solid var(--lineGray);
 }
 
 .heroStatNumber{
@@ -448,7 +464,7 @@ ul {
 }
 
 .historySectionImg{
-    background: var(--Gray-Linear, linear-gradient(127deg, var(--Gray, #333) 60.36%, #565656 101.43%));
+    background: var(--grayGradient);
 }
 
 .historySectionImg img{
@@ -632,7 +648,7 @@ ul {
 }
 
 .testimonialsSection {
-    background: var(--Gray-Linear, linear-gradient(127deg, var(--Gray, #333) 60.36%, #565656 101.43%));
+    background: var(--grayGradient);
     color: var(--white);
 }
 
@@ -654,9 +670,10 @@ ul {
     position: relative;
     text-align: center;
     padding: 6rem 0 2rem;
-    border: var(--cardBorder) solid rgba(255, 255, 255, 0.77);
+    
+    border: var(--cardBorder) solid var(--lineGray);
     border-radius: var(--mediumRadius);
-    background: rgba(255, 255, 255, 0.13);
+    background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(var(--blur));
     width: 100%;
 }
@@ -701,7 +718,7 @@ ul {
 }
 
 .faqSection {
-    background: var(--Gray-Linear, linear-gradient(127deg, var(--Gray, #333) 60.36%, #565656 101.43%));
+    background: var(--grayGradient);
     color: var(--white);
 }
 
@@ -894,7 +911,7 @@ details[open] .faqContent p {
 .pricingSavings{
     display: inline-block;
     padding: var(--8) var(--16);
-    background: rgba(0, 255, 30, 0.091);
+    background: var(--lightGreen);
     color: var(--green);
     font-weight: 600;
     font-size: 1.1rem;
@@ -1085,13 +1102,13 @@ details[open] .faqContent p {
 }
 
 .form .btn {
-    color: white;
+    color: var(--white);
     display: block;
     margin: var(--40) auto 0;
 }
 
 .footerSection {
-    background: var(--Gray-Linear, linear-gradient(127deg, var(--Gray, #333) 60.36%, #565656 101.43%));
+    background: var(--grayGradient);
     color: var(--whiteOpacity);
 }
 
@@ -1175,7 +1192,7 @@ details[open] .faqContent p {
 .footerLine {
     width: 100%;
     height: 0.1rem;
-    background-color: white;
+    background-color: var(--white);
 }
 
 .footerLogo {
@@ -1195,7 +1212,7 @@ details[open] .faqContent p {
 .footerDeveloper a {
     text-decoration: underline 0.1px solid var(--whiteOpacity);
     text-underline-offset: 3px;
-    color: white;
+    color: var(--white);
 
 }
 
@@ -1564,13 +1581,13 @@ border: 0.05rem solid var(--yellow);
     text-align: center;
     padding: var(--24);
     border-radius: var(--mediumRadius);
-    box-shadow: 3px 3px 10px 3px rgba(254, 184, 20, 0.15);
+    box-shadow: 3px 3px 10px 3px rgba(254, 188, 17, 0.15);
     background-color: transparent;
     transition: all 0.4s ease-in-out;
   }
 
   .benefitCard:hover {
-    box-shadow: 5px 5px 10px 3px rgba(254, 184, 20, 0.25);
+    box-shadow: 5px 5px 10px 3px rgba(254, 188, 17, 0.25);
     transform: scale(1.02);
   }
 
@@ -1605,7 +1622,7 @@ border: 0.05rem solid var(--yellow);
 }
 
 .pricingCard:nth-child(1) {
-    box-shadow: 0 12px 20px 0 rgba(254, 187, 17, 0.203);
+    box-shadow: 0 12px 20px 0 rgba(254, 188, 17, 0.203);
     
 }
 
