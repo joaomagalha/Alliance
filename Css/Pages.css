@@ -99,68 +99,286 @@
     color: var(--whiteOpacity);
 }
 
-.teacherSectionText .subtitle{
-    max-width: 26rem;
-}
-
-.teacherCardImg {
-    border-radius: var(--16) var(--16) 0 0;
-    height: 35rem;
-    width: 100%;
-    object-fit: cover;
-}
-
-.teacherCardInfo {
-    padding: var(--containerLateralPadding);
+.professorCards {
     display: flex;
     flex-direction: column;
-    gap: var(--8);
-    background-color: rgb(255, 255, 255);
-    border-radius: 0 0 var(--16) var(--16);
-    color: var(--gray);
-    box-shadow: 3px 3px 50px 8px rgba(0, 0, 0, 0.10);
+    align-items: center;
+    justify-content: center;
+    gap: var(--32);
 }
 
-.teacherCardInfo h3 {
-    font-weight: bold;
-    text-transform: uppercase;
+.professor-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 320px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.teacherCardInfo .teacherBelt {
-    font-weight: 500;
-    color: var(--gray);
-}
+    .professor-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+    }
 
-.teacherCardInfo p {
-    color: var(--secondaryTextGray);
-}
+    /* ===== ÁREA DA FOTO ===== */
+    .professor-photo {
+      position: relative;
+      height: 320px;
+      background: #1a1a1a;
+      overflow: hidden;
+    }
 
-.teacherCardBtn {
-    display: flex;
-    gap: var(--8);
-}
+    .professor-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
 
-.teacherBtn {
-    flex-grow: 1;
-    text-align: center;
-    padding: var(--16) 0;
-    border-radius: var(--smallRadius);
-    text-transform: uppercase;
-    font-size: 1.4rem;
-    font-weight: bold;
-}
+    /* Linha decorativa amarela no rodapé da foto */
+    .professor-photo::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(to right, var(--gray)0%, var(--gray)50%, #FFB800 50%, #FFB800 100%);
+      z-index: 2;
+    }
 
-.teacherBtnFilled {
-    background-color: var(--yellow);
-    color: var(--white);
-    box-shadow: 0 12px 20px 0 rgba(254, 188, 17, 0.20);
-}
+    /* ===== BADGES NA FOTO ===== */
+    .badge {
+      position: absolute;
+      font-size: 11px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      z-index: 3;
+    }
 
-.teacherBtnOutline {
-    color: var(--yellow);
-    border: 1px solid rgba(0, 0, 0, 0.07);
-    box-shadow: 2px 2px 5.5px 0 rgba(0, 0, 0, 0.128);
-}
+    .badge-status {
+      top: 12px;
+      left: 12px;
+      background: #333333ca;
+      backdrop-filter: blur(8px);
+      color: #ffffff;
+    }
+
+    .badge-status .dot {
+      width: 7px;
+      height: 7px;
+      background: #00C853;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    .badge-highlight {
+      top: 12px;
+      right: 12px;
+      background: #FFB800;
+      color: var(--gray);
+    }
+
+    /* ===== CONTEÚDO DO CARD ===== */
+    .professor-info {
+      padding: 20px;
+    }
+
+    /* Header: Nome + Rating */
+    .professor-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 10px;
+      gap: 8px;
+    }
+
+    .professor-name {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--gray);
+      letter-spacing: -0.01em;
+    }
+
+    .professor-rating {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 13px;
+      color: var(--gray);
+      flex-shrink: 0;
+    }
+
+    .professor-rating .star {
+      color: #FFB800;
+      font-size: 14px;
+    }
+
+    .professor-rating .rating-value {
+      font-weight: 600;
+    }
+
+    .professor-rating .rating-count {
+      color: var(--placeholderColor);
+      font-size: 12px;
+    }
+
+    /* Tags */
+    .professor-tags {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      font-size: 11px;
+      padding: 4px 9px;
+      border-radius: 5px;
+      font-weight: 500;
+    }
+
+    .tag-primary {
+      background: var(--gray);
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .tag-secondary {
+      background: rgba(128, 128, 128, 0.111);
+      color: var(--gray);
+    }
+
+    /* Box de especialidade */
+    .specialty-box {
+      background: #FFF9E6;
+      border-left: 3px solid #FFB800;
+      padding: 10px 12px;
+      border-radius: 0 6px 6px 0;
+      margin-bottom: 14px;
+    }
+
+    .specialty-label {
+      font-size: 1rem;
+      color: #997000;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 3px;
+    }
+
+    .specialty-value {
+      font-size: 13px;
+      color: #4a3500;
+      font-weight: 600;
+    }
+
+    /* Métricas */
+    .professor-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 16px;
+      padding: 10px 0;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat:not(:last-child) {
+      border-right: 1px solid #eee;
+    }
+
+    .stat-value {
+      font-size: 15px;
+      font-weight: 700;
+      color: #0a0a0a;
+      margin-bottom: 2px;
+    }
+
+    .stat-label {
+      font-size: 10px;
+      color: #888;
+      font-weight: 500;
+    }
+
+    /* CTAs */
+    .btn {
+      width: 100%;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .btn-primary {
+      background: var(--buttton-yellow, linear-gradient(90deg, var(--yellow) 0%, var(--yellowLight) 100%));
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .btn-primary:hover {
+      background: #e6a600;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary-group {
+      display: flex;
+      gap: 6px;
+    }
+
+    .btn-secondary {
+      flex: 1;
+      background: transparent;
+      border: 1px solid var(--placeholderColor);
+      padding: 9px;
+      border-radius: 7px;
+      font-size: 12px;
+      cursor: pointer;
+      color: var(--secondaryTextGray);
+      transition: all 0.2s ease;
+      font-family: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(128, 128, 128, 0.111);
+      border-color: var(--placeholderColor);
+    }
+
+    .btn-icon-only {
+      flex: 0 0 auto;
+      padding: 9px 12px;
+    }
+
+    .btn i {
+      font-size: 15px;
+    }
 
 @media (min-width: 768px) {
 

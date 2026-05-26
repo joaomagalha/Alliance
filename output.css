@@ -9,6 +9,9 @@
       "Courier New", monospace;
     --font-weight-extralight: 200;
     --font-weight-bold: 700;
+    --perspective-normal: 500px;
+    --default-transition-duration: 150ms;
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -189,11 +192,17 @@
   .table {
     display: table;
   }
+  .flex-shrink {
+    flex-shrink: 1;
+  }
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
   }
   .flex-col {
     flex-direction: column;
+  }
+  .flex-wrap {
+    flex-wrap: wrap;
   }
   .items-center {
     align-items: center;
@@ -206,6 +215,10 @@
   }
   .justify-start {
     justify-content: flex-start;
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
   }
   .text-center {
     text-align: center;
@@ -224,15 +237,24 @@
   .italic {
     font-style: italic;
   }
+  .backdrop-filter {
+    -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+    backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
+  }
+  .transition {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
 }
 :root {
   --yellow: #FEBC11;
   --black: #191919;
   --gray: #333333;
   --white: #FFFFFF;
-  --whiteOpacity: rgba(255, 255, 255, 0.75);
-  --secondaryTextGray: rgba(51, 51, 51, 0.65);
-  --placeholderColor: rgba(0, 0, 0, 0.149);
+  --whiteOpacity: #ffffffbf;
+  --secondaryTextGray: #333333a6;
+  --placeholderColor: #00000026;
   --lightYellow: #FFFCF5;
   --red: #E83636;
   --green: #72A184;
@@ -926,7 +948,7 @@ details[open] .faqContent p {
 .pricingCardTitle h3 {
   text-transform: uppercase;
   font-weight: 500;
-  color: rgb(177, 177, 177);
+  color: var(--placeholderColor);
   font-size: 1.6rem;
 }
 .pricingCardTitle span {
@@ -944,18 +966,18 @@ details[open] .faqContent p {
   font-size: 1.6rem;
   font-weight: 400;
   text-transform: lowercase;
-  color: rgb(177, 177, 177);
+  color: var(--placeholderColor);
 }
 .pricingOldValue {
   font-size: 1.6rem;
-  color: rgb(177, 177, 177);
-  text-decoration: line-through;
+  color: var(--placeholderColor);
+  text-decoration: line-through rgba(128, 128, 128, 0.102);
   font-weight: 400;
 }
 .pricingSavings {
   display: inline-block;
   padding: var(--8) var(--16);
-  background: rgba(0, 255, 98, 0.107);
+  background: rgba(0, 255, 30, 0.091);
   color: var(--green);
   font-weight: 600;
   font-size: 1.1rem;
@@ -1529,7 +1551,48 @@ details[open] .faqContent p {
   syntax: "*";
   inherits: false;
 }
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
 @property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-blur {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-brightness {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-contrast {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-grayscale {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-hue-rotate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-invert {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-opacity {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-saturate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-backdrop-sepia {
   syntax: "*";
   inherits: false;
 }
@@ -1541,7 +1604,17 @@ details[open] .faqContent p {
       --tw-rotate-z: initial;
       --tw-skew-x: initial;
       --tw-skew-y: initial;
+      --tw-border-style: solid;
       --tw-font-weight: initial;
+      --tw-backdrop-blur: initial;
+      --tw-backdrop-brightness: initial;
+      --tw-backdrop-contrast: initial;
+      --tw-backdrop-grayscale: initial;
+      --tw-backdrop-hue-rotate: initial;
+      --tw-backdrop-invert: initial;
+      --tw-backdrop-opacity: initial;
+      --tw-backdrop-saturate: initial;
+      --tw-backdrop-sepia: initial;
     }
   }
 }

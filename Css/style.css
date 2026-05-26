@@ -7,9 +7,9 @@
     --black: #191919;
     --gray: #333333;
     --white: #FFFFFF;
-    --whiteOpacity: rgba(255, 255, 255, 0.75);
-    --secondaryTextGray: rgba(51, 51, 51, 0.65);
-    --placeholderColor: rgba(0, 0, 0, 0.149);
+    --whiteOpacity: #ffffffbf;
+    --secondaryTextGray: #333333a6;
+    --placeholderColor: #00000026;
     --lightYellow: #FFFCF5;
     --red: #E83636;
     --green: #72A184;
@@ -859,7 +859,7 @@ details[open] .faqContent p {
 .pricingCardTitle h3{
     text-transform: uppercase;
     font-weight: 500;
-    color: rgb(177, 177, 177);
+    color: var(--placeholderColor);
     font-size: 1.6rem;
 }   
 
@@ -880,13 +880,13 @@ details[open] .faqContent p {
     font-size: 1.6rem;
     font-weight: 400;
     text-transform: lowercase;
-    color: rgb(177, 177, 177);
+    color: var(--placeholderColor);
 }
 
 .pricingOldValue{
     font-size: 1.6rem;
-    color: rgb(177, 177, 177);
-    text-decoration: line-through;
+    color: var(--placeholderColor);
+    text-decoration: line-through rgba(128, 128, 128, 0.102);
     font-weight: 400;
 
 }
@@ -894,7 +894,7 @@ details[open] .faqContent p {
 .pricingSavings{
     display: inline-block;
     padding: var(--8) var(--16);
-    background: rgba(0, 255, 98, 0.107);
+    background: rgba(0, 255, 30, 0.091);
     color: var(--green);
     font-weight: 600;
     font-size: 1.1rem;
