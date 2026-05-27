@@ -217,7 +217,7 @@ ul {
 
 .btn:hover {
     transform: translateY(-0.2rem);
-    box-shadow: 0 1.8rem 3rem 0 rgba(254, 188, 17, 0.35);
+    box-shadow: 0 0.8rem 2rem 0 rgba(254, 188, 17, 0.35);
 }
 
 @keyframes btnShimmer {
@@ -1755,7 +1755,7 @@ details[open] .faqContent p {
 
 .pricingCard:hover,
 .benefitCard:hover {
-    transform: scale(1.008);
+    scale: 1.008;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1763,6 +1763,7 @@ details[open] .faqContent p {
     .classCard:hover,
     .benefitCard:hover,
     .testimonialCard:hover {
+        scale: none;
         transform: none;
     }
 }
