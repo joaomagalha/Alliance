@@ -118,8 +118,7 @@
 }
 
 .professor-card:hover {
-    transform: translateY(-0.3rem) scale(1.015);
-    box-shadow: 0.3rem 1rem 5rem 0.8rem rgba(0, 0, 0, 0.15);
+    transform: scale(1.015);
 }
 
 .differentialCard {
@@ -127,8 +126,7 @@
 }
 
 .differentialCard:hover {
-    transform: translateY(-0.3rem) scale(1.015);
-    box-shadow: 0.3rem 1rem 5rem 0.8rem rgba(0, 0, 0, 0.15);
+    transform: scale(1.015);
 }
 
 @media (prefers-reduced-motion: reduce) {
