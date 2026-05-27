@@ -1779,6 +1779,9 @@ details[open] .faqContent p {
   position: relative;
 }
 .preloaderLogo {
+  margin-bottom: var(--24);
+}
+.preloaderLogo {
   width: 9rem;
   height: auto;
   filter: drop-shadow(0 0 2rem rgba(254, 188, 17, 0.3));
