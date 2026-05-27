@@ -187,6 +187,10 @@ ul {
     padding: var(--8) var(--32);
     position: relative;
     overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--8);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
