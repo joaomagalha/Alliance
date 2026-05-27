@@ -1548,20 +1548,6 @@ details[open] .faqContent p {
    Responsividade — Desktop (≥ 102.4rem)
    ================================= */
 
-/* Hero: telas largas (≥ 1180px) — altura maior para o vídeo de fundo
-   manter proporção sem ficar esticado horizontalmente */
-@media (min-width: 1180px) {
-  .heroSection {
-    height: 70rem;
-  }
-}
-
-@media (min-width: 1440px) {
-  .heroSection {
-    height: 82rem;
-  }
-}
-
 @media (min-width: 1024px) {
 
   /* Hero: altura maior no desktop para a imagem ter proporção natural */
