@@ -1353,7 +1353,7 @@ details[open] .faqContent p {
     padding: var(--8);
     border-radius: var(--smallRadius);
     font-weight: 400;
-    border: 0.05rem solid rgb(232, 232, 232);
+    border: 0.05rem solid rgb(181, 181, 181);
 }
 
 .scheduleRow:nth-child(odd) {
