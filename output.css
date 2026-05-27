@@ -1679,9 +1679,6 @@ details[open] .faqContent p {
   opacity: 1;
 }
 @media (prefers-reduced-motion: reduce) {
-  .marqueeTrack {
-    animation: none;
-  }
   .pricingCard::after, .classCard::after, .benefitCard::after, .testimonialCard::after {
     display: none;
   }
