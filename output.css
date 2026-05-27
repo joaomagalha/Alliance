@@ -1528,16 +1528,6 @@ details[open] .faqContent p {
     justify-self: center;
   }
 }
-@media (min-width: 1180px) {
-  .heroSection {
-    height: 70rem;
-  }
-}
-@media (min-width: 1440px) {
-  .heroSection {
-    height: 82rem;
-  }
-}
 @media (min-width: 1024px) {
   .heroSection {
     height: 60rem;

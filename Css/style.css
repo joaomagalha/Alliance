@@ -1688,6 +1688,20 @@ details[open] .faqContent p {
 
 }
 
+/* Hero em telas largas (≥ 1180px) — altura maior para o vídeo de
+   fundo manter proporção sem ficar esticado horizontalmente */
+@media (min-width: 1180px) {
+  .heroSection {
+    height: 70rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .heroSection {
+    height: 82rem;
+  }
+}
+
 /* =================================
    On-scroll reveal animation
    ================================= */
