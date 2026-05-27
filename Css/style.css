@@ -1790,9 +1790,6 @@ details[open] .faqContent p {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .marqueeTrack {
-        animation: none;
-    }
     .pricingCard::after,
     .classCard::after,
     .benefitCard::after,
