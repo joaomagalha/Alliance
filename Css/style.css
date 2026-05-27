@@ -1854,9 +1854,9 @@ details[open] .faqContent p {
     position: absolute;
     inset: 0;
     background: radial-gradient(
-        50rem circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-        rgba(254, 188, 17, 0.15),
-        transparent 40%
+        40rem circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        rgba(254, 188, 17, 0.05),
+        transparent 50%
     );
     opacity: 0;
     transition: opacity 0.4s ease;
