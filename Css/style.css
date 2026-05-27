@@ -34,42 +34,42 @@
     --yellowGradient: linear-gradient(90deg, var(--yellow) 0%, var(--yellowSoft) 100%);
     
     /* Shadows */
-    --grayShadowLarge: 3px 3px 50px 8px rgba(0, 0, 0, 0.10);
-    --grayShadowSmall: 5px 5px 10px  rgba(0, 0, 0, 0.10);
+    --grayShadowLarge: 0.3rem 0.3rem 5rem 0.8rem rgba(0, 0, 0, 0.10);
+    --grayShadowSmall: 0.5rem 0.5rem 1rem  rgba(0, 0, 0, 0.10);
 
 
     /* Container */
-    --containerLateralPadding: 24px;
-    --containerSuperiorCabecalho: 16px;
-    --containerSuperiorMin: 32px;
-    --containerSuperiorMax: 64px;
+    --containerLateralPadding: 2.4rem;
+    --containerSuperiorCabecalho: 1.6rem;
+    --containerSuperiorMin: 3.2rem;
+    --containerSuperiorMax: 6.4rem;
 
     /* Largura máxima do conteúdo central das seções */
     --maxContent: 112rem;
 
     /* Espacamento */
-    --4: 4px;
-    --8: 8px;
-    --16: 16px;
-    --24: 24px;
-    --32: 32px;
-    --40: 40px;
-    --48: 48px;
-    --56: 56px;
-    --64: 64px;
+    --4: 0.4rem;
+    --8: 0.8rem;
+    --16: 1.6rem;
+    --24: 2.4rem;
+    --32: 3.2rem;
+    --40: 4rem;
+    --48: 4.8rem;
+    --56: 5.6rem;
+    --64: 6.4rem;
 
     /* Radius */
-    --smallRadius: 8px;
-    --mediumRadius: 16px;
-    --largeRadius: 24px;
+    --smallRadius: 0.8rem;
+    --mediumRadius: 1.6rem;
+    --largeRadius: 2.4rem;
 
     /* Line Height */
     --smallLineHeight: 130%;
     --largeLineHeight: 150%;
 
     /* Diversos (valores arredondados, antes magic numbers do Figma) */
-    --blur: 6px;
-    --cardBorder: 2px;
+    --blur: 0.6rem;
+    --cardBorder: 0.2rem;
     --testimonialsGap: 6rem;
 
     /* Z-index — escala coerente */
@@ -90,86 +90,86 @@ html {
 
 body{
     min-height: 100vh;
-    line-height: 1.6;
+    line-height: var(--largeLineHeight);
     font-family: "Roboto", sans-serif;
     margin: 0;
 }
 
 /* foco visível por teclado — acessibilidade (WCAG 2.4.7) */
 :focus-visible {
-    outline: 2px solid var(--yellow);
-    outline-offset: 2px;
+    outline: 0.2rem solid var(--yellow);
+    outline-offset: 0.2rem;
 }
 
 h1 {
     font-size: 2.4rem;
-    line-height: 130%; 
-    letter-spacing: -0.84px;
+    line-height: var(--smallLineHeight); 
+    letter-spacing: -0.084rem;
     text-transform: uppercase;
 }
 
 h2 {
     font-size: 1.8rem;
-    line-height: 130%;
-    letter-spacing: -0.66px;
+    line-height: var(--smallLineHeight);
+    letter-spacing: -0.066rem;
     text-transform: uppercase;
     font-weight: bold;
 }
 
 h3 {
     font-size: 1.4rem;
-    line-height: 130%; 
-    letter-spacing: -0.36px;
+    line-height: var(--smallLineHeight); 
+    letter-spacing: -0.036rem;
 }
 
 h4 {
     font-size: 1.2rem;
-    line-height: 150%; 
-    letter-spacing: -0.32px;
+    line-height: var(--largeLineHeight); 
+    letter-spacing: -0.032rem;
 }
 
 .textSmall {
     font-size: 1.1rem;
-    line-height: normal;
-    letter-spacing: -0.28px;
+    line-height: var(--smallLineHeight);
+    letter-spacing: -0.028rem;
 }
 
 /* tipografia equivalente à tag <h4> — para textos corridos que deixaram de ser heading */
 .textBase {
     font-size: 1.2rem;
-    line-height: 150%;
-    letter-spacing: -0.32px;
+    line-height: var(--largeLineHeight);
+    letter-spacing: -0.032rem;
 }
 
 /* tipografia equivalente à tag <h3> — para textos que deixaram de ser heading */
 .textH3 {
     font-size: 1.4rem;
-    line-height: 130%;
-    letter-spacing: -0.36px;
+    line-height: var(--smallLineHeight);
+    letter-spacing: -0.036rem;
 }
 
 h6 {
     font-size: 1rem;
-    line-height: 150%; 
-    letter-spacing: -0.26px;
+    line-height: var(--largeLineHeight); 
+    letter-spacing: -0.026rem;
 }
 
 p {
     font-size: 1.2rem;
-    letter-spacing: -0.26px;
+    letter-spacing: -0.026rem;
 }
 
 a {
     font-size: 1.2rem;
     text-decoration: none;
-    line-height: 150%; 
-    letter-spacing: -0.32px;
+    line-height: var(--largeLineHeight); 
+    letter-spacing: -0.032rem;
 }
 
 label {
     font-size: 1.2rem;
-    line-height: 130%; 
-    letter-spacing: -0.32px;
+    line-height: var(--smallLineHeight); 
+    letter-spacing: -0.032rem;
 }
 
 ul {
@@ -179,11 +179,11 @@ ul {
 .btn{
     font-size: 1.4rem;
     font-weight: bold;
-    letter-spacing: -0.48px;
+    letter-spacing: -0.036rem;
     text-transform: uppercase;
     background: var(--yellowGradient);
-    box-shadow: 0 12px 20px 0 rgba(254, 188, 17, 0.20);
-    border-radius: 4px;
+    box-shadow: 0 1.2rem 2rem 0 rgba(254, 188, 17, 0.20);
+    border-radius: 0.4rem;
     padding: var(--8) var(--32);
 }
 
@@ -196,8 +196,8 @@ ul {
     font-weight: 300;
     margin: var(--8) 0 var(--40) 0;
     font-size: 1.2rem;
-    line-height: 150%;
-    letter-spacing: -0.32px;
+    line-height: var(--largeLineHeight);
+    letter-spacing: -0.032rem;
 }
 
 .container {
@@ -235,14 +235,14 @@ ul {
 .headerNavText .headerNavTitle {
     font-size: 0.8rem;
     letter-spacing: 0.1rem;
-    line-height: 130%;
+    line-height: var(--smallLineHeight);
     text-transform: uppercase;
     margin-top: 0;
 }
 
 .headerNavText p {
     font-size: 0.6rem;
-    letter-spacing: 0.154rem;
+    letter-spacing: 0.15rem;
     margin-top: 0.3rem;
 }
 
@@ -269,8 +269,8 @@ ul {
     height: 100vh;
 
     background: var(--grayGradientOpacity);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(1.2rem);
+    -webkit-backdrop-filter: blur(1.2rem);
 
     padding: 2rem;
 
@@ -372,10 +372,10 @@ ul {
     padding: var(--4) var(--16);
     color: var(--yellow);
     background: rgba(254, 188, 17, 0.15);
-    border-radius: 999px;
+    border-radius: 99.9rem;
     font-size: 1rem;
     font-weight: 700;
-    letter-spacing: -0.32px;
+    letter-spacing: -0.032rem;
     text-transform: uppercase;
 }
 
@@ -406,7 +406,7 @@ ul {
 }
 
 .heroStat:not(:last-child){        
-    border-right: 1px solid var(--lineGray);
+    border-right: 0.1rem solid var(--lineGray);
 }
 
 .heroStatNumber{
@@ -414,15 +414,15 @@ ul {
     color: var(--yellow);
     font-size: 1.8rem;
     font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: -0.66px;
+    line-height: var(--smallLineHeight);
+    letter-spacing: -0.066rem;
 }
 
 .heroStatLabel{
     display: block;
     color: var(--whiteOpacity);
     font-size: 0.95rem;
-    line-height: normal;
+    line-height: var(--smallLineHeight);
 }
 
 .quoteLine{
@@ -581,7 +581,7 @@ ul {
 .benefitCardText h3{
     font-weight: 500;
     color: var(--gray);
-    margin-bottom: 2px;
+    margin-bottom: 0.2rem;
 }
 
 .benefitCardText p{
@@ -697,7 +697,7 @@ ul {
 }
 
 .testimonialCardQuote{
-    max-width: 295px;
+    max-width: 29.5rem;
     width: 90%;
     margin: 0 auto;
     font-weight: 300;
@@ -761,8 +761,8 @@ ul {
 }
 
 .faqSectionCard:has(.faqSectionSummary:focus-visible) {
-    outline: 2px solid var(--yellow);
-    outline-offset: 2px;
+    outline: 0.2rem solid var(--yellow);
+    outline-offset: 0.2rem;
 }
 
 .faqSectionSummary h3{
@@ -808,9 +808,9 @@ details[open] .faqContent {
     font-weight: 300;
     color: var(--secondaryTextGray);
     opacity: 0;
-    transform: translateY(-5px);
+    transform: translateY(-0.5rem);
     transition: 0.3s;
-    line-height: 150%;
+    line-height: var(--largeLineHeight);
 
 }
 
@@ -857,7 +857,7 @@ details[open] .faqContent p {
     position: absolute;
     text-align: center;
     left: 0;
-    top: -30px;
+    top: -3rem;
     padding-top: 0.6rem;
     height: 6.7rem;
     width: 13rem;
@@ -895,8 +895,8 @@ details[open] .faqContent p {
     font-size: 4.4rem;
     font-weight: 500;
     color: var(--gray);
-    line-height: 130%;
-    letter-spacing: -0.84px;
+    line-height: var(--smallLineHeight);
+    letter-spacing: -0.084rem;
     text-transform: uppercase;
 }
 
@@ -922,7 +922,7 @@ details[open] .faqContent p {
     color: var(--green);
     font-weight: 600;
     font-size: 1.1rem;
-    letter-spacing: -0.32px;
+    letter-spacing: -0.032rem;
     border-radius: var(--smallRadius);
 }
 
@@ -991,7 +991,7 @@ details[open] .faqContent p {
 }
 
 .field input, textarea{
-    border: 1px solid var(--yellow);
+    border: 0.1rem solid var(--yellow);
     border-radius:  var(--smallRadius);
     padding-left: var(--16);
     font-size: 1.2rem;
@@ -1022,8 +1022,8 @@ details[open] .faqContent p {
 .labelMarginMax{
     margin-bottom: 1.2rem;
     font-size: 1.2rem;
-    line-height: 130%;
-    letter-spacing: -0.32px;
+    line-height: var(--smallLineHeight);
+    letter-spacing: -0.032rem;
     color: var(--gray);
 }
 
@@ -1044,7 +1044,7 @@ details[open] .faqContent p {
 
 ::-webkit-calendar-picker-indicator{
     padding: 0.5rem;
-    border-radius: 4px;
+    border-radius: 0.4rem;
     filter: invert(60%) sepia(80%) saturate(500%) hue-rotate(10deg);
 }
 
@@ -1070,7 +1070,7 @@ details[open] .faqContent p {
 .customBox {
   width: 3rem;
   height: 3rem;
-  border: 1px solid var(--yellow);
+  border: 0.1rem solid var(--yellow);
   border-radius: var(--8);
   display: flex;
   align-items: center;
@@ -1090,8 +1090,8 @@ details[open] .faqContent p {
 
 /* foco visível por teclado: o radio é invisível, então o anel vai na caixa */
 .checkboxCard input:focus-visible + .customBox {
-    outline: 2px solid var(--yellow);
-    outline-offset: 2px;
+    outline: 0.2rem solid var(--yellow);
+    outline-offset: 0.2rem;
 }
 
 .textArea {
@@ -1175,8 +1175,8 @@ details[open] .faqContent p {
 .footerDownloadLinks .downloadLabel {
     color: var(--secondaryTextGray);
     font-size: 1rem;
-    line-height: 150%;
-    letter-spacing: -0.26px;
+    line-height: var(--largeLineHeight);
+    letter-spacing: -0.026rem;
 }
 
 .footerDownloadLinks p {
@@ -1192,7 +1192,7 @@ details[open] .faqContent p {
     justify-content: space-evenly;
     align-items: center;
     padding: 1rem;
-    border: 1px solid var(--placeholderColor);
+    border: 0.1rem solid var(--placeholderColor);
     max-width: 20rem;
 }
 
@@ -1217,8 +1217,8 @@ details[open] .faqContent p {
 }
 
 .footerDeveloper a {
-    text-decoration: underline 0.1px solid var(--whiteOpacity);
-    text-underline-offset: 3px;
+    text-decoration: underline 0.01rem solid var(--whiteOpacity);
+    text-underline-offset: 0.3rem;
     color: var(--white);
 
 }
@@ -1248,7 +1248,7 @@ details[open] .faqContent p {
   bottom: 0;
   left: 0;
   width: 0%;
-  height: 2px;
+  height: 0.2rem;
   background: var(--yellow);
   transition: 0.3s;
 }
@@ -1261,7 +1261,7 @@ details[open] .faqContent p {
 .scheduleSectionDays {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid var(--darkLineGray);
+    border-bottom: 0.1rem solid var(--darkLineGray);
     margin-bottom: var(--16);
 }
 
@@ -1289,7 +1289,7 @@ details[open] .faqContent p {
     padding: var(--24) 0;
     text-align: center;
     font-size: 1.1rem;
-    letter-spacing: -0.28px;
+    letter-spacing: -0.028rem;
 }
 
 .scheduleSectionTimes thead th {
@@ -1318,19 +1318,19 @@ details[open] .faqContent p {
 
 .scheduleTable {
   display: none;
-  max-height: 400px;
+  max-height: 40rem;
   overflow-y: auto;
 
   scrollbar-width: thin;
 }
 
 .scheduleTables::-webkit-scrollbar {
-  width: 6px;
+  width: 0.6rem;
 }
 
 .scheduleTables::-webkit-scrollbar-thumb {
   background: var(--yellow);
-  border-radius: 10px;
+  border-radius: 1rem;
 }
 
 .scheduleTable.active {
@@ -1339,13 +1339,13 @@ details[open] .faqContent p {
 
 
 /* ================================
-   Responsividade — Tablet (≥ 768px)
+   Responsividade — Tablet (≥ 76.8rem)
    ================================ */
 
 @media (min-width: 768px) {
 
   :root {
-    --containerLateralPadding: 48px;
+    --containerLateralPadding: 4.8rem;
   }
 
   /* Hero: altura maior no tablet para acomodar a imagem de fundo */
@@ -1375,7 +1375,7 @@ details[open] .faqContent p {
 
   .heroStatNumber {
     font-size: 2.4rem;
-    letter-spacing: -0.84px;
+    letter-spacing: -0.084rem;
   }
 
   .heroStatLabel {
@@ -1422,7 +1422,7 @@ details[open] .faqContent p {
 
   .historySectionText {
     flex: 1;
-    padding: 48px 40px 48px 48px;
+    padding: 4.8rem 4rem 4.8rem 4.8rem;
     text-align: left;
     flex-direction: column;
     justify-content: center;
@@ -1494,7 +1494,7 @@ details[open] .faqContent p {
 
 
 /* =================================
-   Responsividade — Desktop (≥ 1024px)
+   Responsividade — Desktop (≥ 102.4rem)
    ================================= */
 
 @media (min-width: 1024px) {
@@ -1507,12 +1507,12 @@ details[open] .faqContent p {
   /* Tipografia */
   h1 {
     font-size: 3.2rem;
-    letter-spacing: -1.2px;
+    letter-spacing: -0.12rem;
   }
 
   h2 {
     font-size: 2.4rem;
-    letter-spacing: -0.9px;
+    letter-spacing: -0.084rem;
   }
 
   h3 {
@@ -1544,12 +1544,12 @@ details[open] .faqContent p {
 
   /* Preço: mantém o letter-spacing que antes herdava de h1 */
   .pricingCardValue {
-    letter-spacing: -1.2px;
+    letter-spacing: -0.12rem;
   }
 
   /* Espaçamento horizontal */
   :root {
-    --containerLateralPadding: 80px;
+    --containerLateralPadding: 8rem;
   }
 
   .sideContainer {
@@ -1561,7 +1561,7 @@ details[open] .faqContent p {
 
   /* História — ajuste de proporção para desktop */
   .historySectionText {
-    padding: 80px 64px 80px 0px;
+    padding: 8rem 6.4rem 8rem 0rem;
   }
 
   .historySectionImg img {
@@ -1588,13 +1588,13 @@ details[open] .faqContent p {
     text-align: center;
     padding: var(--24);
     border-radius: var(--mediumRadius);
-    box-shadow: 3px 3px 10px 3px rgba(254, 188, 17, 0.15);
+    box-shadow: 0.3rem 0.3rem 1rem 0.3rem rgba(254, 188, 17, 0.15);
     background-color: transparent;
     transition: all 0.4s ease-in-out;
   }
 
   .benefitCard:hover {
-    box-shadow: 5px 5px 10px 3px rgba(254, 188, 17, 0.25);
+    box-shadow: 0.5rem 0.5rem 1rem 0.3rem rgba(254, 188, 17, 0.25);
     transform: scale(1.02);
   }
 
@@ -1629,7 +1629,7 @@ details[open] .faqContent p {
 }
 
 .pricingCard:nth-child(1) {
-    box-shadow: 0 12px 20px 0 rgba(254, 188, 17, 0.20);
+    box-shadow: 0 1.2rem 2rem 0 rgba(254, 188, 17, 0.20);
     
 }
 
