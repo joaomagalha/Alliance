@@ -417,3 +417,40 @@
 
 }
 
+
+
+/* =================================
+   Flashlight effect — cards de subpáginas
+   ================================= */
+.professor-card,
+.differentialCard {
+    position: relative;
+}
+
+.professor-card::after,
+.differentialCard::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        50rem circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        rgba(254, 188, 17, 0.15),
+        transparent 40%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    border-radius: inherit;
+}
+
+.professor-card:hover::after,
+.differentialCard:hover::after {
+    opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .professor-card::after,
+    .differentialCard::after {
+        display: none;
+    }
+}

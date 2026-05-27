@@ -3,6 +3,23 @@
    Pausa a animação CSS até o elemento entrar na viewport.
    Respeita prefers-reduced-motion (CSS desabilita a animação).
    ============================================================ */
+/* ============================================================
+   Flashlight effect — atualiza CSS custom properties --mouse-x e
+   --mouse-y nos cards quando o mouse passa, alimentando o radial
+   gradient que segue o cursor.
+   ============================================================ */
+const flashlightCards = document.querySelectorAll(
+  ".pricingCard, .classCard, .benefitCard, .testimonialCard, .professor-card, .differentialCard"
+);
+flashlightCards.forEach((card) => {
+  card.addEventListener("mousemove", (e) => {
+    const rect = card.getBoundingClientRect();
+    card.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`);
+    card.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`);
+  });
+});
+
+
 const animateTargets = document.querySelectorAll(".animate-on-scroll, .animate-on-scroll-list");
 if (animateTargets.length && "IntersectionObserver" in window) {
   const io = new IntersectionObserver((entries, observer) => {
