@@ -118,7 +118,7 @@
 }
 
 .professor-card:hover {
-    transform: scale(1.015);
+    transform: scale(1.008);
 }
 
 .differentialCard {
@@ -126,7 +126,7 @@
 }
 
 .differentialCard:hover {
-    transform: scale(1.015);
+    transform: scale(1.008);
 }
 
 @media (prefers-reduced-motion: reduce) {
