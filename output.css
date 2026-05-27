@@ -10,6 +10,7 @@
     --font-weight-extralight: 200;
     --font-weight-bold: 700;
     --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
@@ -294,6 +295,10 @@
   }
   .delay-8 {
     transition-delay: 8ms;
+  }
+  .ease-in-out {
+    --tw-ease: var(--ease-in-out);
+    transition-timing-function: var(--ease-in-out);
   }
   .ease-out {
     --tw-ease: var(--ease-out);
@@ -1895,6 +1900,115 @@ details[open] .faqContent p {
   }
   .preloaderBar span {
     transform: scaleX(1);
+  }
+}
+.heroBackgroundVideo {
+  animation: heroKenBurns 24s ease-in-out infinite alternate;
+  transform-origin: center 55%;
+}
+@keyframes heroKenBurns {
+  from {
+    transform: scale(1.02);
+  }
+  to {
+    transform: scale(1.12);
+  }
+}
+.heroOverlay {
+  background: radial-gradient(50rem 50rem at 90% 100%, rgba(254, 188, 17, 0.18) 0%, transparent 55%), radial-gradient(38rem 38rem at 8% 0%, rgba(254, 188, 17, 0.06) 0%, transparent 60%), radial-gradient(140% 100% at 50% 50%, transparent 30%, rgba(0, 0, 0, 0.55) 100%), linear-gradient(180deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.75) 100%);
+  animation: heroOverlayReveal 2s cubic-bezier(0.22, 1, 0.36, 1) 1.5s both;
+}
+@keyframes heroOverlayReveal {
+  from {
+    opacity: 1;
+    backdrop-filter: blur(0.4rem);
+    -webkit-backdrop-filter: blur(0.4rem);
+  }
+  to {
+    opacity: 0.95;
+    backdrop-filter: blur(0);
+    -webkit-backdrop-filter: blur(0);
+  }
+}
+.heroSection .animate-on-scroll {
+  animation-duration: 1.4s;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+.heroSection .delay-1 {
+  animation-delay: 1.7s;
+}
+.heroSection .delay-2 {
+  animation-delay: 2.0s;
+}
+.heroSection .delay-3 {
+  animation-delay: 2.3s;
+}
+.heroSection .delay-4 {
+  animation-delay: 2.6s;
+}
+.heroSection .delay-5 {
+  animation-delay: 2.9s;
+}
+.heroSection h1 {
+  --heroTitleSpacing: -0.084rem;
+}
+@media (min-width: 1024px) {
+  .heroSection h1 {
+    --heroTitleSpacing: -0.12rem;
+  }
+}
+.heroSection h1.animate-on-scroll {
+  animation-name: heroTitleCinematic;
+  animation-duration: 1.8s;
+}
+@keyframes heroTitleCinematic {
+  0% {
+    opacity: 0;
+    transform: translateY(2rem);
+    filter: blur(0.8rem);
+    letter-spacing: 0.5rem;
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    letter-spacing: var(--heroTitleSpacing);
+  }
+}
+.heroBadge {
+  backdrop-filter: blur(1rem) saturate(1.4);
+  -webkit-backdrop-filter: blur(1rem) saturate(1.4);
+  border: 0.05rem solid rgba(254, 188, 17, 0.3);
+  box-shadow: 0 0.4rem 1.2rem rgba(254, 188, 17, 0.12);
+}
+.heroSectionText .btn {
+  animation: heroBtnGlow 4s ease-in-out 3.6s infinite;
+}
+@keyframes heroBtnGlow {
+  0%, 100% {
+    box-shadow: 0 1.2rem 2rem 0 rgba(254, 188, 17, 0.20);
+  }
+  50% {
+    box-shadow: 0 1.2rem 2.6rem 0 rgba(254, 188, 17, 0.45);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .heroBackgroundVideo {
+    animation: none;
+    transform: none;
+  }
+  .heroOverlay {
+    animation: none;
+    opacity: 0.95;
+  }
+  .heroSection .delay-1, .heroSection .delay-2, .heroSection .delay-3, .heroSection .delay-4, .heroSection .delay-5 {
+    animation-delay: 0s;
+  }
+  .heroSection h1.animate-on-scroll {
+    animation-name: animationIn;
+  }
+  .heroSectionText .btn {
+    animation: none;
   }
 }
 @property --tw-rotate-x {
