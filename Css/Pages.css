@@ -354,12 +354,44 @@
         padding: var(--32) var(--24);
     }
 
+    .teacherSectionText {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
 @media (min-width: 768px) {
 
     .differentialCards {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         align-items: start;
+    }
+
+    /* Tablet — cards de professor em 2 colunas */
+    .professorCards {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 32rem));
+        justify-content: center;
+        align-items: start;
+        max-width: 80rem;
+        margin: 0 auto;
+    }
+
+    .professor-card {
+        max-width: none;
+    }
+
+}
+
+@media (min-width: 1024px) {
+
+    /* Desktop — cards de professor em 3 colunas */
+    .professorCards {
+        grid-template-columns: repeat(3, minmax(0, 32rem));
+        max-width: 112rem;
     }
 
 }
