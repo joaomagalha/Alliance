@@ -907,12 +907,9 @@ details[open] .faqContent p {
     background-color: var(--green);
     color: var(--white);
     border-radius: var(--16);
+    z-index: var(--z-behind);
     font-weight: 500;
     font-size: 1.1rem;
-    /* Recorta os 3.7rem inferiores (que ficavam atrás do card via z-index: -1).
-       Esse truque dispensa o negative z-index, que parava de funcionar quando
-       a animação aplicava transform e criava stacking context no .pricingCard. */
-    clip-path: inset(0 0 3.7rem 0);
 }
 
 .pricingSvg{

@@ -9,6 +9,9 @@
       "Courier New", monospace;
     --font-weight-extralight: 200;
     --font-weight-bold: 700;
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --default-transition-duration: 150ms;
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -974,9 +977,9 @@ details[open] .faqContent p {
   background-color: var(--green);
   color: var(--white);
   border-radius: var(--16);
-  z-index: -1000;
   font-weight: 500;
   font-size: 1.1rem;
+  clip-path: inset(0 0 3.7rem 0);
 }
 .pricingSvg {
   height: 3rem;
