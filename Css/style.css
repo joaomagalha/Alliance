@@ -1757,7 +1757,7 @@ details[open] .faqContent p {
 .classCard:hover,
 .benefitCard:hover,
 .testimonialCard:hover {
-    transform: scale(1.015);
+    transform: scale(1.008);
 }
 
 @media (prefers-reduced-motion: reduce) {
