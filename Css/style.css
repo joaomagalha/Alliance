@@ -1636,3 +1636,64 @@ details[open] .faqContent p {
 }
 
 }
+
+/* =================================
+   On-scroll reveal animation
+   ================================= */
+
+@keyframes animationIn {
+    0%   { opacity: 0; transform: translateY(3rem); filter: blur(1rem); }
+    100% { opacity: 1; transform: translateY(0);    filter: blur(0); }
+}
+
+.animate-on-scroll {
+    animation: animationIn 0.8s ease-out both;
+    animation-play-state: paused;
+}
+
+.animate-on-scroll.animate {
+    animation-play-state: running;
+}
+
+/* Stagger delays — usar como modifier (ex: class="animate-on-scroll delay-2") */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+.delay-6 { animation-delay: 0.6s; }
+.delay-7 { animation-delay: 0.7s; }
+.delay-8 { animation-delay: 0.8s; }
+
+/* Lista com stagger automático — aplique em containers de cards
+   (ex: .benefitsSectionContainer). Filhos diretos animam em cascata. */
+.animate-on-scroll-list > * {
+    animation: animationIn 0.8s ease-out both;
+    animation-play-state: paused;
+}
+
+.animate-on-scroll-list.animate > * {
+    animation-play-state: running;
+}
+
+.animate-on-scroll-list > *:nth-child(1) { animation-delay: 0s; }
+.animate-on-scroll-list > *:nth-child(2) { animation-delay: 0.1s; }
+.animate-on-scroll-list > *:nth-child(3) { animation-delay: 0.2s; }
+.animate-on-scroll-list > *:nth-child(4) { animation-delay: 0.3s; }
+.animate-on-scroll-list > *:nth-child(5) { animation-delay: 0.4s; }
+.animate-on-scroll-list > *:nth-child(6) { animation-delay: 0.5s; }
+.animate-on-scroll-list > *:nth-child(7) { animation-delay: 0.6s; }
+.animate-on-scroll-list > *:nth-child(8) { animation-delay: 0.7s; }
+.animate-on-scroll-list > *:nth-child(n+9) { animation-delay: 0.8s; }
+
+/* Acessibilidade: usuários com prefers-reduced-motion ativado
+   no SO veem o site sem animação (WCAG 2.3.3) */
+@media (prefers-reduced-motion: reduce) {
+    .animate-on-scroll,
+    .animate-on-scroll-list > * {
+        opacity: 1;
+        animation: none;
+        transform: none;
+        filter: none;
+    }
+}
