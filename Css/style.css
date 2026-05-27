@@ -1754,9 +1754,7 @@ details[open] .faqContent p {
 }
 
 .pricingCard:hover,
-.classCard:hover,
-.benefitCard:hover,
-.testimonialCard:hover {
+.benefitCard:hover {
     transform: scale(1.008);
 }
 
