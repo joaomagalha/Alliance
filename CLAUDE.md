@@ -99,7 +99,7 @@ Target DOM via `data-*` attributes, not class names, for new JS behavior.
 
 ## GitHub & Auto-push
 
-Repo: **https://github.com/joaomagalha/alliance-website** (`gh` at `~/bin/gh`)
+Repo: **https://github.com/joaomagalha/Alliance** (`gh` at `~/bin/gh`)
 
 A `PostToolUse` hook in `.claude/settings.local.json` runs `git add -A && git commit -m "chore: auto-save <data hora>" && git push origin main` automatically after each file edit Claude Code makes. **Don't manually run git commands unless the user asks** — the hook handles it, and parallel manual commits cause conflicts.
 
