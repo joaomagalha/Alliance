@@ -184,3 +184,30 @@ if (openBtn && closeBtn && mobileMenu) {
 
 }
 
+
+/* ============================================================
+   Professores — botões "Agendar particular" e "Valores" abrem
+   o WhatsApp da Alliance com mensagem personalizada por professor.
+   ============================================================ */
+const ALLIANCE_PHONE = "5565996768010";
+
+document.querySelectorAll(".professor-card").forEach((card) => {
+    const name = card.querySelector(".professor-name")?.textContent.trim();
+    if (!name) return;
+
+    const openWhatsApp = (text) => {
+        const url = `https://wa.me/${ALLIANCE_PHONE}?text=${encodeURIComponent(text)}`;
+        window.open(url, "_blank", "noopener,noreferrer");
+    };
+
+    const agendarBtn = card.querySelector(".btn-primary");
+    const valoresBtn = card.querySelector(".btn-secondary:not(.btn-icon-only)");
+
+    agendarBtn?.addEventListener("click", () => {
+        openWhatsApp(`Oi, quero agendar uma particular com o professor ${name}.`);
+    });
+    valoresBtn?.addEventListener("click", () => {
+        openWhatsApp(`Oi, quero saber os valores da particular do professor ${name}.`);
+    });
+});
+
