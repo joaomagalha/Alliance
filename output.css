@@ -1713,61 +1713,6 @@ details[open] .faqContent p {
     transform: none;
   }
 }
-.marqueeSection {
-  background: var(--gray);
-  border-top: 0.1rem solid var(--lineGray);
-  border-bottom: 0.1rem solid var(--lineGray);
-  overflow: hidden;
-  padding: var(--16) 0;
-  position: relative;
-}
-.marqueeTrack {
-  display: flex;
-  gap: var(--40);
-  width: max-content;
-  animation: marquee 40s linear infinite;
-}
-.marqueeItem {
-  color: var(--whiteOpacity);
-  font-size: 1.2rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.15rem;
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  gap: var(--8);
-  flex-shrink: 0;
-}
-.marqueeItem i {
-  color: var(--yellow);
-  font-size: 1.4rem;
-}
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-.marqueeSection::before, .marqueeSection::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 6rem;
-  z-index: 1;
-  pointer-events: none;
-}
-.marqueeSection::before {
-  left: 0;
-  background: linear-gradient(to right, var(--gray), transparent);
-}
-.marqueeSection::after {
-  right: 0;
-  background: linear-gradient(to left, var(--gray), transparent);
-}
 .pricingCard, .classCard, .benefitCard, .testimonialCard {
   position: relative;
 }
