@@ -185,6 +185,45 @@ ul {
     box-shadow: 0 1.2rem 2rem 0 rgba(254, 188, 17, 0.20);
     border-radius: 0.4rem;
     padding: var(--8) var(--32);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Shimmer beam: faixa de luz cruzando o botão no hover */
+.btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        110deg,
+        transparent 0%,
+        transparent 40%,
+        rgba(255, 255, 255, 0.5) 50%,
+        transparent 60%,
+        transparent 100%
+    );
+    transform: translateX(-100%);
+    pointer-events: none;
+}
+
+.btn:hover::before {
+    animation: btnShimmer 0.9s ease-out;
+}
+
+.btn:hover {
+    transform: translateY(-0.2rem);
+    box-shadow: 0 1.8rem 3rem 0 rgba(254, 188, 17, 0.35);
+}
+
+@keyframes btnShimmer {
+    0%   { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .btn::before { display: none; }
+    .btn:hover { transform: none; }
 }
 
 .textYellow{
