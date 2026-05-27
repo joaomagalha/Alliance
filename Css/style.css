@@ -1668,7 +1668,7 @@ details[open] .faqContent p {
 /* Lista com stagger automático — aplique em containers de cards
    (ex: .benefitsSectionContainer). Filhos diretos animam em cascata. */
 .animate-on-scroll-list > * {
-    animation: animationIn 0.8s ease-out both;
+    animation: animationIn 0.6s ease-out both;
     animation-play-state: paused;
 }
 
