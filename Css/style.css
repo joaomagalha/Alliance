@@ -1736,3 +1736,31 @@ details[open] .faqContent p {
         filter: none;
     }
 }
+
+
+/* =================================
+   Card hover — lift + shadow boost
+   ================================= */
+.pricingCard,
+.classCard,
+.benefitCard,
+.testimonialCard {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricingCard:hover,
+.classCard:hover,
+.benefitCard:hover,
+.testimonialCard:hover {
+    transform: translateY(-0.6rem);
+    box-shadow: 0.5rem 0.5rem 4rem 0.5rem rgba(0, 0, 0, 0.15);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pricingCard:hover,
+    .classCard:hover,
+    .benefitCard:hover,
+    .testimonialCard:hover {
+        transform: none;
+    }
+}

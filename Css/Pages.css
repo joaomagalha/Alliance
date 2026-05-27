@@ -117,6 +117,27 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.professor-card:hover {
+    transform: translateY(-0.6rem);
+    box-shadow: 0.5rem 0.5rem 4rem 0.5rem rgba(0, 0, 0, 0.15);
+}
+
+.differentialCard {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.differentialCard:hover {
+    transform: translateY(-0.6rem);
+    box-shadow: 0.5rem 0.5rem 4rem 0.5rem rgba(0, 0, 0, 0.15);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .professor-card:hover,
+    .differentialCard:hover {
+        transform: none;
+    }
+}
+
     /* ===== ÁREA DA FOTO ===== */
     .professor-photo {
       position: relative;
