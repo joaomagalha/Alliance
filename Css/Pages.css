@@ -217,9 +217,8 @@
     /* Indicador de faixa — círculo da cor da faixa com tarja preta no meio */
     .belt-icon {
       display: inline-block;
-      width: 2.6rem;
-      height: 2.6rem;
-      border-radius: 50%;
+      width: 5rem;
+      height: 1rem;
       background: var(--belt-color);
       position: relative;
       flex-shrink: 0;
@@ -229,10 +228,11 @@
       content: "";
       position: absolute;
       top: 50%;
-      left: 0;
+      left: 50%;
       right: 0;
-      height: 0.7rem;
-      background: #000;
+      height: 1rem;
+      width: 1.5rem;
+      background: hwb(0 5% 11%);
       transform: translateY(-50%);
     }
 
@@ -240,7 +240,7 @@
     .belt-blue   { --belt-color: #1e3a8a; }
     .belt-purple { --belt-color: #5a2a83; }
     .belt-brown  { --belt-color: #6e4222; }
-    .belt-black  { --belt-color: #1a1a1a; }
+    .belt-black  { --belt-color: #282828; }
 
     /* Tags */
     .professor-tags {
