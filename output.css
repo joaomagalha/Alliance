@@ -9,8 +9,6 @@
       "Courier New", monospace;
     --font-weight-extralight: 200;
     --font-weight-bold: 700;
-    --default-transition-duration: 150ms;
-    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -1474,13 +1472,9 @@ details[open] .faqContent p {
     text-align: center;
     padding: var(--24);
     border-radius: var(--mediumRadius);
-    box-shadow: 0.3rem 0.3rem 1rem 0.3rem rgba(254, 188, 17, 0.15);
+    box-shadow: var(--grayShadowSmall);
     background-color: transparent;
     transition: all 0.4s ease-in-out;
-  }
-  .benefitCard:hover {
-    box-shadow: 0.5rem 0.5rem 1rem 0.3rem rgba(254, 188, 17, 0.25);
-    transform: scale(1.02);
   }
   .testimonialSectionContainer {
     grid-template-columns: repeat(2, 1fr);

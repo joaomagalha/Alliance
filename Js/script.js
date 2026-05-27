@@ -1,3 +1,22 @@
+/* ============================================================
+   On-scroll reveal — fade + slide-up + blur, com stagger.
+   Pausa a animação CSS até o elemento entrar na viewport.
+   Respeita prefers-reduced-motion (CSS desabilita a animação).
+   ============================================================ */
+const animateTargets = document.querySelectorAll(".animate-on-scroll");
+if (animateTargets.length && "IntersectionObserver" in window) {
+  const io = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("animate");
+        observer.unobserve(entry.target); // anima uma vez só
+      }
+    });
+  }, { threshold: 0.15, rootMargin: "0px 0px -5% 0px" });
+  animateTargets.forEach((el) => io.observe(el));
+}
+
+
 const detalhes = document.querySelectorAll(".faqSectionCard");
 
 detalhes.forEach((item) => {

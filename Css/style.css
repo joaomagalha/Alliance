@@ -1588,14 +1588,9 @@ details[open] .faqContent p {
     text-align: center;
     padding: var(--24);
     border-radius: var(--mediumRadius);
-    box-shadow: 0.3rem 0.3rem 1rem 0.3rem rgba(254, 188, 17, 0.15);
+    box-shadow: var(--grayShadowSmall);
     background-color: transparent;
     transition: all 0.4s ease-in-out;
-  }
-
-  .benefitCard:hover {
-    box-shadow: 0.5rem 0.5rem 1rem 0.3rem rgba(254, 188, 17, 0.25);
-    transform: scale(1.02);
   }
 
   /* Testimonials — grade 2x2 no desktop, cards de altura uniforme */
