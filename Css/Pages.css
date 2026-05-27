@@ -337,7 +337,7 @@
     }   
 
     .teacherSection {
-        padding: 0 var(--24);
+        padding: var(--32) var(--24);
     }
 
 @media (min-width: 768px) {
