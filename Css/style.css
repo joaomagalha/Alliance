@@ -1702,15 +1702,146 @@ details[open] .faqContent p {
   }
 }
 
+/* Telas grandes (≥ 1700px) — escala tipográfica proporcional ao
+   hero maior. Cada nível cresce ~25-35% mantendo a hierarquia. */
 @media (min-width: 1700px) {
   .heroSection {
     height: 95rem;
   }
+
+  h1 {
+    font-size: 4.4rem;
+    letter-spacing: -0.154rem;
+  }
+
+  h2 {
+    font-size: 3.2rem;
+    letter-spacing: -0.112rem;
+  }
+
+  h3,
+  .textH3 {
+    font-size: 2rem;
+    letter-spacing: -0.07rem;
+  }
+
+  h4 {
+    font-size: 1.6rem;
+  }
+
+  h6 {
+    font-size: 1.4rem;
+  }
+
+  p,
+  a,
+  label,
+  .textBase,
+  .subtitle {
+    font-size: 1.8rem;
+  }
+
+  .textSmall,
+  .scheduleSectionTimes td,
+  .scheduleSectionTimes th {
+    font-size: 1.6rem;
+  }
+
+  .pricingCardValue {
+    font-size: 5.6rem;
+    letter-spacing: -0.16rem;
+  }
+
+  .pricingCardValue span {
+    font-size: 3.6rem;
+  }
+
+  .heroStatNumber {
+    font-size: 3rem;
+    letter-spacing: -0.105rem;
+  }
+
+  .heroStatLabel {
+    font-size: 1.4rem;
+  }
+
+  .heroBadge {
+    font-size: 1.4rem;
+  }
+
+  .btn {
+    font-size: 1.6rem;
+  }
 }
 
+/* Telas ultra-largas (≥ 2000px) — outro patamar para 2K/4K */
 @media (min-width: 2000px) {
   .heroSection {
     height: 110rem;
+  }
+
+  h1 {
+    font-size: 5rem;
+    letter-spacing: -0.175rem;
+  }
+
+  h2 {
+    font-size: 3.6rem;
+    letter-spacing: -0.126rem;
+  }
+
+  h3,
+  .textH3 {
+    font-size: 2.2rem;
+    letter-spacing: -0.077rem;
+  }
+
+  h4 {
+    font-size: 1.8rem;
+  }
+
+  h6 {
+    font-size: 1.6rem;
+  }
+
+  p,
+  a,
+  label,
+  .textBase,
+  .subtitle {
+    font-size: 2rem;
+  }
+
+  .textSmall,
+  .scheduleSectionTimes td,
+  .scheduleSectionTimes th {
+    font-size: 1.8rem;
+  }
+
+  .pricingCardValue {
+    font-size: 6.4rem;
+    letter-spacing: -0.182rem;
+  }
+
+  .pricingCardValue span {
+    font-size: 4rem;
+  }
+
+  .heroStatNumber {
+    font-size: 3.4rem;
+    letter-spacing: -0.12rem;
+  }
+
+  .heroStatLabel {
+    font-size: 1.6rem;
+  }
+
+  .heroBadge {
+    font-size: 1.6rem;
+  }
+
+  .btn {
+    font-size: 1.8rem;
   }
 }
 

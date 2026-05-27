@@ -1590,6 +1590,16 @@ details[open] .faqContent p {
     height: 82rem;
   }
 }
+@media (min-width: 1700px) {
+  .heroSection {
+    height: 95rem;
+  }
+}
+@media (min-width: 2000px) {
+  .heroSection {
+    height: 110rem;
+  }
+}
 @keyframes animationIn {
   0% {
     opacity: 0;
