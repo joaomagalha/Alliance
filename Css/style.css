@@ -402,6 +402,7 @@ ul {
     object-fit: cover;
     z-index: 0;
     pointer-events: none;
+    filter: contrast(1.05) saturate(1.08);
 }
 
 /* Overlay escuro pra manter contraste do texto sobre o vídeo */
