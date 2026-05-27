@@ -3,7 +3,7 @@
    Pausa a animação CSS até o elemento entrar na viewport.
    Respeita prefers-reduced-motion (CSS desabilita a animação).
    ============================================================ */
-const animateTargets = document.querySelectorAll(".animate-on-scroll");
+const animateTargets = document.querySelectorAll(".animate-on-scroll, .animate-on-scroll-list");
 if (animateTargets.length && "IntersectionObserver" in window) {
   const io = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
