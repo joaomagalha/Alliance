@@ -1910,6 +1910,11 @@ details[open] .faqContent p {
     position: relative;
 }
 
+/* Espaço extra só entre o logo e o nome */
+.preloaderLogo {
+    margin-bottom: var(--24);
+}
+
 /* Logo do águia — entra com fade + scale + desblur */
 .preloaderLogo {
     width: 9rem;
