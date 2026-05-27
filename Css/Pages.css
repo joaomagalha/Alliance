@@ -117,16 +117,8 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.professor-card:hover {
-    transform: scale(1.008);
-}
-
 .differentialCard {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.differentialCard:hover {
-    transform: scale(1.008);
 }
 
 @media (prefers-reduced-motion: reduce) {
