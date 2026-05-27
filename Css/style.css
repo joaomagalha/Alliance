@@ -1702,6 +1702,18 @@ details[open] .faqContent p {
   }
 }
 
+@media (min-width: 1700px) {
+  .heroSection {
+    height: 95rem;
+  }
+}
+
+@media (min-width: 2000px) {
+  .heroSection {
+    height: 110rem;
+  }
+}
+
 /* =================================
    On-scroll reveal animation
    ================================= */
