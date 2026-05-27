@@ -243,30 +243,6 @@
       color: var(--gray);
     }
 
-    /* Box de especialidade */
-    .specialty-box {
-      background: var(--lightYellow);
-      border-left: 0.3rem solid var(--yellow);
-      padding: 1rem 1.2rem;
-      border-radius: 0 0.6rem 0.6rem 0;
-      margin-bottom: 1.4rem;
-    }
-
-    .specialty-label {
-      font-size: 1rem;
-      color: var(--yellowDark);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05rem;
-      margin-bottom: 0.3rem;
-    }
-
-    .specialty-value {
-      font-size: 1.3rem;
-      color: var(--gray);
-      font-weight: 600;
-    }
-
     /* CTAs */
     .btn {
       width: 100%;
