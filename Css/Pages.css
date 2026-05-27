@@ -214,19 +214,33 @@
       flex-shrink: 0;
     }
 
-    .professor-rating .star {
-      color: var(--yellow);
-      font-size: 1.4rem;
+    /* Indicador de faixa — círculo da cor da faixa com tarja preta no meio */
+    .belt-icon {
+      display: inline-block;
+      width: 2.6rem;
+      height: 2.6rem;
+      border-radius: 50%;
+      background: var(--belt-color);
+      position: relative;
+      flex-shrink: 0;
     }
 
-    .professor-rating .rating-value {
-      font-weight: 600;
+    .belt-icon::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 0.7rem;
+      background: #000;
+      transform: translateY(-50%);
     }
 
-    .professor-rating .rating-count {
-      color: var(--placeholderColor);
-      font-size: 1.2rem;
-    }
+    .belt-white  { --belt-color: var(--white); box-shadow: inset 0 0 0 0.1rem var(--placeholderColor); }
+    .belt-blue   { --belt-color: #1e3a8a; }
+    .belt-purple { --belt-color: #5a2a83; }
+    .belt-brown  { --belt-color: #6e4222; }
+    .belt-black  { --belt-color: #1a1a1a; }
 
     /* Tags */
     .professor-tags {
