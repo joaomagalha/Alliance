@@ -1710,6 +1710,11 @@ details[open] .faqContent p {
   .heroSection {
     height: 95rem;
   }
+
+  /* Imagem da equipe fica menos esticada — ganha altura proporcional */
+  .teacherSectionImg {
+    height: 70rem;
+  }
 }
 
 @media (min-width: 2000px) {
@@ -1719,6 +1724,10 @@ details[open] .faqContent p {
 
   .heroSection {
     height: 110rem;
+  }
+
+  .teacherSectionImg {
+    height: 82rem;
   }
 }
 
