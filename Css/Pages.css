@@ -160,13 +160,6 @@
       50% { opacity: 0.5; }
     }
 
-    .badge-highlight {
-      top: 1.2rem;
-      right: 1.2rem;
-      background: var(--yellow);
-      color: var(--gray);
-    }
-
     /* ===== CONTEÚDO DO CARD ===== */
     .professor-info {
       padding: 2rem;
