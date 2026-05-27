@@ -4,6 +4,37 @@
    Respeita prefers-reduced-motion (CSS desabilita a animação).
    ============================================================ */
 /* ============================================================
+   Preloader — esconde a tela inicial após o load. Garante um
+   tempo mínimo de exibição (1.6s) pra animação ser apreciada,
+   mesmo se a página já tiver carregado rápido.
+   ============================================================ */
+const preloader = document.getElementById("preloader");
+if (preloader) {
+  const MIN_DISPLAY = 1600;
+  const startedAt = performance.now();
+  // Trava o scroll enquanto o preloader está visível
+  document.body.style.overflow = "hidden";
+
+  const hidePreloader = () => {
+    const elapsed = performance.now() - startedAt;
+    const wait = Math.max(0, MIN_DISPLAY - elapsed);
+    setTimeout(() => {
+      preloader.classList.add("hidden");
+      document.body.style.overflow = "";
+      // Remove do DOM depois do fade (acessibilidade)
+      setTimeout(() => preloader.remove(), 700);
+    }, wait);
+  };
+
+  if (document.readyState === "complete") {
+    hidePreloader();
+  } else {
+    window.addEventListener("load", hidePreloader);
+  }
+}
+
+
+/* ============================================================
    Flashlight effect — atualiza CSS custom properties --mouse-x e
    --mouse-y nos cards quando o mouse passa, alimentando o radial
    gradient que segue o cursor.
