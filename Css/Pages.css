@@ -20,7 +20,7 @@
     padding: var(--24);
     height: 32rem;
     border-radius: var(--mediumRadius);
-    box-shadow: 3px 3px 50px 8px rgba(0, 0, 0, 0.10);
+    box-shadow: var(--grayShadowLarge);
 
 }
 
@@ -67,12 +67,12 @@
 }
 
 .faqSectionCard{
-    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: var(--grayShadowSmall);
 }
 
 .footerCard {
     font-family: Helvetica, sans-serif;
-    background: var(--Gray-Linear, linear-gradient(127deg, var(--Gray, #333) 60.36%, #565656 101.43%));
+    background: var(--grayGradient);
     color: var(--white);
     display: flex;
     flex-direction: column;
@@ -113,14 +113,9 @@
     overflow: hidden;
     width: 100%;
     max-width: 320px;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--grayShadowLarge);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-    .professor-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
-    }
 
     /* ===== ÁREA DA FOTO ===== */
     .professor-photo {
@@ -302,7 +297,7 @@
     }
 
     .btn-primary {
-      background: var(--buttton-yellow, linear-gradient(90deg, var(--yellow) 0%, #FFCC47 100%));
+      background: var(--yellowGradient);
       color: var(--white);
       margin-bottom: 8px;
     }
@@ -331,11 +326,6 @@
       align-items: center;
       justify-content: center;
       gap: 5px;
-    }
-
-    .btn-secondary:hover {
-      background: rgba(128, 128, 128, 0.111);
-      border-color: var(--placeholderColor);
     }
 
     .btn-icon-only {

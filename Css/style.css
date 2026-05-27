@@ -4,11 +4,13 @@
 
     /* Cores */
     --yellow: #FEBC11;
+    --yellowSoft: #FFCC47;
     --yellowDark: #997000;
     --lightYellow: #FFFCF5;
 
-    --black: #191919;
     --gray: #333333;
+    --grayOpaque: #333333d5;
+    --grayMid: #565656;
     --secondaryTextGray: #333333a6;
     --placeholderColor: #00000026;
 
@@ -24,11 +26,16 @@
 
     /* Cor das Linhas */
     --lineGray: rgba(255, 255, 255, 0.15);
+    --darkLineGray: rgba(51, 51, 51, 0.05);
 
     /* Gradientes */
-    --grayGradient: linear-gradient(127deg, var(--Gray, #333) 60.36%, #565656 101.43%);
+    --grayGradient: linear-gradient(127deg, var(--gray) 60.36%, var(--grayMid) 101.43%);
+    --grayGradientOpacity: linear-gradient(127deg, var(--grayOpaque) 43.4%, var(--grayMid) 86.8%);
+    --yellowGradient: linear-gradient(90deg, var(--yellow) 0%, var(--yellowSoft) 100%);
     
-
+    /* Shadows */
+    --grayShadowLarge: 3px 3px 50px 8px rgba(0, 0, 0, 0.10);
+    --grayShadowSmall: 5px 5px 10px  rgba(0, 0, 0, 0.10);
 
 
     /* Container */
@@ -174,7 +181,7 @@ ul {
     font-weight: bold;
     letter-spacing: -0.48px;
     text-transform: uppercase;
-    background: var(--buttton-yellow, linear-gradient(90deg, var(--yellow) 0%, #FFCC47 100%));
+    background: var(--yellowGradient);
     box-shadow: 0 12px 20px 0 rgba(254, 188, 17, 0.20);
     border-radius: 4px;
     padding: var(--8) var(--32);
@@ -261,7 +268,7 @@ ul {
     max-width: 28rem;
     height: 100vh;
 
-    background: var(--Gray-Linear-Header, linear-gradient(127deg, var(--Gray, #333333d5) 43.4%, #565656 86.8%));
+    background: var(--grayGradientOpacity);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
 
@@ -339,7 +346,7 @@ ul {
   background-repeat: no-repeat; */
   height: 38rem;
   width: 100%;
-  background-color: rgb(85, 85, 85);
+  background-color: var(--gray);
   padding: var(--containerSuperiorMax) var(--containerLateralPadding) var(--containerSuperiorMin);
   display: flex;
   align-items: flex-end;
@@ -364,7 +371,7 @@ ul {
     margin-bottom: var(--8);
     padding: var(--4) var(--16);
     color: var(--yellow);
-    background: rgba(254, 188, 17, 0.12);
+    background: rgba(254, 188, 17, 0.15);
     border-radius: 999px;
     font-size: 1rem;
     font-weight: 700;
@@ -422,7 +429,7 @@ ul {
     display: block;
     width: 100%;
     height: 0.1rem;
-    background: rgba(51, 51, 51, 0.05);
+    background: var(--darkLineGray);
     max-width: var(--maxContent);
     margin: 0 auto;
 }
@@ -527,7 +534,7 @@ ul {
 
 .manifestSection{
     padding: 10rem var(--containerLateralPadding) 10rem;
-    background: var(--Gray-Linear, linear-gradient(127deg, var(--Gray, #333) 60.36%, #565656 101.43%));
+    background: var(--grayGradient);
     color: var(--white);
 }
 
@@ -546,7 +553,7 @@ ul {
 
 .benefitsSection {
     padding: var(--containerSuperiorMax) var(--containerLateralPadding) 0;
-    color: var(--Gray, #333);
+    color: var(--gray);
 }
 
 .benefitsSectionContainer {
@@ -777,7 +784,7 @@ details[open] .faqSectionSummary i {
     display: block;
     width: 100%;
     height: 0.1rem;
-    background: rgba(51, 51, 51, 0.05);
+    background: var(--darkLineGray);
     margin: 1rem 0 2rem;
 }
 
@@ -835,7 +842,7 @@ details[open] .faqContent p {
     flex-direction: column;
     gap: var(--32);
     padding: var(--32) var(--32);
-    box-shadow: 3px 3px 50px 8px rgba(0, 0, 0, 0.10);
+    box-shadow: var(--grayShadowLarge);
     border-radius: var(--16);
     background-color: var(--white);
     width: 100%;
@@ -903,7 +910,7 @@ details[open] .faqContent p {
 .pricingOldValue{
     font-size: 1.6rem;
     color: var(--placeholderColor);
-    text-decoration: line-through rgba(128, 128, 128, 0.102);
+    text-decoration: line-through var(--lineGray);
     font-weight: 400;
 
 }
@@ -1254,7 +1261,7 @@ details[open] .faqContent p {
 .scheduleSectionDays {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid var(--placeholderColor);
+    border-bottom: 1px solid var(--darkLineGray);
     margin-bottom: var(--16);
 }
 
@@ -1305,7 +1312,7 @@ details[open] .faqContent p {
 .scheduleRow:nth-child(even) {
   background:var(--lightYellow);
   color: var(--yellow);
-border: 0.05rem solid var(--yellow);
+  border: 0.05rem solid var(--yellow);
 
 }
 
@@ -1403,7 +1410,7 @@ border: 0.05rem solid var(--yellow);
 
   /* Seção História — lado a lado a partir do tablet */
   .historySection {
-    background: var(--Gray-Linear, linear-gradient(127deg, #333 60.36%, #565656 101.43%));
+    background: var(--grayGradient);
   }
 
   .historySectionInner {
@@ -1622,7 +1629,7 @@ border: 0.05rem solid var(--yellow);
 }
 
 .pricingCard:nth-child(1) {
-    box-shadow: 0 12px 20px 0 rgba(254, 188, 17, 0.203);
+    box-shadow: 0 12px 20px 0 rgba(254, 188, 17, 0.20);
     
 }
 
