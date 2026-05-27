@@ -147,7 +147,11 @@ if (openBtn && closeBtn && mobileMenu) {
         openBtn.focus(); // devolve o foco a quem abriu o menu
     });
 
-    document.addEventListener("click", (event) => {
+    // Click/touch fora do menu fecha. Usa pointerdown para responder
+    // antes do click — mais confiável em iOS Safari e Android Chrome,
+    // onde o evento `click` às vezes não dispara em elementos sem listener.
+    const handleOutsidePointer = (event) => {
+        if (!mobileMenu.classList.contains("active")) return;
 
         const clickedOutside =
             !mobileMenu.contains(event.target) &&
@@ -156,8 +160,20 @@ if (openBtn && closeBtn && mobileMenu) {
         if (clickedOutside) {
             closeMenu();
         }
+    };
+    document.addEventListener("pointerdown", handleOutsidePointer);
+    // Fallback para navegadores sem Pointer Events (raros em 2026, mas seguro)
+    document.addEventListener("click", handleOutsidePointer);
 
-    });
+    // Scroll na página fecha o menu (padrão UX comum em menus mobile)
+    let lastScrollY = window.scrollY;
+    window.addEventListener("scroll", () => {
+        if (!mobileMenu.classList.contains("active")) return;
+        // Ignora micro-movimentos (< 5px) que podem vir do iOS rubber-band
+        if (Math.abs(window.scrollY - lastScrollY) < 5) return;
+        closeMenu();
+        lastScrollY = window.scrollY;
+    }, { passive: true });
 
     document.addEventListener("keydown", (event) => {
         if (event.key === "Escape" && mobileMenu.classList.contains("active")) {
