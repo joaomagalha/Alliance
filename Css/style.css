@@ -1686,7 +1686,8 @@ details[open] .faqContent p {
 
 @keyframes animationIn {
     0%   { opacity: 0; transform: translateY(2rem); filter: blur(0.5rem); }
-    100% { opacity: 1; transform: translateY(0);    filter: blur(0); }
+    99%  { opacity: 1; transform: translateY(0);    filter: blur(0); }
+    100% { opacity: 1; transform: none;             filter: none; }
 }
 
 .animate-on-scroll {
