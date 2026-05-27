@@ -217,7 +217,7 @@
     /* Indicador de faixa — círculo da cor da faixa com tarja preta no meio */
     .belt-icon {
       display: inline-block;
-      width: 5rem;
+      width: 4rem;
       height: 1rem;
       background: var(--belt-color);
       position: relative;
@@ -231,7 +231,7 @@
       left: 50%;
       right: 0;
       height: 1rem;
-      width: 1.5rem;
+      width: 1.4rem;
       background: var(--belt-stripe);
       transform: translateY(-50%);
     }
