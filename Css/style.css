@@ -1642,12 +1642,12 @@ details[open] .faqContent p {
    ================================= */
 
 @keyframes animationIn {
-    0%   { opacity: 0; transform: translateY(3rem); filter: blur(1rem); }
+    0%   { opacity: 0; transform: translateY(2rem); filter: blur(0.5rem); }
     100% { opacity: 1; transform: translateY(0);    filter: blur(0); }
 }
 
 .animate-on-scroll {
-    animation: animationIn 0.8s ease-out both;
+    animation: animationIn 0.6s ease-out both;
     animation-play-state: paused;
 }
 
