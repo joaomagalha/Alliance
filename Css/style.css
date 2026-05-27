@@ -383,10 +383,6 @@ ul {
 }
 
 .heroSection{
-  /* background-image: url(/Assets/Imagens/imagemCapa/alunoProfessorSatu.png);
-  background-size: cover;
-  background-position: center bottom;
-  background-repeat: no-repeat; */
   height: 38rem;
   width: 100%;
   background-color: var(--gray);
