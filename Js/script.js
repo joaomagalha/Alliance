@@ -225,6 +225,10 @@ if (contactForm) {
     const submitBtn  = contactForm.querySelector("button.btn");
     const timeLabels = { morning: "Manhã", afternoon: "Tarde", evening: "Noite" };
 
+    // Bloqueia escolha de datas passadas (mín = hoje)
+    const dateInput = contactForm.querySelector('input[type="date"]');
+    if (dateInput) dateInput.min = new Date().toISOString().split("T")[0];
+
     contactForm.addEventListener("submit", (e) => {
         e.preventDefault();
 
