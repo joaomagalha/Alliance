@@ -211,3 +211,57 @@ document.querySelectorAll(".professor-card").forEach((card) => {
     });
 });
 
+
+/* ============================================================
+   Form → WhatsApp da Alliance. HTML5 required já bloqueia envio
+   sem os campos obrigatórios. Mensagem (textarea) é opcional.
+   Após enviar: botão fica verde com check e reseta em 3.5s.
+   ============================================================ */
+const contactForm = document.querySelector(".form");
+if (contactForm) {
+    const submitBtn = contactForm.querySelector("button.btn");
+    const timeLabels = { morning: "Manhã", afternoon: "Tarde", evening: "Noite" };
+
+    contactForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const data = new FormData(contactForm);
+        const name    = (data.get("name")    || "").trim();
+        const email   = (data.get("email")   || "").trim();
+        const phone   = (data.get("phone")   || "").trim();
+        const date    = data.get("date");
+        const time    = timeLabels[data.get("time")] || data.get("time");
+        const message = (data.get("message") || "").trim();
+
+        const formattedDate = date
+            ? new Date(`${date}T00:00:00`).toLocaleDateString("pt-BR")
+            : "";
+
+        const lines = [
+            "Olá! Gostaria de agendar minha aula experimental.",
+            "",
+            `*Nome:* ${name}`,
+            `*Email:* ${email}`,
+            `*Telefone:* ${phone}`,
+            `*Data:* ${formattedDate}`,
+            `*Período:* ${time}`,
+        ];
+        if (message) lines.push("", `*Observação:* ${message}`);
+
+        const url = `https://wa.me/${ALLIANCE_PHONE}?text=${encodeURIComponent(lines.join("\n"))}`;
+        window.open(url, "_blank", "noopener,noreferrer");
+
+        const originalHTML = submitBtn.innerHTML;
+        submitBtn.classList.add("btn--success");
+        submitBtn.innerHTML = '<i class="fa-solid fa-check" aria-hidden="true"></i> Mensagem enviada!';
+        submitBtn.disabled = true;
+
+        setTimeout(() => {
+            submitBtn.classList.remove("btn--success");
+            submitBtn.innerHTML = originalHTML;
+            submitBtn.disabled = false;
+            contactForm.reset();
+        }, 3500);
+    });
+}
+
