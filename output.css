@@ -664,27 +664,28 @@ ul {
     letter-spacing: 0.15rem;
   }
 }
-.heroSection--withImage .animate-on-scroll {
+.heroSection.heroSection--withImage .animate-on-scroll {
   animation-duration: 0.45s;
   animation-timing-function: ease-out;
 }
-.heroSection--withImage .delay-1 {
+.heroSection.heroSection--withImage .delay-1 {
   animation-delay: 0s;
 }
-.heroSection--withImage .delay-2 {
+.heroSection.heroSection--withImage .delay-2 {
   animation-delay: 0.08s;
 }
-.heroSection--withImage .delay-3 {
+.heroSection.heroSection--withImage .delay-3 {
   animation-delay: 0.16s;
 }
-.heroSection--withImage .delay-4 {
+.heroSection.heroSection--withImage .delay-4 {
   animation-delay: 0.24s;
 }
-.heroSection--withImage .delay-5 {
+.heroSection.heroSection--withImage .delay-5 {
   animation-delay: 0.32s;
 }
-.heroSection--withImage h1.animate-on-scroll {
+.heroSection.heroSection--withImage h1.animate-on-scroll {
   animation-name: animationIn;
+  animation-duration: 0.45s;
 }
 .heroBackgroundVideo {
   position: absolute;
