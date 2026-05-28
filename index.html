@@ -56,6 +56,14 @@
     }
     </script>
     <script src="Js/script.js" defer></script>
+    <script>
+        /* Se o usuário chegou aqui via setinha "voltar" das páginas internas,
+           pula o preloader pra não interromper a navegação. */
+        if (sessionStorage.getItem("alliance:skip-preloader") === "1") {
+            sessionStorage.removeItem("alliance:skip-preloader");
+            document.documentElement.classList.add("skip-preloader");
+        }
+    </script>
 </head>
 <body>
 

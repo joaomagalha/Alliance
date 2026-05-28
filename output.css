@@ -1750,6 +1750,11 @@ details[open] .faqContent p {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
+  .gymImageSectionContainer > picture:nth-child(3) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc((100% - var(--32)) / 2);
+  }
   .historySection {
     background: var(--grayGradient);
   }
