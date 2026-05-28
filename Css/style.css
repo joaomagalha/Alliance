@@ -706,10 +706,10 @@ ul {
 
 /* Modificadores de enquadramento por imagem */
 .gymImageSectionImg--up {
-    object-position: center 75%;
+    object-position: center 95%;
 }
 .gymImageSectionImg--zoom {
-    transform: scale(1.12);
+    transform: scale(1.25);
     transform-origin: center;
 }
 
