@@ -1330,10 +1330,13 @@ details[open] .faqContent p {
     display: contents;
 }
 
-/* toda linha (cabeçalho e dados) usa o grid de 3 colunas */
+/* toda linha (cabeçalho e dados) usa o grid de 3 colunas
+   align-items: center alinha Horário e Dias ao meio da célula
+   da Aula, que pode ter 2 linhas (nome + badge). */
 .scheduleSectionTimes tr {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    align-items: center;
 }
 
 .scheduleSectionTimes td,
