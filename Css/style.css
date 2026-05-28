@@ -708,6 +708,9 @@ ul {
 .gymImageSectionImg--up {
     object-position: center 20%;
 }
+.gymImageSectionImg--down {
+    object-position: center bottom;
+}
 .gymImageSectionImg--zoom {
     transform: scale(1.25);
     transform-origin: center;
