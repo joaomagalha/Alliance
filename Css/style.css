@@ -558,6 +558,17 @@ ul {
 .classCard{
     position: relative;
     height: 26rem;
+    overflow: hidden;
+    border-radius: var(--mediumRadius);
+}
+
+/* Modificadores de enquadramento da imagem do card */
+.classCardImg--top {
+    object-position: center top;
+}
+.classCardImg--zoom {
+    transform: scale(1.15);
+    transform-origin: center;
 }
 
 .overlay {
