@@ -836,7 +836,26 @@ ul {
 }
 
 .teacherSectionBtn{
+    display: inline-flex;
+    margin: var(--40) auto 0;
+    padding: var(--16) var(--40);
     color: var(--white);
+    font-size: 1.4rem;
+    box-shadow: 0 1.6rem 3.2rem rgba(254, 188, 17, 0.25);
+}
+
+.teacherSectionBtn i {
+    transition: transform 0.3s ease;
+}
+
+.teacherSectionBtn:hover i {
+    transform: translateX(0.4rem);
+}
+
+/* Garante que o botão fica centralizado em relação à imagem (mesma max-width) */
+.teachersSection > .teacherSectionBtn {
+    display: flex;
+    width: fit-content;
 }
 
 /* Wrap da imagem da seção de professores — segura a foto + overlays
