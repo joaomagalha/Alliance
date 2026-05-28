@@ -2093,6 +2093,9 @@ details[open] .faqContent p {
   justify-content: center;
   transition: opacity 0.6s ease, visibility 0.6s ease;
 }
+.skip-preloader .preloader {
+  display: none !important;
+}
 .preloader.hidden {
   opacity: 0;
   visibility: hidden;

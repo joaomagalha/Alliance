@@ -10,26 +10,31 @@
    ============================================================ */
 const preloader = document.getElementById("preloader");
 if (preloader) {
-  const MIN_DISPLAY = 1600;
-  const startedAt = performance.now();
-  // Trava o scroll enquanto o preloader está visível
-  document.body.style.overflow = "hidden";
-
-  const hidePreloader = () => {
-    const elapsed = performance.now() - startedAt;
-    const wait = Math.max(0, MIN_DISPLAY - elapsed);
-    setTimeout(() => {
-      preloader.classList.add("hidden");
-      document.body.style.overflow = "";
-      // Remove do DOM depois do fade (acessibilidade)
-      setTimeout(() => preloader.remove(), 700);
-    }, wait);
-  };
-
-  if (document.readyState === "complete") {
-    hidePreloader();
+  if (document.documentElement.classList.contains("skip-preloader")) {
+    // Veio da setinha "voltar" — remove direto, sem animação nem scroll lock
+    preloader.remove();
   } else {
-    window.addEventListener("load", hidePreloader);
+    const MIN_DISPLAY = 1600;
+    const startedAt = performance.now();
+    // Trava o scroll enquanto o preloader está visível
+    document.body.style.overflow = "hidden";
+
+    const hidePreloader = () => {
+      const elapsed = performance.now() - startedAt;
+      const wait = Math.max(0, MIN_DISPLAY - elapsed);
+      setTimeout(() => {
+        preloader.classList.add("hidden");
+        document.body.style.overflow = "";
+        // Remove do DOM depois do fade (acessibilidade)
+        setTimeout(() => preloader.remove(), 700);
+      }, wait);
+    };
+
+    if (document.readyState === "complete") {
+      hidePreloader();
+    } else {
+      window.addEventListener("load", hidePreloader);
+    }
   }
 }
 
