@@ -1440,7 +1440,8 @@ details[open] .faqContent p {
 
 .form .btn {
     color: var(--white);
-    display: block;
+    display: flex;
+    width: fit-content;
     margin: var(--40) auto 0;
 }
 
