@@ -1503,12 +1503,6 @@ details[open] .faqContent p {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
-  .gymImageSectionContainer > picture:last-child {
-    grid-column: 1 / -1;
-  }
-  .gymImageSectionContainer > picture:last-child .gymImageSectionImg {
-    aspect-ratio: 2 / 1;
-  }
   .historySection {
     background: var(--grayGradient);
   }
