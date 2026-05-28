@@ -872,10 +872,10 @@ ul {
   border-radius: var(--16);
 }
 .gymImageSectionImg--up {
-  object-position: center 75%;
+  object-position: center 95%;
 }
 .gymImageSectionImg--zoom {
-  transform: scale(1.12);
+  transform: scale(1.25);
   transform-origin: center;
 }
 .gymImageSectionContainer > picture:nth-child(1) .gymImageSectionImg {
