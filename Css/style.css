@@ -1368,6 +1368,37 @@ details[open] .faqContent p {
 
 }
 
+/* Badge inline com idade (Kids) ou nível de faixa (Adultos) — guia rápido
+   pro usuário entender pra quem é a aula sem precisar ler outro lugar. */
+.scheduleBadge {
+    display: inline-block;
+    margin-left: 0.4rem;
+    padding: 0.1rem 0.6rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--gray);
+    background: var(--white);
+    border: 0.05rem solid var(--yellow);
+    border-radius: 99rem;
+    letter-spacing: 0;
+    white-space: nowrap;
+    vertical-align: middle;
+    line-height: 1.7;
+    text-transform: none;
+}
+
+/* Mobile: badge desce pra baixo do nome da turma — coluna é estreita demais
+   pra caber inline sem quebrar feio. */
+@media (max-width: 600px) {
+    .scheduleBadge {
+        display: block;
+        margin: 0.3rem auto 0;
+        width: fit-content;
+        font-size: 0.78rem;
+        padding: 0.05rem 0.5rem;
+    }
+}
+
 .scheduleTable {
   display: none;
   max-height: 40rem;
