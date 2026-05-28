@@ -813,7 +813,7 @@ ul {
 }
 .gurgelQuoteAttribution {
   position: absolute;
-  top: var(--containerSuperiorMin);
+  top: calc(var(--containerSuperiorMax) + var(--16));
   left: var(--containerLateralPadding);
   margin: 0;
   color: var(--secondaryTextGray);
