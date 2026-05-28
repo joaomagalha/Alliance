@@ -406,7 +406,7 @@ ul {
         ),
         var(--heroBgImage);
     background-size: cover;
-    background-position: center 30%;
+    background-position: var(--heroBgPos, center 30%);
     background-repeat: no-repeat;
     color: var(--white);
 }
