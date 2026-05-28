@@ -897,7 +897,7 @@ ul {
   display: block;
   width: 100%;
   max-width: var(--maxContent);
-  height: clamp(26rem, 38vw, 52rem);
+  height: clamp(26rem, 45vw, 65rem);
   object-fit: cover;
   object-position: center 35%;
   border-radius: var(--mediumRadius);

@@ -1763,7 +1763,7 @@ details[open] .faqContent p {
 
   /* Imagem da equipe fica menos esticada — ganha altura proporcional */
   .teacherSectionImg {
-    height: 70rem;
+    height: 85rem;
   }
 }
 
