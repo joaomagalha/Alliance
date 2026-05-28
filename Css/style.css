@@ -12,7 +12,7 @@
     --grayOpaque: #333333d5;
     --grayMid: #565656;
     --secondaryTextGray: #333333a6;
-    --placeholderColor: #00000026;
+    --placeholderColor: #0000004e;
 
     --white: #FFFFFF;
     --whiteOpacity: #ffffffbf;
@@ -613,12 +613,32 @@ ul {
 }
 
 .gurgelQuoteSection p{
-    margin: var(--32) 0;
+    margin: var(--32) 0 var(--16);
     font-weight: 300;
     color: var(--secondaryTextGray);
     line-height: var(--largeLineHeight);
     font-style: italic;
     text-align: center;
+}
+
+/* Assinatura discreta do Gurgel embaixo de cada quote — amarelo,
+   uppercase com letter-spacing largo (estilo placa de gravação). */
+.gurgelQuoteAttribution {
+    display: block;
+    margin: 0 auto var(--32);
+    color: var(--yellowDark);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+@media (min-width: 1024px) {
+    .gurgelQuoteAttribution {
+        font-size: 1.05rem;
+    }
 }
 
 .historySectionText{
