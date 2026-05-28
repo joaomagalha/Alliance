@@ -222,9 +222,9 @@ document.querySelectorAll(".professor-card").forEach((card) => {
    ============================================================ */
 const contactForm = document.querySelector(".form");
 if (contactForm) {
-    // ⚠️ Substitua YOUR_FORM_ID pelo endpoint da sua conta Formspree
-    // (https://formspree.io → New Form → copie o URL do POST)
-    const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+    // ⚠️ Substitua YOUR_ACCESS_KEY pela sua access key do Web3Forms
+    // (https://web3forms.com → Dashboard → copie a Access Key)
+    const WEB3FORMS_KEY = "YOUR_ACCESS_KEY";
 
     const submitBtn  = contactForm.querySelector("button.btn");
     const timeLabels = { morning: "Manhã", afternoon: "Tarde", evening: "Noite" };
@@ -251,21 +251,24 @@ if (contactForm) {
             data.set("date", formatted);
         }
 
-        // Linha de assunto bonita no email
-        data.set("_subject", `Nova aula experimental — ${data.get("name") || "(sem nome)"}`);
+        // Campos do Web3Forms
+        data.set("access_key", WEB3FORMS_KEY);
+        data.set("subject", `Nova aula experimental — ${data.get("name") || "(sem nome)"}`);
+        data.set("from_name", "Site Alliance Moinho");
 
         const originalHTML = submitBtn.innerHTML;
         submitBtn.disabled = true;
         setState("btn--sending", '<i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i> Enviando...');
 
         try {
-            const response = await fetch(FORMSPREE_ENDPOINT, {
+            const response = await fetch("https://api.web3forms.com/submit", {
                 method: "POST",
                 body: data,
                 headers: { Accept: "application/json" },
             });
 
-            if (!response.ok) throw new Error("submit-failed");
+            const result = await response.json();
+            if (!response.ok || !result.success) throw new Error(result.message || "submit-failed");
 
             setState("btn--success", '<i class="fa-solid fa-check" aria-hidden="true"></i> Mensagem enviada!');
             contactForm.reset();
