@@ -782,7 +782,7 @@ ul {
   text-align: center;
 }
 .heroStat:first-child {
-  padding-left: var(--8);
+  padding-left: 0;
 }
 .heroStat:not(:last-child) {
   border-right: 0.1rem solid var(--lineGray);

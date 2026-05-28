@@ -598,6 +598,7 @@ ul {
 
 .heroStat:first-child{
     padding-left: 0;
+    text-align: left;
 }
 
 .heroStat:not(:last-child){        
