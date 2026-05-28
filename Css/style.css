@@ -230,6 +230,24 @@ ul {
     .btn:hover { transform: none; }
 }
 
+/* Estado de sucesso do botão (form enviado) — verde + spring pulse */
+.btn.btn--success {
+    background: linear-gradient(90deg, var(--green) 0%, var(--greenPulse) 100%);
+    box-shadow: 0 0.8rem 2rem rgba(0, 200, 83, 0.35);
+    color: var(--white);
+    pointer-events: none;
+    animation: btnSuccessPulse 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.btn.btn--success::before { display: none; }
+.btn.btn--success:hover  { transform: none; }
+
+@keyframes btnSuccessPulse {
+    0%   { transform: scale(0.96); }
+    50%  { transform: scale(1.04); }
+    100% { transform: scale(1); }
+}
+
 .textYellow{
     color: var(--yellow);
 }
