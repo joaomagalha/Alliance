@@ -2065,32 +2065,6 @@ details[open] .faqContent p {
 .heroSection .delay-5 {
   animation-delay: 2.9s;
 }
-.heroSection h1 {
-  --heroTitleSpacing: -0.084rem;
-}
-@media (min-width: 1024px) {
-  .heroSection h1 {
-    --heroTitleSpacing: -0.12rem;
-  }
-}
-.heroSection h1.animate-on-scroll {
-  animation-name: heroTitleCinematic;
-  animation-duration: 1.8s;
-}
-@keyframes heroTitleCinematic {
-  0% {
-    opacity: 0;
-    transform: translateY(2rem);
-    filter: blur(0.8rem);
-    letter-spacing: 0.5rem;
-  }
-  100% {
-    opacity: 1;
-    transform: none;
-    filter: none;
-    letter-spacing: var(--heroTitleSpacing);
-  }
-}
 .heroBadge {
   backdrop-filter: blur(1rem) saturate(1.4);
   -webkit-backdrop-filter: blur(1rem) saturate(1.4);
