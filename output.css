@@ -1775,6 +1775,7 @@ details[open] .faqContent p {
   }
   .teacherSectionImg {
     height: 85rem;
+    object-position: center;
   }
 }
 @media (min-width: 2000px) {
@@ -1786,6 +1787,7 @@ details[open] .faqContent p {
   }
   .teacherSectionImg {
     height: 100rem;
+    object-position: center;
   }
 }
 @keyframes animationIn {
