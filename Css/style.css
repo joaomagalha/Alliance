@@ -1871,7 +1871,7 @@ details[open] .faqContent p {
 
   .teacherSectionImg {
     height: 100rem;
-    object-position: center;
+    object-position: center 20%;
   }
 }
 

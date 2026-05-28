@@ -1775,7 +1775,7 @@ details[open] .faqContent p {
   }
   .teacherSectionImg {
     height: 85rem;
-    object-position: center;
+    object-position: center 20%;
   }
 }
 @media (min-width: 2000px) {
