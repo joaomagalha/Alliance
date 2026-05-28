@@ -222,69 +222,49 @@ document.querySelectorAll(".professor-card").forEach((card) => {
    ============================================================ */
 const contactForm = document.querySelector(".form");
 if (contactForm) {
-    // ⚠️ Substitua YOUR_ACCESS_KEY pela sua access key do Web3Forms
-    // (https://web3forms.com → Dashboard → copie a Access Key)
-    const WEB3FORMS_KEY = "YOUR_ACCESS_KEY";
-
     const submitBtn  = contactForm.querySelector("button.btn");
     const timeLabels = { morning: "Manhã", afternoon: "Tarde", evening: "Noite" };
 
-    const setState = (cls, html) => {
-        submitBtn.classList.remove("btn--sending", "btn--success", "btn--error");
-        if (cls) submitBtn.classList.add(cls);
-        submitBtn.innerHTML = html;
-    };
-
-    contactForm.addEventListener("submit", async (e) => {
+    contactForm.addEventListener("submit", (e) => {
         e.preventDefault();
 
         const data = new FormData(contactForm);
+        const name    = (data.get("name")    || "").trim();
+        const email   = (data.get("email")   || "").trim();
+        const phone   = (data.get("phone")   || "").trim();
+        const date    = data.get("date");
+        const time    = timeLabels[data.get("time")] || data.get("time");
+        const message = (data.get("message") || "").trim();
 
-        // Traduz o valor do rádio pra rótulo legível antes de mandar
-        const rawTime = data.get("time");
-        if (rawTime && timeLabels[rawTime]) data.set("time", timeLabels[rawTime]);
+        const formattedDate = date
+            ? new Date(`${date}T00:00:00`).toLocaleDateString("pt-BR")
+            : "";
 
-        // Formata a data como dd/mm/aaaa
-        const rawDate = data.get("date");
-        if (rawDate) {
-            const formatted = new Date(`${rawDate}T00:00:00`).toLocaleDateString("pt-BR");
-            data.set("date", formatted);
-        }
+        const lines = [
+            "Olá! Gostaria de agendar minha aula experimental.",
+            "",
+            `*Nome:* ${name}`,
+            `*Email:* ${email}`,
+            `*Telefone:* ${phone}`,
+            `*Data:* ${formattedDate}`,
+            `*Período:* ${time}`,
+        ];
+        if (message) lines.push("", `*Observação:* ${message}`);
 
-        // Campos do Web3Forms
-        data.set("access_key", WEB3FORMS_KEY);
-        data.set("subject", `Nova aula experimental — ${data.get("name") || "(sem nome)"}`);
-        data.set("from_name", "Site Alliance Moinho");
+        const url = `https://wa.me/${ALLIANCE_PHONE}?text=${encodeURIComponent(lines.join("\n"))}`;
+        window.open(url, "_blank", "noopener,noreferrer");
 
         const originalHTML = submitBtn.innerHTML;
+        submitBtn.classList.add("btn--success");
+        submitBtn.innerHTML = '<i class="fa-solid fa-check" aria-hidden="true"></i> Mensagem enviada!';
         submitBtn.disabled = true;
-        setState("btn--sending", '<i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i> Enviando...');
 
-        try {
-            const response = await fetch("https://api.web3forms.com/submit", {
-                method: "POST",
-                body: data,
-                headers: { Accept: "application/json" },
-            });
-
-            const result = await response.json();
-            if (!response.ok || !result.success) throw new Error(result.message || "submit-failed");
-
-            setState("btn--success", '<i class="fa-solid fa-check" aria-hidden="true"></i> Mensagem enviada!');
+        setTimeout(() => {
+            submitBtn.classList.remove("btn--success");
+            submitBtn.innerHTML = originalHTML;
+            submitBtn.disabled = false;
             contactForm.reset();
-
-            setTimeout(() => {
-                setState(null, originalHTML);
-                submitBtn.disabled = false;
-            }, 4000);
-        } catch (err) {
-            setState("btn--error", '<i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Erro — tente de novo');
-
-            setTimeout(() => {
-                setState(null, originalHTML);
-                submitBtn.disabled = false;
-            }, 4000);
-        }
+        }, 3500);
     });
 }
 
