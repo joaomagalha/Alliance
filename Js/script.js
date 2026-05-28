@@ -203,6 +203,7 @@ if (headerPageMenu) {
             const ref = document.referrer;
             if (ref && new URL(ref).origin === location.origin && window.history.length > 1) {
                 e.preventDefault();
+                sessionStorage.setItem("alliance:skip-preloader", "1");
                 history.back();
             }
         } catch {
