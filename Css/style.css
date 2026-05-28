@@ -467,18 +467,22 @@ ul {
 }
 
 /* Inner pages não têm preloader — entra rápido, sem flourish.
-   Stagger curto pra dar fluidez sem custar tempo. */
-.heroSection--withImage .animate-on-scroll {
+   Stagger curto pra dar fluidez sem custar tempo.
+   Especificidade duplicada (.heroSection.heroSection--withImage) pra vencer
+   o bloco "Hero — cinematic entrance" que aparece mais abaixo no arquivo
+   e tem mesma especificidade quando escrito como `.heroSection`. */
+.heroSection.heroSection--withImage .animate-on-scroll {
     animation-duration: 0.45s;
     animation-timing-function: ease-out;
 }
-.heroSection--withImage .delay-1 { animation-delay: 0s; }
-.heroSection--withImage .delay-2 { animation-delay: 0.08s; }
-.heroSection--withImage .delay-3 { animation-delay: 0.16s; }
-.heroSection--withImage .delay-4 { animation-delay: 0.24s; }
-.heroSection--withImage .delay-5 { animation-delay: 0.32s; }
-.heroSection--withImage h1.animate-on-scroll {
+.heroSection.heroSection--withImage .delay-1 { animation-delay: 0s; }
+.heroSection.heroSection--withImage .delay-2 { animation-delay: 0.08s; }
+.heroSection.heroSection--withImage .delay-3 { animation-delay: 0.16s; }
+.heroSection.heroSection--withImage .delay-4 { animation-delay: 0.24s; }
+.heroSection.heroSection--withImage .delay-5 { animation-delay: 0.32s; }
+.heroSection.heroSection--withImage h1.animate-on-scroll {
     animation-name: animationIn;
+    animation-duration: 0.45s;
 }
 
 /* Vídeo de background do hero — cobre toda a área atrás do conteúdo */
