@@ -801,7 +801,7 @@ ul {
   margin: 0 auto;
 }
 .gurgelQuoteSection p {
-  margin: var(--32) 0 var(--16);
+  margin: var(--32) 0 var(--4);
   font-weight: 300;
   color: var(--secondaryTextGray);
   line-height: var(--largeLineHeight);
@@ -811,18 +811,12 @@ ul {
 .gurgelQuoteAttribution {
   display: block;
   margin: 0 auto var(--32);
-  color: var(--yellowDark);
+  color: var(--secondaryTextGray);
   font-style: normal;
-  font-weight: 700;
-  font-size: 0.95rem;
-  letter-spacing: 0.2rem;
-  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1rem;
   text-align: center;
-}
-@media (min-width: 1024px) {
-  .gurgelQuoteAttribution {
-    font-size: 1.05rem;
-  }
+  opacity: 0.7;
 }
 .historySectionText {
   padding: 0 var(--containerLateralPadding) var(--containerSuperiorMin);

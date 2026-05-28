@@ -612,8 +612,12 @@ ul {
     margin: 0 auto;
 }
 
+.gurgelQuoteSection {
+    position: relative;
+}
+
 .gurgelQuoteSection p{
-    margin: var(--32) 0 var(--4);
+    margin: var(--32) 0;
     font-weight: 300;
     color: var(--secondaryTextGray);
     line-height: var(--largeLineHeight);
@@ -621,15 +625,16 @@ ul {
     text-align: center;
 }
 
-/* Assinatura clean — cinza claro, normal weight, sem caixa alta */
+/* Assinatura ancorada no canto superior esquerdo da seção */
 .gurgelQuoteAttribution {
-    display: block;
-    margin: 0 auto var(--32);
+    position: absolute;
+    top: var(--containerSuperiorMin);
+    left: var(--containerLateralPadding);
+    margin: 0;
     color: var(--secondaryTextGray);
     font-style: normal;
     font-weight: 400;
     font-size: 1rem;
-    text-align: center;
     opacity: 0.7;
 }
 
