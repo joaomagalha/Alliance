@@ -1373,8 +1373,8 @@ details[open] .faqContent p {
 .scheduleBadge {
     display: inline-block;
     margin-left: 0.4rem;
-    padding: 0.1rem 0.6rem;
-    font-size: 0.85rem;
+    padding: 0.15rem 0.7rem;
+    font-size: 1rem;
     font-weight: 600;
     color: var(--gray);
     background: var(--white);
@@ -1383,7 +1383,7 @@ details[open] .faqContent p {
     letter-spacing: 0;
     white-space: nowrap;
     vertical-align: middle;
-    line-height: 1.7;
+    line-height: 1.6;
     text-transform: none;
 }
 
@@ -1392,10 +1392,18 @@ details[open] .faqContent p {
 @media (max-width: 600px) {
     .scheduleBadge {
         display: block;
-        margin: 0.3rem auto 0;
+        margin: 0.4rem auto 0;
         width: fit-content;
-        font-size: 0.78rem;
-        padding: 0.05rem 0.5rem;
+        font-size: 0.95rem;
+        padding: 0.1rem 0.6rem;
+    }
+}
+
+/* Desktop ganha um pouco mais de respiro — combina com o aumento de fonte
+   dos tds (1.3rem) nesse breakpoint. */
+@media (min-width: 1024px) {
+    .scheduleBadge {
+        font-size: 1.1rem;
     }
 }
 
