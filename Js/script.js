@@ -213,55 +213,75 @@ document.querySelectorAll(".professor-card").forEach((card) => {
 
 
 /* ============================================================
-   Form → WhatsApp da Alliance. HTML5 required já bloqueia envio
-   sem os campos obrigatórios. Mensagem (textarea) é opcional.
-   Após enviar: botão fica verde com check e reseta em 3.5s.
+   Form → Formspree (envia email pra alliancemoinho@gmail.com).
+   HTML5 required já bloqueia envio sem campos obrigatórios.
+   Mensagem (textarea) é opcional. Estados visuais:
+     - Enviando: spinner azul/cinza
+     - Sucesso:  verde com check (volta após 4s)
+     - Erro:     vermelho com aviso (volta após 4s)
    ============================================================ */
 const contactForm = document.querySelector(".form");
 if (contactForm) {
-    const submitBtn = contactForm.querySelector("button.btn");
+    // ⚠️ Substitua YOUR_FORM_ID pelo endpoint da sua conta Formspree
+    // (https://formspree.io → New Form → copie o URL do POST)
+    const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+
+    const submitBtn  = contactForm.querySelector("button.btn");
     const timeLabels = { morning: "Manhã", afternoon: "Tarde", evening: "Noite" };
 
-    contactForm.addEventListener("submit", (e) => {
+    const setState = (cls, html) => {
+        submitBtn.classList.remove("btn--sending", "btn--success", "btn--error");
+        if (cls) submitBtn.classList.add(cls);
+        submitBtn.innerHTML = html;
+    };
+
+    contactForm.addEventListener("submit", async (e) => {
         e.preventDefault();
 
         const data = new FormData(contactForm);
-        const name    = (data.get("name")    || "").trim();
-        const email   = (data.get("email")   || "").trim();
-        const phone   = (data.get("phone")   || "").trim();
-        const date    = data.get("date");
-        const time    = timeLabels[data.get("time")] || data.get("time");
-        const message = (data.get("message") || "").trim();
 
-        const formattedDate = date
-            ? new Date(`${date}T00:00:00`).toLocaleDateString("pt-BR")
-            : "";
+        // Traduz o valor do rádio pra rótulo legível antes de mandar
+        const rawTime = data.get("time");
+        if (rawTime && timeLabels[rawTime]) data.set("time", timeLabels[rawTime]);
 
-        const lines = [
-            "Olá! Gostaria de agendar minha aula experimental.",
-            "",
-            `*Nome:* ${name}`,
-            `*Email:* ${email}`,
-            `*Telefone:* ${phone}`,
-            `*Data:* ${formattedDate}`,
-            `*Período:* ${time}`,
-        ];
-        if (message) lines.push("", `*Observação:* ${message}`);
+        // Formata a data como dd/mm/aaaa
+        const rawDate = data.get("date");
+        if (rawDate) {
+            const formatted = new Date(`${rawDate}T00:00:00`).toLocaleDateString("pt-BR");
+            data.set("date", formatted);
+        }
 
-        const url = `https://wa.me/${ALLIANCE_PHONE}?text=${encodeURIComponent(lines.join("\n"))}`;
-        window.open(url, "_blank", "noopener,noreferrer");
+        // Linha de assunto bonita no email
+        data.set("_subject", `Nova aula experimental — ${data.get("name") || "(sem nome)"}`);
 
         const originalHTML = submitBtn.innerHTML;
-        submitBtn.classList.add("btn--success");
-        submitBtn.innerHTML = '<i class="fa-solid fa-check" aria-hidden="true"></i> Mensagem enviada!';
         submitBtn.disabled = true;
+        setState("btn--sending", '<i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i> Enviando...');
 
-        setTimeout(() => {
-            submitBtn.classList.remove("btn--success");
-            submitBtn.innerHTML = originalHTML;
-            submitBtn.disabled = false;
+        try {
+            const response = await fetch(FORMSPREE_ENDPOINT, {
+                method: "POST",
+                body: data,
+                headers: { Accept: "application/json" },
+            });
+
+            if (!response.ok) throw new Error("submit-failed");
+
+            setState("btn--success", '<i class="fa-solid fa-check" aria-hidden="true"></i> Mensagem enviada!');
             contactForm.reset();
-        }, 3500);
+
+            setTimeout(() => {
+                setState(null, originalHTML);
+                submitBtn.disabled = false;
+            }, 4000);
+        } catch (err) {
+            setState("btn--error", '<i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i> Erro — tente de novo');
+
+            setTimeout(() => {
+                setState(null, originalHTML);
+                submitBtn.disabled = false;
+            }, 4000);
+        }
     });
 }
 
