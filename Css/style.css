@@ -1773,10 +1773,17 @@ details[open] .faqContent p {
     align-items: start;
   }
 
-  /* Gym — grid 2x2 com todas as imagens no mesmo formato quadrado */
+  /* Gym — grid 2 colunas. Com 3 fotos: 2 em cima + 3ª centralizada
+     embaixo, mesmo tamanho dos outros 2 cards. */
   .gymImageSectionContainer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gymImageSectionContainer > picture:nth-child(3) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc((100% - var(--32)) / 2);
   }
 
   /* Seção História — lado a lado a partir do tablet */
