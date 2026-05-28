@@ -624,7 +624,17 @@ ul {
 .mobileMenuSection a {
   color: var(--whiteOpacity);
   text-decoration: none;
-  transition: 0.3s;
+  transition: color 0.2s ease;
+}
+.mobileMenuSection a:hover {
+  color: var(--white);
+}
+.footerNavigationLinks a, .footerScheduleLinks a, .footerContact a {
+  color: var(--whiteOpacity);
+  transition: color 0.2s ease;
+}
+.footerNavigationLinks a:hover, .footerScheduleLinks a:hover, .footerContact a:hover {
+  color: var(--white);
 }
 .heroSection {
   height: 38rem;
