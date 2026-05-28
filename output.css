@@ -665,23 +665,23 @@ ul {
   }
 }
 .heroSection--withImage .animate-on-scroll {
-  animation-duration: 0.6s;
+  animation-duration: 0.45s;
   animation-timing-function: ease-out;
 }
 .heroSection--withImage .delay-1 {
-  animation-delay: 0.15s;
+  animation-delay: 0s;
 }
 .heroSection--withImage .delay-2 {
-  animation-delay: 0.30s;
+  animation-delay: 0.08s;
 }
 .heroSection--withImage .delay-3 {
-  animation-delay: 0.45s;
+  animation-delay: 0.16s;
 }
 .heroSection--withImage .delay-4 {
-  animation-delay: 0.60s;
+  animation-delay: 0.24s;
 }
 .heroSection--withImage .delay-5 {
-  animation-delay: 0.75s;
+  animation-delay: 0.32s;
 }
 .heroSection--withImage h1.animate-on-scroll {
   animation-name: animationIn;
