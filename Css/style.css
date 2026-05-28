@@ -692,6 +692,8 @@ ul {
 
 .gymImageSectionContainer picture {
     display: block;
+    overflow: hidden;
+    border-radius: var(--16);
 }
 
 .gymImageSectionImg{
@@ -700,6 +702,15 @@ ul {
     aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: var(--16);
+}
+
+/* Modificadores de enquadramento por imagem */
+.gymImageSectionImg--up {
+    object-position: center 75%;
+}
+.gymImageSectionImg--zoom {
+    transform: scale(1.12);
+    transform-origin: center;
 }
 
 .gymImageSectionContainer > picture:nth-child(1) .gymImageSectionImg{
