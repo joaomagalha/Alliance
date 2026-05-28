@@ -186,6 +186,28 @@ if (openBtn && closeBtn && mobileMenu) {
 
 
 /* ============================================================
+   Back arrow das páginas internas — se o usuário veio do próprio
+   site, usa history.back() pra restaurar a posição do scroll
+   (browser cuida disso). Fallback pra navegação normal (index.html)
+   quando referrer for externo ou inexistente.
+   ============================================================ */
+const headerPageMenu = document.getElementById("headerPageMenu");
+if (headerPageMenu) {
+    headerPageMenu.addEventListener("click", (e) => {
+        try {
+            const ref = document.referrer;
+            if (ref && new URL(ref).origin === location.origin && window.history.length > 1) {
+                e.preventDefault();
+                history.back();
+            }
+        } catch {
+            /* referrer inválido — segue navegação normal */
+        }
+    });
+}
+
+
+/* ============================================================
    Professores — botões "Agendar particular" e "Valores" abrem
    o WhatsApp da Alliance com mensagem personalizada por professor.
    ============================================================ */
