@@ -466,6 +466,22 @@ ul {
     }
 }
 
+/* Inner pages não têm preloader — sobrescrevem as animações cinematográficas
+   (delays longos + flourish de letter-spacing) que foram desenhadas só pra
+   home. Aqui usa stagger simples começando logo após o load. */
+.heroSection--withImage .animate-on-scroll {
+    animation-duration: 0.6s;
+    animation-timing-function: ease-out;
+}
+.heroSection--withImage .delay-1 { animation-delay: 0.15s; }
+.heroSection--withImage .delay-2 { animation-delay: 0.30s; }
+.heroSection--withImage .delay-3 { animation-delay: 0.45s; }
+.heroSection--withImage .delay-4 { animation-delay: 0.60s; }
+.heroSection--withImage .delay-5 { animation-delay: 0.75s; }
+.heroSection--withImage h1.animate-on-scroll {
+    animation-name: animationIn;
+}
+
 /* Vídeo de background do hero — cobre toda a área atrás do conteúdo */
 .heroBackgroundVideo {
     position: absolute;
