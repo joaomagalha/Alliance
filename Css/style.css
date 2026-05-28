@@ -393,6 +393,18 @@ ul {
   overflow: hidden;
 }
 
+/* Hero das páginas internas — recebe imagem via --heroBgImage no inline style.
+   Overlay escuro gradiente garante contraste do título/subtítulo. */
+.heroSection--withImage {
+    background-image:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.75) 100%),
+        var(--heroBgImage);
+    background-size: cover;
+    background-position: center 30%;
+    background-repeat: no-repeat;
+    color: var(--white);
+}
+
 /* Vídeo de background do hero — cobre toda a área atrás do conteúdo */
 .heroBackgroundVideo {
     position: absolute;
