@@ -394,15 +394,76 @@ ul {
 }
 
 /* Hero das páginas internas — recebe imagem via --heroBgImage no inline style.
-   Overlay escuro gradiente garante contraste do título/subtítulo. */
+   Overlay direcional: escuro embaixo, leve no meio, levemente escuro no topo —
+   cria profundidade cinematográfica sem matar o atmosfera da foto. */
 .heroSection--withImage {
     background-image:
-        linear-gradient(180deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.75) 100%),
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.78) 0%,
+            rgba(0, 0, 0, 0.35) 55%,
+            rgba(0, 0, 0, 0.5) 100%
+        ),
         var(--heroBgImage);
     background-size: cover;
     background-position: center 30%;
     background-repeat: no-repeat;
     color: var(--white);
+}
+
+/* Glass panel envolve o texto do hero — premium feel com backdrop-filter */
+.heroSection--withImage .heroSectionText {
+    max-width: 56rem;
+    width: 100%;
+    background: rgba(20, 20, 20, 0.45);
+    backdrop-filter: blur(1.6rem) saturate(1.4);
+    -webkit-backdrop-filter: blur(1.6rem) saturate(1.4);
+    border: 0.05rem solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--mediumRadius);
+    padding: var(--32);
+}
+
+.heroSection--withImage .heroSectionText h1 {
+    color: var(--white);
+    margin-bottom: var(--16);
+}
+
+.heroSection--withImage .heroSectionText p {
+    color: rgba(255, 255, 255, 0.75);
+    max-width: 46rem;
+    margin: 0;
+}
+
+/* Kicker — pequena tag dourada acima do título (estilo Nike/Apple) */
+.heroKicker {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--8);
+    margin-bottom: var(--16);
+}
+
+.heroKicker i {
+    color: var(--yellow);
+    font-size: 1.6rem;
+}
+
+.heroKicker span {
+    color: var(--yellow);
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+
+/* Mobile — reduz padding do painel pra caber confortável */
+@media (max-width: 600px) {
+    .heroSection--withImage .heroSectionText {
+        padding: var(--24);
+    }
+    .heroKicker span {
+        font-size: 0.9rem;
+        letter-spacing: 0.15rem;
+    }
 }
 
 /* Vídeo de background do hero — cobre toda a área atrás do conteúdo */
