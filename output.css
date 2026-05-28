@@ -615,7 +615,7 @@ ul {
 .heroSection--withImage {
   background-image: linear-gradient( to top, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.35) 55%, rgba(0, 0, 0, 0.5) 100% ), var(--heroBgImage);
   background-size: cover;
-  background-position: center 30%;
+  background-position: var(--heroBgPos, center 30%);
   background-repeat: no-repeat;
   color: var(--white);
 }
