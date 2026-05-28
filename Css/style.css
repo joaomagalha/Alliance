@@ -1856,7 +1856,7 @@ details[open] .faqContent p {
   /* Imagem da equipe fica menos esticada — ganha altura proporcional */
   .teacherSectionImg {
     height: 85rem;
-    object-position: center;
+    object-position: center 20%;
   }
 }
 
