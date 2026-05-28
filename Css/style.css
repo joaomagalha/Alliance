@@ -1874,6 +1874,14 @@ details[open] .faqContent p {
     font-size: 1.6rem;
   }
 
+  /* Botões ganham presença no desktop pra acompanhar o aumento da
+     tipografia. Padding maior + shadow mais forte = sensação premium. */
+  .btn {
+    font-size: 1.6rem;
+    padding: var(--16) var(--40);
+    box-shadow: 0 1.6rem 3.2rem rgba(254, 188, 17, 0.22);
+  }
+
   /* Texto de leitura um pouco maior no desktop (não afeta o layout) */
   p,
   a,
