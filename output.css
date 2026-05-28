@@ -754,6 +754,9 @@ ul {
 .classCardImg--top {
   object-position: center top;
 }
+.classCardImg--upper {
+  object-position: center 30%;
+}
 .classCardImg--zoom {
   transform: scale(1.15);
   transform-origin: center;
