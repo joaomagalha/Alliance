@@ -783,6 +783,7 @@ ul {
 }
 .heroStat:first-child {
   padding-left: 0;
+  text-align: left;
 }
 .heroStat:not(:last-child) {
   border-right: 0.1rem solid var(--lineGray);
