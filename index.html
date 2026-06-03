@@ -79,7 +79,7 @@
 
     <header class="header leftContainer" id="header">
 
-        <nav class="headerNav flex justify-between items-center"> 
+        <nav class="headerNav flex justify-between items-center">
             <img width="32" height="30" src="Assets/Svg/logoBranca.svg" alt="" class="headerNavLogo">
 
             <div class="headerNavText text-center">
@@ -87,7 +87,15 @@
                 <p class="uppercase font-extralight">Moinho</p>
             </div>
 
-            <button aria-label="Abrir menu" id="headerMenu" aria-expanded="false" class="headerMenu">  
+            <ul class="desktopNav" aria-label="Navegação principal">
+                <li><a href="#class">Aulas</a></li>
+                <li><a href="#teachers">Professores</a></li>
+                <li><a href="#schedule">Grade Horária</a></li>
+                <li><a href="#pricing">Planos</a></li>
+                <li><a href="#faq">Dúvidas</a></li>
+            </ul>
+
+            <button aria-label="Abrir menu" id="headerMenu" aria-expanded="false" class="headerMenu">
                 <i class="fa-solid fa-bars headerNavIcon"></i>
             </button>
         </nav>
