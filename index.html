@@ -66,6 +66,7 @@
     </script>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Pular para o conteúdo</a>
 
     <!-- Preloader: cobre o site enquanto carrega e dá uma entrada de marca -->
     <div id="preloader" class="preloader" aria-hidden="true">
@@ -183,7 +184,7 @@
 
     <section class="heroSection">
 
-        <video class="heroBackgroundVideo" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+        <video class="heroBackgroundVideo" autoplay muted loop playsinline preload="none" aria-hidden="true">
             <source src="Assets/Videos/allianceVideo.mp4" type="video/mp4">
         </video>
         <div class="heroOverlay" aria-hidden="true"></div>
@@ -213,7 +214,7 @@
     </section>
 
 
-    <main>
+    <main id="main-content">
 
         <blockquote class="gurgelQuoteSection container">
 
@@ -264,7 +265,7 @@
 
             </div>
 
-            <ul class="classCardSectionContainer flex flex-col animate-on-scroll-list">
+            <ul role="list" class="classCardSectionContainer flex flex-col animate-on-scroll-list">
           
                 <li class="classCard">
                     <a href="iniciantes.html"> 
@@ -369,7 +370,7 @@
                 
             </div>
 
-            <ul class="benefitsSectionContainer animate-on-scroll-list">
+            <ul role="list" class="benefitsSectionContainer animate-on-scroll-list">
 
                 <li class="benefitCard">
                     <img width="39" height="39" src="Assets/Svg/lock.svg" alt="">
@@ -415,8 +416,6 @@
             <span class="quoteLine"></span>
 
         </blockquote>
-
-    </main>
 
     <section id="gym" class="gymImageSection sideContainer" aria-labelledby="gym-title">
 
@@ -511,7 +510,7 @@
 
         </div>
 
-        <ul class="testimonialSectionContainer animate-on-scroll-list">
+        <ul role="list" class="testimonialSectionContainer animate-on-scroll-list">
 
             <li class="testimonialCard">
 
@@ -1267,6 +1266,8 @@
         </form>
 
     </section>
+
+    </main>
 
     <footer class="footerSection">
 

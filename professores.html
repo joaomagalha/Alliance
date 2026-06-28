@@ -26,6 +26,7 @@
     <script src="Js/script.js" defer></script>
 </head>
 <body>
+<a href="#main-content" class="skip-link">Pular para o conteúdo</a>
 
     <header class="header leftContainer">
 
@@ -48,7 +49,7 @@
 
     </section>
 
-    <main>
+    <main id="main-content">
 
         <section class="teacherSection">
             
@@ -59,49 +60,34 @@
 
             </div>
 
-            <ul class="professorCards animate-on-scroll-list">
+            <ul role="list" class="professorCards animate-on-scroll-list">
 
                 <li class="professor-card">
-
-                    <!-- Foto + Badges -->
                     <div class="professor-photo">
-                    <!-- Substitua o src pela foto real do professor -->
                     <img loading="lazy" decoding="async" width="400" height="600" src="Assets/Imagens/imagemProfessores/professorIan.webp" alt="Professor Ian Pinto">
-
-                    <!-- Badge de disponibilidade -->
                     <span class="badge badge-status">
                         <span class="dot"></span>
                         Disponível
                     </span>
 
                     </div>
-
-                    <!-- Informações do Professor -->
                     <div class="professor-info">
-
-                    <!-- Nome + Rating -->
                     <div class="professor-header">
                         <h3 class="professor-name">Ian Pinto</h3>
                         <div class="professor-rating">
                             <span class="belt-icon belt-black" aria-label="Faixa preta"></span>
                         </div>
                     </div>
-
-                    <!-- Tags -->
                     <div class="professor-tags">
                         <span class="tag tag-primary">Faixa preta</span>
                         <span class="tag tag-secondary">11 anos de experiência</span>
                     </div>
-
-                    <!-- CTA Principal -->
-                    <button class="btn btn-primary">
+                    <button class="btn btn-primary" aria-label="Agendar aula particular com Ian Pinto">
                         Agendar particular
                     </button>
-
-                    <!-- CTAs Secundários -->
                     <div class="btn-secondary-group">
-                        <button class="btn-secondary">
-                        <i class="ti ti-brand-whatsapp"></i>
+                        <button class="btn-secondary" aria-label="Ver valores com Ian Pinto">
+                        <i class="fa-brands fa-whatsapp"></i>
                         Valores
                         </button>
                         <a class="btn-secondary btn-icon-only" aria-label="Instagram de Ian Pinto" href="https://www.instagram.com/iaanpinto/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
@@ -110,45 +96,30 @@
                     </div>
                 </li>
                 <li class="professor-card">
-
-                    <!-- Foto + Badges -->
                     <div class="professor-photo">
-                    <!-- Substitua o src pela foto real do professor -->
                     <img loading="lazy" decoding="async" width="400" height="600" src="Assets/Imagens/imagemProfessores/professorLauretti.webp" alt="Professor Thiago Lauretti">
-
-                    <!-- Badge de disponibilidade -->
                     <span class="badge badge-status">
                         <span class="dot"></span>
                         Disponível
                     </span>
                     </div>
-
-                    <!-- Informações do Professor -->
                     <div class="professor-info">
-
-                    <!-- Nome + Rating -->
                     <div class="professor-header">
                         <h3 class="professor-name">Thiago Lauretti</h3>
                         <div class="professor-rating">
                             <span class="belt-icon belt-black" aria-label="Faixa preta"></span>
                         </div>
                     </div>
-
-                    <!-- Tags -->
                     <div class="professor-tags">
                         <span class="tag tag-primary">Faixa preta</span>
                         <span class="tag tag-secondary">17 anos de experiência</span>
                     </div>
-
-                    <!-- CTA Principal -->
-                    <button class="btn btn-primary">
+                    <button class="btn btn-primary" aria-label="Agendar aula particular com Thiago Lauretti">
                         Agendar particular
                     </button>
-
-                    <!-- CTAs Secundários -->
                     <div class="btn-secondary-group">
-                        <button class="btn-secondary">
-                        <i class="ti ti-brand-whatsapp"></i>
+                        <button class="btn-secondary" aria-label="Ver valores com Thiago Lauretti">
+                        <i class="fa-brands fa-whatsapp"></i>
                         Valores
                         </button>
                         <a class="btn-secondary btn-icon-only" aria-label="Instagram de Thiago Lauretti" href="https://www.instagram.com/laurettibjj/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
@@ -157,45 +128,30 @@
                     </div>
                 </li>
                 <li class="professor-card">
-
-                    <!-- Foto + Badges -->
                     <div class="professor-photo">
-                    <!-- Substitua o src pela foto real do professor -->
                     <img loading="lazy" decoding="async" width="400" height="600" src="Assets/Imagens/imagemProfessores/professorEmilio.webp" alt="Professor Emilio Neto">
-
-                    <!-- Badge de disponibilidade -->
                     <span class="badge badge-status">
                         <span class="dot"></span>
                         Disponível
                     </span>
                     </div>
-
-                    <!-- Informações do Professor -->
                     <div class="professor-info">
-
-                    <!-- Nome + Rating -->
                     <div class="professor-header">
                         <h3 class="professor-name">Emilio Neto</h3>
                         <div class="professor-rating">
                             <span class="belt-icon belt-black" aria-label="Faixa preta"></span>
                         </div>
                     </div>
-
-                    <!-- Tags -->
                     <div class="professor-tags">
                         <span class="tag tag-primary">Faixa preta</span>
                         <span class="tag tag-secondary">17 anos de experiência</span>
                     </div>
-
-                    <!-- CTA Principal -->
-                    <button class="btn btn-primary">
+                    <button class="btn btn-primary" aria-label="Agendar aula particular com Emilio Neto">
                         Agendar particular
                     </button>
-
-                    <!-- CTAs Secundários -->
                     <div class="btn-secondary-group">
-                        <button class="btn-secondary">
-                        <i class="ti ti-brand-whatsapp"></i>
+                        <button class="btn-secondary" aria-label="Ver valores com Emilio Neto">
+                        <i class="fa-brands fa-whatsapp"></i>
                         Valores
                         </button>
                         <a class="btn-secondary btn-icon-only" aria-label="Instagram de Emilio Neto" href="https://www.instagram.com/emilionetto/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
@@ -204,92 +160,62 @@
                     </div>
                 </li>
                 <li class="professor-card">
-
-                    <!-- Foto + Badges -->
                     <div class="professor-photo">
-                    <!-- Substitua o src pela foto real do professor -->
                     <img loading="lazy" decoding="async" width="400" height="600" src="Assets/Imagens/imagemProfessores/professorLelo.webp" alt="Professor Wesley Candido (Lelo)">
-
-                    <!-- Badge de disponibilidade -->
                     <span class="badge badge-status">
                         <span class="dot"></span>
                         Disponível
                     </span>
                     </div>
-
-                    <!-- Informações do Professor -->
                     <div class="professor-info">
-
-                    <!-- Nome + Rating -->
                     <div class="professor-header">
                         <h3 class="professor-name">Weslley Candido</h3>
                         <div class="professor-rating">
                             <span class="belt-icon belt-black" aria-label="Faixa preta"></span>
                         </div>
                     </div>
-
-                    <!-- Tags -->
                     <div class="professor-tags">
                         <span class="tag tag-primary">Faixa preta</span>
                         <span class="tag tag-secondary">13 anos de experiência</span>
                     </div>
-
-                    <!-- CTA Principal -->
-                    <button class="btn btn-primary">
+                    <button class="btn btn-primary" aria-label="Agendar aula particular com Weslley Candido">
                         Agendar particular
                     </button>
-
-                    <!-- CTAs Secundários -->
                     <div class="btn-secondary-group">
-                        <button class="btn-secondary">
-                        <i class="ti ti-brand-whatsapp"></i>
+                        <button class="btn-secondary" aria-label="Ver valores com Weslley Candido">
+                        <i class="fa-brands fa-whatsapp"></i>
                         Valores
                         </button>
-                        <a class="btn-secondary btn-icon-only" aria-label="Instagram de Wesley Candido" href="https://www.instagram.com/lelojow/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+                        <a class="btn-secondary btn-icon-only" aria-label="Instagram de Weslley Candido" href="https://www.instagram.com/lelojow/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
                     </div>
 
                     </div>
                 </li>
                 <li class="professor-card">
-
-                    <!-- Foto + Badges -->
                     <div class="professor-photo">
-                    <!-- Substitua o src pela foto real do professor -->
                     <img loading="lazy" decoding="async" width="400" height="600" src="Assets/Imagens/imagemProfessores/professorDiogo.webp" alt="Professor Diogo Kauan">
-
-                    <!-- Badge de disponibilidade -->
                     <span class="badge badge-status">
                         <span class="dot"></span>
                         Disponível
                     </span>
                     </div>
-
-                    <!-- Informações do Professor -->
                     <div class="professor-info">
-
-                    <!-- Nome + Rating -->
                     <div class="professor-header">
                         <h3 class="professor-name">Diogo Kauan</h3>
                         <div class="professor-rating">
                             <span class="belt-icon belt-purple" aria-label="Faixa roxa"></span>
                         </div>
                     </div>
-
-                    <!-- Tags -->
                     <div class="professor-tags">
                         <span class="tag tag-primary">Faixa roxa</span>
                         <span class="tag tag-secondary">5 anos de experiência</span>
                     </div>
-
-                    <!-- CTA Principal -->
-                    <button class="btn btn-primary">
+                    <button class="btn btn-primary" aria-label="Agendar aula particular com Diogo Kauan">
                         Agendar particular
                     </button>
-
-                    <!-- CTAs Secundários -->
                     <div class="btn-secondary-group">
-                        <button class="btn-secondary">
-                        <i class="ti ti-brand-whatsapp"></i>
+                        <button class="btn-secondary" aria-label="Ver valores com Diogo Kauan">
+                        <i class="fa-brands fa-whatsapp"></i>
                         Valores
                         </button>
                         <a class="btn-secondary btn-icon-only" aria-label="Instagram de Diogo Kauan" href="https://www.instagram.com/zukashii_/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
@@ -299,45 +225,30 @@
                 </li>
 
                 <li class="professor-card">
-
-                    <!-- Foto + Badges -->
                     <div class="professor-photo">
-                    <!-- Substitua o src pela foto real do professor -->
                     <img loading="lazy" decoding="async" width="400" height="600" src="Assets/Imagens/imagemProfessores/professorGustavo.webp" alt="Professor Gustavo Henrique">
-
-                    <!-- Badge de disponibilidade -->
                     <span class="badge badge-status">
                         <span class="dot"></span>
                         Disponível
                     </span>
                     </div>
-
-                    <!-- Informações do Professor -->
                     <div class="professor-info">
-
-                    <!-- Nome + Rating -->
                     <div class="professor-header">
                         <h3 class="professor-name">Gustavo Henrique</h3>
                         <div class="professor-rating">
                             <span class="belt-icon belt-purple" aria-label="Faixa roxa"></span>
                         </div>
                     </div>
-
-                    <!-- Tags -->
                     <div class="professor-tags">
                         <span class="tag tag-primary">Faixa roxa</span>
                         <span class="tag tag-secondary">6 anos de experiência</span>
                     </div>
-
-                    <!-- CTA Principal -->
-                    <button class="btn btn-primary">
+                    <button class="btn btn-primary" aria-label="Agendar aula particular com Gustavo Henrique">
                         Agendar particular
                     </button>
-
-                    <!-- CTAs Secundários -->
                     <div class="btn-secondary-group">
-                        <button class="btn-secondary">
-                        <i class="ti ti-brand-whatsapp"></i>
+                        <button class="btn-secondary" aria-label="Ver valores com Gustavo Henrique">
+                        <i class="fa-brands fa-whatsapp"></i>
                         Valores
                         </button>
                         <a class="btn-secondary btn-icon-only" aria-label="Instagram de Gustavo Henrique" href="https://www.instagram.com/gh.engenharia92/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
@@ -346,45 +257,30 @@
                     </div>
                 </li>
                 <li class="professor-card">
-
-                    <!-- Foto + Badges -->
                     <div class="professor-photo">
-                    <!-- Substitua o src pela foto real do professor -->
                     <img loading="lazy" decoding="async" width="400" height="600" src="Assets/Imagens/imagemProfessores/professorJoao2.webp" alt="Professor João Victor">
-
-                    <!-- Badge de disponibilidade -->
                     <span class="badge badge-status">
                         <span class="dot"></span>
                         Disponível
                     </span>
                     </div>
-
-                    <!-- Informações do Professor -->
                     <div class="professor-info">
-
-                    <!-- Nome + Rating -->
                     <div class="professor-header">
                         <h3 class="professor-name">João Victor</h3>
                         <div class="professor-rating">
                             <span class="belt-icon belt-purple" aria-label="Faixa roxa"></span>
                         </div>
                     </div>
-
-                    <!-- Tags -->
                     <div class="professor-tags">
                         <span class="tag tag-primary">Faixa roxa</span>
                         <span class="tag tag-secondary">5 anos de experiência</span>
                     </div>
-
-                    <!-- CTA Principal -->
-                    <button class="btn btn-primary">
+                    <button class="btn btn-primary" aria-label="Agendar aula particular com João Victor">
                         Agendar particular
                     </button>
-
-                    <!-- CTAs Secundários -->
                     <div class="btn-secondary-group">
-                        <button class="btn-secondary">
-                        <i class="ti ti-brand-whatsapp"></i>
+                        <button class="btn-secondary" aria-label="Ver valores com João Victor">
+                        <i class="fa-brands fa-whatsapp"></i>
                         Valores
                         </button>
                         <a class="btn-secondary btn-icon-only" aria-label="Instagram de João Victor" href="https://www.instagram.com/joaovictormagalhaes_/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
@@ -393,46 +289,30 @@
                     </div>
                 </li>
                 <li class="professor-card">
-
-                    <!-- Foto + Badges -->
                     <div class="professor-photo">
-                    <!-- Substitua o src pela foto real do professor -->
                     <img loading="lazy" decoding="async" width="400" height="600" src="Assets/Imagens/imagemProfessores/professorKayke.webp" alt="Professor Kayke Camargo">
-
-                    <!-- Badge de disponibilidade -->
                     <span class="badge badge-status">
                         <span class="dot"></span>
                         Disponível
                     </span>
                     </div>
-
-                    <!-- Informações do Professor -->
                     <div class="professor-info">
-
-                    <!-- Nome + Rating -->
                     <div class="professor-header">
                         <h3 class="professor-name">Kayke Camargo</h3>
                         <div class="professor-rating">
                             <span class="belt-icon belt-purple" aria-label="Faixa roxa"></span>
                         </div>
                     </div>
-
-                    <!-- Tags -->
                     <div class="professor-tags">
                         <span class="tag tag-primary">Faixa roxa</span>
                         <span class="tag tag-secondary">10 anos de experiência</span>
                     </div>
-
-
-                    <!-- CTA Principal -->
-                    <button class="btn btn-primary">
+                    <button class="btn btn-primary" aria-label="Agendar aula particular com Kayke Camargo">
                         Agendar particular
                     </button>
-
-                    <!-- CTAs Secundários -->
                     <div class="btn-secondary-group">
-                        <button class="btn-secondary">
-                        <i class="ti ti-brand-whatsapp"></i>
+                        <button class="btn-secondary" aria-label="Ver valores com Kayke Camargo">
+                        <i class="fa-brands fa-whatsapp"></i>
                         Valores
                         </button>
                         <a class="btn-secondary btn-icon-only" aria-label="Instagram de Kayke Camargo" href="https://www.instagram.com/kaykecamargo_/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
@@ -441,45 +321,30 @@
                     </div>
                 </li>
                 <li class="professor-card">
-
-                    <!-- Foto + Badges -->
                     <div class="professor-photo">
-                    <!-- Substitua o src pela foto real do professor -->
                     <img loading="lazy" decoding="async" width="400" height="600" src="Assets/Imagens/imagemProfessores/professorRichard.webp" alt="Professor Richard Sanchez">
-
-                    <!-- Badge de disponibilidade -->
                     <span class="badge badge-status">
                         <span class="dot"></span>
                         Disponível
                     </span>
                     </div>
-
-                    <!-- Informações do Professor -->
                     <div class="professor-info">
-
-                    <!-- Nome + Rating -->
                     <div class="professor-header">
                         <h3 class="professor-name">Richard Sanchez</h3>
                         <div class="professor-rating">
                             <span class="belt-icon belt-purple" aria-label="Faixa roxa"></span>
                         </div>
                     </div>
-
-                    <!-- Tags -->
                     <div class="professor-tags">
                         <span class="tag tag-primary">Faixa roxa</span>
                         <span class="tag tag-secondary">8 anos de experiência</span>
                     </div>
-
-                    <!-- CTA Principal -->
-                    <button class="btn btn-primary">
+                    <button class="btn btn-primary" aria-label="Agendar aula particular com Richard Sanchez">
                         Agendar particular
                     </button>
-
-                    <!-- CTAs Secundários -->
                     <div class="btn-secondary-group">
-                        <button class="btn-secondary">
-                        <i class="ti ti-brand-whatsapp"></i>
+                        <button class="btn-secondary" aria-label="Ver valores com Richard Sanchez">
+                        <i class="fa-brands fa-whatsapp"></i>
                         Valores
                         </button>
                         <a class="btn-secondary btn-icon-only" aria-label="Instagram de Richard Sanchez" href="https://www.instagram.com/richardsanchez_bjj/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
@@ -488,45 +353,30 @@
                     </div>
                 </li>
                 <li class="professor-card">
-
-                    <!-- Foto + Badges -->
                     <div class="professor-photo">
-                    <!-- Substitua o src pela foto real do professor -->
                     <img loading="lazy" decoding="async" width="400" height="600" src="Assets/Imagens/imagemProfessores/professoraGil.webp" alt="Professora Gil Santos">
-
-                    <!-- Badge de disponibilidade -->
                     <span class="badge badge-status">
                         <span class="dot"></span>
                         Disponível
                     </span>
                     </div>
-
-                    <!-- Informações do Professor -->
                     <div class="professor-info">
-
-                    <!-- Nome + Rating -->
                     <div class="professor-header">
                         <h3 class="professor-name">Gil Santos</h3>
                         <div class="professor-rating">
                             <span class="belt-icon belt-purple" aria-label="Faixa roxa"></span>
                         </div>
                     </div>
-
-                    <!-- Tags -->
                     <div class="professor-tags">
                         <span class="tag tag-primary">Faixa roxa</span>
                         <span class="tag tag-secondary">5 anos de experiência</span>
                     </div>
-
-                    <!-- CTA Principal -->
-                    <button class="btn btn-primary">
+                    <button class="btn btn-primary" aria-label="Agendar aula particular com Gil Santos">
                         Agendar particular
                     </button>
-
-                    <!-- CTAs Secundários -->
                     <div class="btn-secondary-group">
-                        <button class="btn-secondary">
-                        <i class="ti ti-brand-whatsapp"></i>
+                        <button class="btn-secondary" aria-label="Ver valores com Gil Santos">
+                        <i class="fa-brands fa-whatsapp"></i>
                         Valores
                         </button>
                         <a class="btn-secondary btn-icon-only" aria-label="Instagram de Gil Santos" href="https://www.instagram.com/gilsantos836/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
@@ -548,48 +398,33 @@
 
             </div>
 
-            <ul class="professorCards animate-on-scroll-list">
+            <ul role="list" class="professorCards animate-on-scroll-list">
 
                     <li class="professor-card">
-
-                    <!-- Foto + Badges -->
                     <div class="professor-photo">
-                    <!-- Substitua o src pela foto real do professor -->
                     <img loading="lazy" decoding="async" width="400" height="600" src="Assets/Imagens/imagemProfessores/instrutorGedney.webp" alt="Instrutor Gedney Cebalho">
-
-                    <!-- Badge de disponibilidade -->
                     <span class="badge badge-status">
                         <span class="dot"></span>
                         Disponível
                     </span>
                     </div>
-
-                    <!-- Informações do Professor -->
                     <div class="professor-info">
-
-                    <!-- Nome + Rating -->
                     <div class="professor-header">
                         <h3 class="professor-name">Gedney Cebalho</h3>
                         <div class="professor-rating">
                             <span class="belt-icon belt-blue" aria-label="Faixa azul"></span>
                         </div>
                     </div>
-
-                    <!-- Tags -->
                     <div class="professor-tags">
                         <span class="tag tag-primary">Faixa azul</span>
                         <span class="tag tag-secondary">2 anos de experiência</span>
                     </div>
-
-                    <!-- CTA Principal -->
-                    <button class="btn btn-primary">
+                    <button class="btn btn-primary" aria-label="Agendar aula particular com Gedney Cebalho">
                         Agendar particular
                     </button>
-
-                    <!-- CTAs Secundários -->
                     <div class="btn-secondary-group">
-                        <button class="btn-secondary">
-                        <i class="ti ti-brand-whatsapp"></i>
+                        <button class="btn-secondary" aria-label="Ver valores com Gedney Cebalho">
+                        <i class="fa-brands fa-whatsapp"></i>
                         Valores
                         </button>
                         <a class="btn-secondary btn-icon-only" aria-label="Instagram de Gedney Cebalho" href="https://www.instagram.com/gedney_jj/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
@@ -598,45 +433,30 @@
                     </div>
                 </li>
                 <li class="professor-card">
-
-                    <!-- Foto + Badges -->
                     <div class="professor-photo">
-                    <!-- Substitua o src pela foto real do professor -->
                     <img loading="lazy" decoding="async" width="400" height="600" src="Assets/Imagens/imagemProfessores/istrutorAlberto.webp" alt="Instrutor Alberto Nogueira">
-
-                    <!-- Badge de disponibilidade -->
                     <span class="badge badge-status">
                         <span class="dot"></span>
                         Disponível
                     </span>
                     </div>
-
-                    <!-- Informações do Professor -->
                     <div class="professor-info">
-
-                    <!-- Nome + Rating -->
                     <div class="professor-header">
                         <h3 class="professor-name">Alberto Nogueira</h3>
                         <div class="professor-rating">
                             <span class="belt-icon belt-blue" aria-label="Faixa azul"></span>
                         </div>
                     </div>
-
-                    <!-- Tags -->
                     <div class="professor-tags">
                         <span class="tag tag-primary">Faixa azul</span>
                         <span class="tag tag-secondary">5 anos de experiência</span>
                     </div>
-
-                    <!-- CTA Principal -->
-                    <button class="btn btn-primary">
+                    <button class="btn btn-primary" aria-label="Agendar aula particular com Alberto Nogueira">
                         Agendar particular
                     </button>
-
-                    <!-- CTAs Secundários -->
                     <div class="btn-secondary-group">
-                        <button class="btn-secondary">
-                        <i class="ti ti-brand-whatsapp"></i>
+                        <button class="btn-secondary" aria-label="Ver valores com Alberto Nogueira">
+                        <i class="fa-brands fa-whatsapp"></i>
                         Valores
                         </button>
                         <a class="btn-secondary btn-icon-only" aria-label="Instagram de Alberto Nogueira" href="https://www.instagram.com/alberto.nogueeira/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
@@ -647,12 +467,9 @@
 
             </ul>
 
-
         </section>
 
     </main>
-
-
 
     <footer class="footerSection">
 
@@ -666,7 +483,6 @@
                     <a href="https://wa.me/5565996768010?text=Oi%2C%20gostaria%20de%20agendar%20uma%20aula%20introdutória." target="_blank" rel="noopener noreferrer">Agendar Aula Introdutória</a>
                     <a href="https://wa.me/5565996768010?text=Oi%2C%20gostaria%20de%20agendar%20uma%20aula%20experimental." target="_blank" rel="noopener noreferrer">Agendar Aula Experimental</a>
                 </div>
-
 
             </div>
 

@@ -288,7 +288,7 @@ if (contactForm) {
 
         const originalHTML = submitBtn.innerHTML;
         submitBtn.classList.add("btn--success");
-        submitBtn.innerHTML = '<i class="fa-solid fa-check" aria-hidden="true"></i> Mensagem enviada!';
+        submitBtn.innerHTML = '<i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Abrindo WhatsApp…';
         submitBtn.disabled = true;
 
         setTimeout(() => {
@@ -296,7 +296,7 @@ if (contactForm) {
             submitBtn.innerHTML = originalHTML;
             submitBtn.disabled = false;
             contactForm.reset();
-        }, 3500);
+        }, 4000);
     });
 }
 

@@ -11,7 +11,7 @@
     --gray: #333333;
     --grayOpaque: #333333d5;
     --grayMid: #565656;
-    --secondaryTextGray: #333333a6;
+    --secondaryTextGray: #666666;
     --placeholderColor: #0000004e;
 
     --white: #FFFFFF;
@@ -173,7 +173,33 @@ label {
 }
 
 ul {
-    list-style-type: none; 
+    list-style-type: none;
+}
+
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.skip-link:focus {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    padding: 1rem 2rem;
+    background: var(--yellow);
+    color: var(--gray);
+    font-weight: bold;
+    font-size: 1.4rem;
+    border-radius: var(--smallRadius);
+    z-index: 9999;
+    text-decoration: none;
 }
 
 .btn{
@@ -619,6 +645,7 @@ ul {
     z-index: 0;
     pointer-events: none;
     filter: contrast(1.05) saturate(1.08);
+    will-change: transform;
 }
 
 /* Overlay escuro pra manter contraste do texto sobre o vídeo */
@@ -850,7 +877,8 @@ ul {
 
 .manifestSection p{
     margin: var(--16) auto var(--24);
-    width: 30rem;
+    max-width: 30rem;
+    width: 100%;
 }
 
 .manifestParagraph {

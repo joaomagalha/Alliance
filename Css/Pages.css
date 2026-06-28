@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     gap: var(--32);
-    max-width: 112rem;
+    max-width: var(--maxContent);
     margin: 0 auto
 }
 
@@ -18,7 +18,8 @@
     width: 100%;
     background-color: var(--white);
     padding: var(--24);
-    height: 32rem;
+    min-height: 32rem;
+    height: auto;
     border-radius: var(--mediumRadius);
     box-shadow: var(--grayShadowLarge);
 
@@ -123,7 +124,7 @@
       right: 0;
       height: 0.4rem;
       background: linear-gradient(to right, var(--gray)0%, var(--gray)50%, var(--yellow)50%, var(--yellow)100%);
-      z-index: 2;
+      z-index: var(--z-card-icon);
     }
 
     /* ===== BADGES NA FOTO ===== */
@@ -136,7 +137,7 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      z-index: 3;
+      z-index: var(--z-card-label);
     }
 
     .badge-status {
@@ -383,6 +384,22 @@
     .differentialCard::after {
         display: none;
     }
+}
+
+.pageCtaSection {
+    text-align: center;
+    padding: var(--48) var(--containerLateralPadding);
+    background: var(--grayGradient);
+}
+
+.pageCtaSection h2 {
+    color: var(--white);
+    margin-bottom: var(--8);
+}
+
+.pageCtaSection p {
+    color: var(--whiteOpacity);
+    margin-bottom: var(--32);
 }
 
 @media (min-width: 1024px) {
