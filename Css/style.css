@@ -1364,6 +1364,22 @@ details[open] .faqContent p {
     margin-top: var(--24);
 }
 
+.pricingPopularBadge {
+    position: absolute;
+    top: -1.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--yellow);
+    color: var(--gray);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.08rem;
+    text-transform: uppercase;
+    padding: 0.4rem 1.4rem;
+    border-radius: var(--smallRadius);
+    white-space: nowrap;
+}
+
 .pricingSvg{
     height: 3rem;
     width: fit-content;
@@ -1405,7 +1421,7 @@ details[open] .faqContent p {
 .pricingOldValue{
     font-size: 1.6rem;
     color: var(--placeholderColor);
-    text-decoration: line-through var(--lineGray);
+    text-decoration: line-through;
     font-weight: 400;
 
 }
@@ -2526,7 +2542,7 @@ details[open] .faqContent p {
 
 /* CTA — soft glow pulse after entrance to draw the eye */
 .heroSectionText .btn {
-    animation: heroBtnGlow 4s ease-in-out 3.6s infinite;
+    animation: heroBtnGlow 4s ease-in-out 3.6s 4;
 }
 @keyframes heroBtnGlow {
     0%, 100% { box-shadow: 0 1.2rem 2rem 0 rgba(254, 188, 17, 0.20); }
