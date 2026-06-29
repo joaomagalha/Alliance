@@ -1364,21 +1364,6 @@ details[open] .faqContent p {
     margin-top: var(--24);
 }
 
-.pricingPopularBadge {
-    position: absolute;
-    top: -1.2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--yellow);
-    color: var(--gray);
-    font-size: 1.1rem;
-    font-weight: 700;
-    letter-spacing: 0.08rem;
-    text-transform: uppercase;
-    padding: 0.4rem 1.4rem;
-    border-radius: var(--smallRadius);
-    white-space: nowrap;
-}
 
 .pricingSvg{
     height: 3rem;
