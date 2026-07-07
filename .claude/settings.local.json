@@ -14,7 +14,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "cd \"/Users/joaovictor/Trabalho/Alliance/Alliance Website\" && git add -A && git diff --cached --quiet || git commit -m \"chore: auto-save $(date '+%Y-%m-%d %H:%M')\" && git push origin main"
+            "command": "cd \"/Users/joaovictor/João/Trabalho/Alliance/Alliance Website\" && git add -A && git diff --cached --quiet || git commit -m \"chore: auto-save $(date '+%Y-%m-%d %H:%M')\" && git push origin main"
           }
         ]
       }
