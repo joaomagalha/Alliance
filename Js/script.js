@@ -38,6 +38,24 @@ if (preloader) {
   }
 }
 
+/* ============================================================
+   Hero video — fallback de autoplay. Alguns navegadores mobile
+   ignoram o atributo `autoplay` declarativo (timing, low power
+   mode, volta de background) mas aceitam play() via script.
+   Tenta de novo quando o vídeo fica pronto e quando a aba volta
+   a ficar visível.
+   ============================================================ */
+const heroVideo = document.querySelector(".heroBackgroundVideo");
+if (heroVideo) {
+  const tryPlay = () => heroVideo.play().catch(() => {});
+  tryPlay();
+  heroVideo.addEventListener("loadeddata", tryPlay);
+  heroVideo.addEventListener("canplay", tryPlay);
+  document.addEventListener("visibilitychange", () => {
+    if (!document.hidden && heroVideo.paused) tryPlay();
+  });
+}
+
 
 /* ============================================================
    Flashlight effect — atualiza CSS custom properties --mouse-x e
