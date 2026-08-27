@@ -111,3 +111,14 @@ If `git status` looks unexpectedly dirty, it's almost always `output.css` regene
 - Don't re-list the repo with `ls` — the file layout above is current as of the last update.
 - For class-page edits, the six class pages share near-identical structure (~13 KB each) — read one, apply the pattern to the others.
 - Keep replies terse and in Portuguese. No trailing summaries of what you just did — the diff speaks for itself.
+
+## Vault (Cofre João)
+
+Este repo é o código; o relacionamento com o cliente (contrato, status,
+pendências, histórico de decisões de negócio) vive fora daqui, no vault
+pessoal do João: `/Users/joaovictor/João/Pessoal/Cofre João/clientes/alliance-moinho.md`,
+`/Users/joaovictor/João/Pessoal/Cofre João/projetos/alliance-moinho.md` e
+`/Users/joaovictor/João/Pessoal/Cofre João/contratos/alliance-moinho-suporte-contrato.md`.
+Sessão aberta direto neste repo não carrega esse contexto automaticamente
+— leia esse(s) arquivo(s) antes de assumir que algo não foi decidido ou
+combinado com o cliente.
