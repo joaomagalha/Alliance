@@ -151,7 +151,16 @@ function initTablist(tablist, opts = {}) {
 
 const scheduleTablist = document.querySelector(".scheduleSectionDays");
 if (scheduleTablist) {
-  initTablist(scheduleTablist, { onActivate: (panel) => { panel.scrollTop = 0; } });
+  initTablist(scheduleTablist, {
+    // Reinicia o scroll e replica o efeito de revelação em cascata das
+    // linhas a cada troca de dia (mesmo efeito das abas dos Planos).
+    onActivate: (panel) => {
+      panel.scrollTop = 0;
+      panel.classList.remove("replay");
+      void panel.offsetWidth; // força reflow pra reiniciar a animação CSS
+      panel.classList.add("replay");
+    },
+  });
 }
 
 const pricingTablist = document.querySelector(".pricingCategories");
