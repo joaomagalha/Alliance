@@ -114,11 +114,16 @@ If `git status` looks unexpectedly dirty, it's almost always `output.css` regene
 
 ## Vault (Cofre João)
 
-Este repo é o código; o relacionamento com o cliente (contrato, status,
-pendências, histórico de decisões de negócio) vive fora daqui, no vault
-pessoal do João: `/Users/joaovictor/João/Pessoal/Cofre João/clientes/alliance-moinho.md`,
-`/Users/joaovictor/João/Pessoal/Cofre João/projetos/alliance-moinho.md` e
-`/Users/joaovictor/João/Pessoal/Cofre João/contratos/alliance-moinho-suporte-contrato.md`.
-Sessão aberta direto neste repo não carrega esse contexto automaticamente
-— leia esse(s) arquivo(s) antes de assumir que algo não foi decidido ou
-combinado com o cliente.
+Desde 01/09/2026 este repo MORA DENTRO do vault, em
+`Cofre João/projetos/alliance-moinho/site/`. Uma sessão de Claude Code aberta
+aqui herda o `CLAUDE.md` do vault e o `~/.claude/CLAUDE.md` (regras do João,
+sem travessão, nível de autonomia etc.) — mas **não** as memórias
+automáticas, que carregam pela raiz do projeto. Então continue lendo o
+contexto de negócio antes de assumir que algo não foi combinado com o cliente:
+
+- `../../../clientes/alliance-moinho.md` — contrato, status, pendências, histórico
+- `../../alliance-moinho.md` — decisões técnicas do site e da reforma em andamento
+- `../../../contratos/alliance-moinho-suporte-contrato.md` — contrato de suporte
+
+`node_modules` não vem versionado — rode `npm install` aqui se precisar do
+build do Tailwind (`output.css` já está commitado).
