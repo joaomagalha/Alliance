@@ -581,374 +581,786 @@
         <div class="scheduleSectionText animate-on-scroll">
 
             <h2 id="schedule-title">Grade de <br> <span class="textYellow">Horários</span></h2>
-            <p class="subtitle">Aulas todos os dias, com horários <br>flexíveis para encaixar na sua rotina.</p>
+            <p class="subtitle">Escolha o dia da semana <br>e veja as aulas do dia.</p>
 
         </div>
 
         <div class="scheduleSectionContainer">
 
-            <div class="scheduleSectionDays" role="tablist" aria-label="Tipo de aulas">
+            <div class="scheduleSectionDays" role="tablist" aria-label="Dia da semana">
 
-                <button class="tab active" role="tab" id="tab-all" aria-selected="true" aria-controls="all" data-tab="all">Todas</button>
-                <button class="tab" role="tab" id="tab-adult" aria-selected="false" aria-controls="adult" tabindex="-1" data-tab="adult">Adultos</button>
-                <button class="tab" role="tab" id="tab-kids" aria-selected="false" aria-controls="kids" tabindex="-1" data-tab="kids">Kids</button>
-                <button class="tab" role="tab" id="tab-nogi" aria-selected="false" aria-controls="nogi" tabindex="-1" data-tab="nogi">No-Gi</button>
+                <button class="tab active" role="tab" id="tab-seg" aria-selected="true" aria-controls="seg" tabindex="0" data-tab="seg">Seg</button>
+                <button class="tab" role="tab" id="tab-ter" aria-selected="false" aria-controls="ter" tabindex="-1" data-tab="ter">Ter</button>
+                <button class="tab" role="tab" id="tab-qua" aria-selected="false" aria-controls="qua" tabindex="-1" data-tab="qua">Qua</button>
+                <button class="tab" role="tab" id="tab-qui" aria-selected="false" aria-controls="qui" tabindex="-1" data-tab="qui">Qui</button>
+                <button class="tab" role="tab" id="tab-sex" aria-selected="false" aria-controls="sex" tabindex="-1" data-tab="sex">Sex</button>
+                <button class="tab" role="tab" id="tab-sab" aria-selected="false" aria-controls="sab" tabindex="-1" data-tab="sab">Sáb</button>
 
             </div>
 
             <div class="scheduleTables">
 
-                <div class="scheduleTable active" id="all" role="tabpanel" aria-labelledby="tab-all" tabindex="0">
-                    <table class="scheduleSectionTimes text-center">
+                <div class="scheduleTable active" id="seg" role="tabpanel" aria-labelledby="tab-seg" tabindex="0">
+                    <table class="scheduleGrid">
+                        <caption class="visually-hidden">Grade de horários de segunda-feira</caption>
                         <thead>
                             <tr>
-                                <th scope="col">Aula</th>
-                                <th scope="col">Dias</th>
                                 <th scope="col">Horário</th>
+                                <th scope="col">Aula</th>
+                                <th scope="col">Categoria</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="scheduleRow">
-                                <td>Iniciantes <span class="scheduleBadge">Faixa branca</span></td>
-                                <td>Seg/Qua</td>
-                                <td>06:30 - 07:30</td>
+                                <td class="scheduleTime">06:30</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="iniciante"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Iniciantes</span>
+                                        <span class="scheduleClassMeta">06:30 - 07:30 &middot; Faixa branca</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Adultos</span></td>
                             </tr>
                             <tr class="scheduleRow">
-                                <td>Intermediário <span class="scheduleBadge">Branca +2 graus</span></td>
-                                <td>Ter/Qui/Sex</td>
-                                <td>06:30 - 07:30</td>
+                                <td class="scheduleTime">07:30</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="intermediario"><i class="fa-solid fa-hand-fist" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Intermediário</span>
+                                        <span class="scheduleClassMeta">07:30 - 08:30 &middot; Branca +2 graus</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Adultos</span></td>
                             </tr>
                             <tr class="scheduleRow">
-                                <td>Iniciantes <span class="scheduleBadge">Faixa branca</span></td>
-                                <td>Sex</td>
-                                <td>06:30 - 07:30</td>
+                                <td class="scheduleTime">09:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="iniciante"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Iniciantes</span>
+                                        <span class="scheduleClassMeta">09:00 - 10:00 &middot; Faixa branca</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Adultos</span></td>
                             </tr>
                             <tr class="scheduleRow">
-                                <td>Intermediário <span class="scheduleBadge">Branca +2 graus</span></td>
-                                <td>Seg/Qua</td>
-                                <td>07:30 - 08:30</td>
+                                <td class="scheduleTime">09:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="little"><i class="fa-solid fa-child" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Little Eagle</span>
+                                        <span class="scheduleClassMeta">09:00 - 10:00 &middot; 5-7 anos</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Kids</span></td>
                             </tr>
                             <tr class="scheduleRow">
-                                <td>Iniciantes <span class="scheduleBadge">Faixa branca</span></td>
-                                <td>Ter/Qui</td>
-                                <td>07:30 - 08:30</td>
+                                <td class="scheduleTime">09:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="warrior"><i class="fa-solid fa-child-reaching" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Eagle Warrior</span>
+                                        <span class="scheduleClassMeta">09:00 - 10:00 &middot; 8-11 anos</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Kids</span></td>
                             </tr>
                             <tr class="scheduleRow">
-                                <td>Kids (Todas as turmas) <span class="scheduleBadge">3-16 anos</span></td>
-                                <td>Sáb</td>
-                                <td>08:00 - 09:00</td>
+                                <td class="scheduleTime">10:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="competicao"><i class="fa-solid fa-trophy" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Competição</span>
+                                        <span class="scheduleClassMeta">10:00 - 12:00 &middot; Todos os níveis</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Competição</span></td>
                             </tr>
                             <tr class="scheduleRow">
-                                <td>Iniciantes <span class="scheduleBadge">Faixa branca</span></td>
-                                <td>Seg/Qua/Sáb</td>
-                                <td>09:00 - 10:00</td>
+                                <td class="scheduleTime">12:15</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="intermediario"><i class="fa-solid fa-hand-fist" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Intermediário</span>
+                                        <span class="scheduleClassMeta">12:15 - 13:15 &middot; Branca +2 graus</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Adultos</span></td>
                             </tr>
                             <tr class="scheduleRow">
-                                <td>Intermediário <span class="scheduleBadge">Branca +2 graus</span></td>
-                                <td>Ter/Qui/Sáb</td>
-                                <td>09:00 - 10:00</td>
+                                <td class="scheduleTime">17:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="baby"><i class="fa-solid fa-baby" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Baby Eagle</span>
+                                        <span class="scheduleClassMeta">17:00 - 18:00 &middot; 3-4 anos</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Kids</span></td>
                             </tr>
                             <tr class="scheduleRow">
-                                <td>Little Eagle <span class="scheduleBadge">5-7 anos</span></td>
-                                <td>Seg/Qua</td>
-                                <td>09:00 - 10:00</td>
+                                <td class="scheduleTime">18:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="iniciante"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Iniciantes</span>
+                                        <span class="scheduleClassMeta">18:00 - 19:00 &middot; Faixa branca</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Adultos</span></td>
                             </tr>
                             <tr class="scheduleRow">
-                                <td>Eagle Warrior <span class="scheduleBadge">8-11 anos</span></td>
-                                <td>Seg/Qua</td>
-                                <td>09:00 - 10:00</td>
+                                <td class="scheduleTime">18:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="little"><i class="fa-solid fa-child" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Little Eagle</span>
+                                        <span class="scheduleClassMeta">18:00 - 19:00 &middot; 5-7 anos</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Kids</span></td>
                             </tr>
                             <tr class="scheduleRow">
-                                <td>Baby Eagle <span class="scheduleBadge">3-4 anos</span></td>
-                                <td>Ter/Qui</td>
-                                <td>09:00 - 10:00</td>
+                                <td class="scheduleTime">19:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="intermediario"><i class="fa-solid fa-hand-fist" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Intermediário</span>
+                                        <span class="scheduleClassMeta">19:00 - 20:00 &middot; Branca +2 graus</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Adultos</span></td>
                             </tr>
                             <tr class="scheduleRow">
-                                <td>Avançado <span class="scheduleBadge">Azul ou mais</span></td>
-                                <td>Sáb</td>
-                                <td>10:00 - 11:00</td>
+                                <td class="scheduleTime">19:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="feminino"><i class="fa-solid fa-venus" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Feminino (Iniciantes)</span>
+                                        <span class="scheduleClassMeta">19:00 - 20:00 &middot; Faixa branca</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Feminino</span></td>
                             </tr>
                             <tr class="scheduleRow">
-                                <td>Competição <span class="scheduleBadge">Todos os níveis</span></td>
-                                <td>Seg a Sex</td>
-                                <td>10:00 - 12:00</td>
+                                <td class="scheduleTime">19:30</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="avancado"><i class="fa-solid fa-ranking-star" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Avançado</span>
+                                        <span class="scheduleClassMeta">19:30 - 21:00 &middot; Azul ou mais</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Adultos</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="scheduleTable" id="ter" role="tabpanel" aria-labelledby="tab-ter" tabindex="0">
+                    <table class="scheduleGrid">
+                        <caption class="visually-hidden">Grade de horários de terça-feira</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Horário</th>
+                                <th scope="col">Aula</th>
+                                <th scope="col">Categoria</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="scheduleRow">
+                                <td class="scheduleTime">06:30</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="intermediario"><i class="fa-solid fa-hand-fist" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Intermediário</span>
+                                        <span class="scheduleClassMeta">06:30 - 07:30 &middot; Branca +2 graus</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Adultos</span></td>
                             </tr>
                             <tr class="scheduleRow">
-                                <td>Intermediário <span class="scheduleBadge">Branca +2 graus</span></td>
-                                <td>Seg/Qua</td>
-                                <td>12:15 - 13:15</td>
+                                <td class="scheduleTime">07:30</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="iniciante"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Iniciantes</span>
+                                        <span class="scheduleClassMeta">07:30 - 08:30 &middot; Faixa branca</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Adultos</span></td>
                             </tr>
                             <tr class="scheduleRow">
-                                <td>Iniciantes <span class="scheduleBadge">Faixa branca</span></td>
-                                <td>Ter/Qui</td>
-                                <td>12:15 - 13:15</td>
+                                <td class="scheduleTime">09:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="intermediario"><i class="fa-solid fa-hand-fist" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Intermediário</span>
+                                        <span class="scheduleClassMeta">09:00 - 10:00 &middot; Branca +2 graus</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Adultos</span></td>
                             </tr>
                             <tr class="scheduleRow">
-                                <td>Baby Eagle <span class="scheduleBadge">3-4 anos</span></td>
-                                <td>Seg/Qua</td>
-                                <td>17:00 - 18:00</td>
+                                <td class="scheduleTime">09:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="baby"><i class="fa-solid fa-baby" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Baby Eagle</span>
+                                        <span class="scheduleClassMeta">09:00 - 10:00 &middot; 3-4 anos</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Kids</span></td>
                             </tr>
                             <tr class="scheduleRow">
-                                <td>Eagle Youth <span class="scheduleBadge">12-16 anos</span></td>
-                                <td>Ter/Qui</td>
-                                <td>17:00 - 18:00</td>
+                                <td class="scheduleTime">10:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="competicao"><i class="fa-solid fa-trophy" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Competição</span>
+                                        <span class="scheduleClassMeta">10:00 - 12:00 &middot; Todos os níveis</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Competição</span></td>
                             </tr>
                             <tr class="scheduleRow">
-                                <td>Iniciantes <span class="scheduleBadge">Faixa branca</span></td>
-                                <td>Seg/Qua/Sex</td>
-                                <td>18:00 - 19:00</td>
+                                <td class="scheduleTime">12:15</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="iniciante"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Iniciantes</span>
+                                        <span class="scheduleClassMeta">12:15 - 13:15 &middot; Faixa branca</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Adultos</span></td>
                             </tr>
                             <tr class="scheduleRow">
-                                <td>Intermediário <span class="scheduleBadge">Branca +2 graus</span></td>
-                                <td>Ter/Qui</td>
-                                <td>18:00 - 19:00</td>
+                                <td class="scheduleTime">17:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="youth"><i class="fa-solid fa-user-group" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Eagle Youth</span>
+                                        <span class="scheduleClassMeta">17:00 - 18:00 &middot; 12-16 anos</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Kids</span></td>
                             </tr>
                             <tr class="scheduleRow">
-                                <td>Little Eagle <span class="scheduleBadge">5-7 anos</span></td>
-                                <td>Seg/Qua</td>
-                                <td>18:00 - 19:00</td>
+                                <td class="scheduleTime">18:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="intermediario"><i class="fa-solid fa-hand-fist" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Intermediário</span>
+                                        <span class="scheduleClassMeta">18:00 - 19:00 &middot; Branca +2 graus</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Adultos</span></td>
                             </tr>
                             <tr class="scheduleRow">
-                                <td>Eagle Warrior <span class="scheduleBadge">8-11 anos</span></td>
-                                <td>Ter/Qui</td>
-                                <td>18:00 - 19:00</td>
+                                <td class="scheduleTime">18:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="warrior"><i class="fa-solid fa-child-reaching" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Eagle Warrior</span>
+                                        <span class="scheduleClassMeta">18:00 - 19:00 &middot; 8-11 anos</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Kids</span></td>
                             </tr>
                             <tr class="scheduleRow">
-                                <td>Feminino (Iniciantes) <span class="scheduleBadge">Faixa branca</span></td>
-                                <td>Ter/Qui</td>
-                                <td>18:00 - 19:00</td>
+                                <td class="scheduleTime">18:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="feminino"><i class="fa-solid fa-venus" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Feminino (Iniciantes)</span>
+                                        <span class="scheduleClassMeta">18:00 - 19:00 &middot; Faixa branca</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Feminino</span></td>
                             </tr>
                             <tr class="scheduleRow">
-                                <td>Intermediário <span class="scheduleBadge">Branca +2 graus</span></td>
-                                <td>Seg/Qua</td>
-                                <td>19:00 - 20:00</td>
+                                <td class="scheduleTime">19:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="iniciante"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Iniciantes</span>
+                                        <span class="scheduleClassMeta">19:00 - 20:00 &middot; Faixa branca</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Adultos</span></td>
                             </tr>
                             <tr class="scheduleRow">
-                                <td>Iniciantes <span class="scheduleBadge">Faixa branca</span></td>
-                                <td>Ter/Qui</td>
-                                <td>19:00 - 20:00</td>
+                                <td class="scheduleTime">19:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="nogi"><i class="fa-solid fa-user-ninja" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">No-Gi</span>
+                                        <span class="scheduleClassMeta">19:00 - 20:00 &middot; Branca +2 graus</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Adultos</span></td>
                             </tr>
                             <tr class="scheduleRow">
-                                <td>Feminino (Iniciantes) <span class="scheduleBadge">Faixa branca</span></td>
-                                <td>Seg/Qua</td>
-                                <td>19:00 - 20:00</td>
+                                <td class="scheduleTime">19:30</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="avancado"><i class="fa-solid fa-ranking-star" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Avançado</span>
+                                        <span class="scheduleClassMeta">19:30 - 21:00 &middot; Azul ou mais</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Adultos</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="scheduleTable" id="qua" role="tabpanel" aria-labelledby="tab-qua" tabindex="0">
+                    <table class="scheduleGrid">
+                        <caption class="visually-hidden">Grade de horários de quarta-feira</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Horário</th>
+                                <th scope="col">Aula</th>
+                                <th scope="col">Categoria</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="scheduleRow">
+                                <td class="scheduleTime">06:30</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="iniciante"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Iniciantes</span>
+                                        <span class="scheduleClassMeta">06:30 - 07:30 &middot; Faixa branca</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Adultos</span></td>
                             </tr>
                             <tr class="scheduleRow">
-                                <td>No-Gi <span class="scheduleBadge">Branca +2 graus</span></td>
-                                <td>Ter/Qui</td>
-                                <td>19:00 - 20:00</td>
+                                <td class="scheduleTime">07:30</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="intermediario"><i class="fa-solid fa-hand-fist" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Intermediário</span>
+                                        <span class="scheduleClassMeta">07:30 - 08:30 &middot; Branca +2 graus</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Adultos</span></td>
                             </tr>
                             <tr class="scheduleRow">
-                                <td>Intermediário/Avançado <span class="scheduleBadge">Branca +2 / Azul+</span></td>
-                                <td>Sex</td>
-                                <td>19:00 - 20:00</td>
+                                <td class="scheduleTime">09:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="iniciante"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Iniciantes</span>
+                                        <span class="scheduleClassMeta">09:00 - 10:00 &middot; Faixa branca</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Adultos</span></td>
                             </tr>
                             <tr class="scheduleRow">
-                                <td>Avançado <span class="scheduleBadge">Azul ou mais</span></td>
-                                <td>Seg a Qui</td>
-                                <td>19:30 - 21:00</td>
+                                <td class="scheduleTime">09:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="little"><i class="fa-solid fa-child" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Little Eagle</span>
+                                        <span class="scheduleClassMeta">09:00 - 10:00 &middot; 5-7 anos</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Kids</span></td>
+                            </tr>
+                            <tr class="scheduleRow">
+                                <td class="scheduleTime">09:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="warrior"><i class="fa-solid fa-child-reaching" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Eagle Warrior</span>
+                                        <span class="scheduleClassMeta">09:00 - 10:00 &middot; 8-11 anos</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Kids</span></td>
+                            </tr>
+                            <tr class="scheduleRow">
+                                <td class="scheduleTime">10:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="competicao"><i class="fa-solid fa-trophy" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Competição</span>
+                                        <span class="scheduleClassMeta">10:00 - 12:00 &middot; Todos os níveis</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Competição</span></td>
+                            </tr>
+                            <tr class="scheduleRow">
+                                <td class="scheduleTime">12:15</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="intermediario"><i class="fa-solid fa-hand-fist" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Intermediário</span>
+                                        <span class="scheduleClassMeta">12:15 - 13:15 &middot; Branca +2 graus</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Adultos</span></td>
+                            </tr>
+                            <tr class="scheduleRow">
+                                <td class="scheduleTime">17:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="baby"><i class="fa-solid fa-baby" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Baby Eagle</span>
+                                        <span class="scheduleClassMeta">17:00 - 18:00 &middot; 3-4 anos</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Kids</span></td>
+                            </tr>
+                            <tr class="scheduleRow">
+                                <td class="scheduleTime">18:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="iniciante"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Iniciantes</span>
+                                        <span class="scheduleClassMeta">18:00 - 19:00 &middot; Faixa branca</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Adultos</span></td>
+                            </tr>
+                            <tr class="scheduleRow">
+                                <td class="scheduleTime">18:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="little"><i class="fa-solid fa-child" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Little Eagle</span>
+                                        <span class="scheduleClassMeta">18:00 - 19:00 &middot; 5-7 anos</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Kids</span></td>
+                            </tr>
+                            <tr class="scheduleRow">
+                                <td class="scheduleTime">19:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="intermediario"><i class="fa-solid fa-hand-fist" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Intermediário</span>
+                                        <span class="scheduleClassMeta">19:00 - 20:00 &middot; Branca +2 graus</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Adultos</span></td>
+                            </tr>
+                            <tr class="scheduleRow">
+                                <td class="scheduleTime">19:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="feminino"><i class="fa-solid fa-venus" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Feminino (Iniciantes)</span>
+                                        <span class="scheduleClassMeta">19:00 - 20:00 &middot; Faixa branca</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Feminino</span></td>
+                            </tr>
+                            <tr class="scheduleRow">
+                                <td class="scheduleTime">19:30</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="avancado"><i class="fa-solid fa-ranking-star" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Avançado</span>
+                                        <span class="scheduleClassMeta">19:30 - 21:00 &middot; Azul ou mais</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Adultos</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="scheduleTable" id="qui" role="tabpanel" aria-labelledby="tab-qui" tabindex="0">
+                    <table class="scheduleGrid">
+                        <caption class="visually-hidden">Grade de horários de quinta-feira</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Horário</th>
+                                <th scope="col">Aula</th>
+                                <th scope="col">Categoria</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="scheduleRow">
+                                <td class="scheduleTime">06:30</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="intermediario"><i class="fa-solid fa-hand-fist" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Intermediário</span>
+                                        <span class="scheduleClassMeta">06:30 - 07:30 &middot; Branca +2 graus</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Adultos</span></td>
+                            </tr>
+                            <tr class="scheduleRow">
+                                <td class="scheduleTime">07:30</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="iniciante"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Iniciantes</span>
+                                        <span class="scheduleClassMeta">07:30 - 08:30 &middot; Faixa branca</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Adultos</span></td>
+                            </tr>
+                            <tr class="scheduleRow">
+                                <td class="scheduleTime">09:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="intermediario"><i class="fa-solid fa-hand-fist" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Intermediário</span>
+                                        <span class="scheduleClassMeta">09:00 - 10:00 &middot; Branca +2 graus</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Adultos</span></td>
+                            </tr>
+                            <tr class="scheduleRow">
+                                <td class="scheduleTime">09:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="baby"><i class="fa-solid fa-baby" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Baby Eagle</span>
+                                        <span class="scheduleClassMeta">09:00 - 10:00 &middot; 3-4 anos</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Kids</span></td>
+                            </tr>
+                            <tr class="scheduleRow">
+                                <td class="scheduleTime">10:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="competicao"><i class="fa-solid fa-trophy" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Competição</span>
+                                        <span class="scheduleClassMeta">10:00 - 12:00 &middot; Todos os níveis</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Competição</span></td>
+                            </tr>
+                            <tr class="scheduleRow">
+                                <td class="scheduleTime">12:15</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="iniciante"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Iniciantes</span>
+                                        <span class="scheduleClassMeta">12:15 - 13:15 &middot; Faixa branca</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Adultos</span></td>
+                            </tr>
+                            <tr class="scheduleRow">
+                                <td class="scheduleTime">17:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="youth"><i class="fa-solid fa-user-group" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Eagle Youth</span>
+                                        <span class="scheduleClassMeta">17:00 - 18:00 &middot; 12-16 anos</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Kids</span></td>
+                            </tr>
+                            <tr class="scheduleRow">
+                                <td class="scheduleTime">18:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="intermediario"><i class="fa-solid fa-hand-fist" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Intermediário</span>
+                                        <span class="scheduleClassMeta">18:00 - 19:00 &middot; Branca +2 graus</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Adultos</span></td>
+                            </tr>
+                            <tr class="scheduleRow">
+                                <td class="scheduleTime">18:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="warrior"><i class="fa-solid fa-child-reaching" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Eagle Warrior</span>
+                                        <span class="scheduleClassMeta">18:00 - 19:00 &middot; 8-11 anos</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Kids</span></td>
+                            </tr>
+                            <tr class="scheduleRow">
+                                <td class="scheduleTime">18:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="feminino"><i class="fa-solid fa-venus" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Feminino (Iniciantes)</span>
+                                        <span class="scheduleClassMeta">18:00 - 19:00 &middot; Faixa branca</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Feminino</span></td>
+                            </tr>
+                            <tr class="scheduleRow">
+                                <td class="scheduleTime">19:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="iniciante"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Iniciantes</span>
+                                        <span class="scheduleClassMeta">19:00 - 20:00 &middot; Faixa branca</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Adultos</span></td>
+                            </tr>
+                            <tr class="scheduleRow">
+                                <td class="scheduleTime">19:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="nogi"><i class="fa-solid fa-user-ninja" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">No-Gi</span>
+                                        <span class="scheduleClassMeta">19:00 - 20:00 &middot; Branca +2 graus</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Adultos</span></td>
+                            </tr>
+                            <tr class="scheduleRow">
+                                <td class="scheduleTime">19:30</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="avancado"><i class="fa-solid fa-ranking-star" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Avançado</span>
+                                        <span class="scheduleClassMeta">19:30 - 21:00 &middot; Azul ou mais</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Adultos</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="scheduleTable" id="sex" role="tabpanel" aria-labelledby="tab-sex" tabindex="0">
+                    <table class="scheduleGrid">
+                        <caption class="visually-hidden">Grade de horários de sexta-feira</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Horário</th>
+                                <th scope="col">Aula</th>
+                                <th scope="col">Categoria</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="scheduleRow">
+                                <td class="scheduleTime">06:30</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="intermediario"><i class="fa-solid fa-hand-fist" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Intermediário</span>
+                                        <span class="scheduleClassMeta">06:30 - 07:30 &middot; Branca +2 graus</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Adultos</span></td>
+                            </tr>
+                            <tr class="scheduleRow">
+                                <td class="scheduleTime">06:30</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="iniciante"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Iniciantes</span>
+                                        <span class="scheduleClassMeta">06:30 - 07:30 &middot; Faixa branca</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Adultos</span></td>
+                            </tr>
+                            <tr class="scheduleRow">
+                                <td class="scheduleTime">10:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="competicao"><i class="fa-solid fa-trophy" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Competição</span>
+                                        <span class="scheduleClassMeta">10:00 - 12:00 &middot; Todos os níveis</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Competição</span></td>
+                            </tr>
+                            <tr class="scheduleRow">
+                                <td class="scheduleTime">18:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="iniciante"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Iniciantes</span>
+                                        <span class="scheduleClassMeta">18:00 - 19:00 &middot; Faixa branca</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Adultos</span></td>
+                            </tr>
+                            <tr class="scheduleRow">
+                                <td class="scheduleTime">19:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="avancado"><i class="fa-solid fa-ranking-star" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Intermediário/<wbr>Avançado</span>
+                                        <span class="scheduleClassMeta">19:00 - 20:00 &middot; Branca +2 / Azul+</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Adultos</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="scheduleTable" id="sab" role="tabpanel" aria-labelledby="tab-sab" tabindex="0">
+                    <table class="scheduleGrid">
+                        <caption class="visually-hidden">Grade de horários de sábado</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Horário</th>
+                                <th scope="col">Aula</th>
+                                <th scope="col">Categoria</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="scheduleRow">
+                                <td class="scheduleTime">08:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="kidsall"><i class="fa-solid fa-children" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Kids — Todas as turmas</span>
+                                        <span class="scheduleClassMeta">08:00 - 09:00 &middot; 3-16 anos</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Kids</span></td>
+                            </tr>
+                            <tr class="scheduleRow">
+                                <td class="scheduleTime">09:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="iniciante"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Iniciantes</span>
+                                        <span class="scheduleClassMeta">09:00 - 10:00 &middot; Faixa branca</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Adultos</span></td>
+                            </tr>
+                            <tr class="scheduleRow">
+                                <td class="scheduleTime">09:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="intermediario"><i class="fa-solid fa-hand-fist" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Intermediário</span>
+                                        <span class="scheduleClassMeta">09:00 - 10:00 &middot; Branca +2 graus</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Adultos</span></td>
+                            </tr>
+                            <tr class="scheduleRow">
+                                <td class="scheduleTime">10:00</td>
+                                <td class="scheduleClass">
+                                    <span class="scheduleIcon" data-cat="avancado"><i class="fa-solid fa-ranking-star" aria-hidden="true"></i></span>
+                                    <span class="scheduleClassBody">
+                                        <span class="scheduleClassName">Avançado</span>
+                                        <span class="scheduleClassMeta">10:00 - 11:00 &middot; Azul ou mais</span>
+                                    </span>
+                                </td>
+                                <td class="scheduleCat"><span class="scheduleCatPill">Adultos</span></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
 
-                <div class="scheduleTable" id="adult" role="tabpanel" aria-labelledby="tab-adult" tabindex="0">
-                    <table class="scheduleSectionTimes text-center">
-                        <thead>
-                            <tr>
-                                <th scope="col">Aula</th>
-                                <th scope="col">Dias</th>
-                                <th scope="col">Horário</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="scheduleRow">
-                                <td>Iniciantes <span class="scheduleBadge">Faixa branca</span></td>
-                                <td>Seg/Qua</td>
-                                <td>06:30 - 07:30</td>
-                            </tr>
-                            <tr class="scheduleRow">
-                                <td>Intermediário <span class="scheduleBadge">Branca +2 graus</span></td>
-                                <td>Ter/Qui/Sex</td>
-                                <td>06:30 - 07:30</td>
-                            </tr>
-                            <tr class="scheduleRow">
-                                <td>Iniciantes <span class="scheduleBadge">Faixa branca</span></td>
-                                <td>Sex</td>
-                                <td>06:30 - 07:30</td>
-                            </tr>
-                            <tr class="scheduleRow">
-                                <td>Intermediário <span class="scheduleBadge">Branca +2 graus</span></td>
-                                <td>Seg/Qua</td>
-                                <td>07:30 - 08:30</td>
-                            </tr>
-                            <tr class="scheduleRow">
-                                <td>Iniciantes <span class="scheduleBadge">Faixa branca</span></td>
-                                <td>Ter/Qui</td>
-                                <td>07:30 - 08:30</td>
-                            </tr>
-                            <tr class="scheduleRow">
-                                <td>Iniciantes <span class="scheduleBadge">Faixa branca</span></td>
-                                <td>Seg/Qua/Sáb</td>
-                                <td>09:00 - 10:00</td>
-                            </tr>
-                            <tr class="scheduleRow">
-                                <td>Intermediário <span class="scheduleBadge">Branca +2 graus</span></td>
-                                <td>Ter/Qui/Sáb</td>
-                                <td>09:00 - 10:00</td>
-                            </tr>
-                            <tr class="scheduleRow">
-                                <td>Avançado <span class="scheduleBadge">Azul ou mais</span></td>
-                                <td>Sáb</td>
-                                <td>10:00 - 11:00</td>
-                            </tr>
-                            <tr class="scheduleRow">
-                                <td>Competição <span class="scheduleBadge">Todos os níveis</span></td>
-                                <td>Seg a Sex</td>
-                                <td>10:00 - 12:00</td>
-                            </tr>
-                            <tr class="scheduleRow">
-                                <td>Intermediário <span class="scheduleBadge">Branca +2 graus</span></td>
-                                <td>Seg/Qua</td>
-                                <td>12:15 - 13:15</td>
-                            </tr>
-                            <tr class="scheduleRow">
-                                <td>Iniciantes <span class="scheduleBadge">Faixa branca</span></td>
-                                <td>Ter/Qui</td>
-                                <td>12:15 - 13:15</td>
-                            </tr>
-                            <tr class="scheduleRow">
-                                <td>Iniciantes <span class="scheduleBadge">Faixa branca</span></td>
-                                <td>Seg/Qua/Sex</td>
-                                <td>18:00 - 19:00</td>
-                            </tr>
-                            <tr class="scheduleRow">
-                                <td>Intermediário <span class="scheduleBadge">Branca +2 graus</span></td>
-                                <td>Ter/Qui</td>
-                                <td>18:00 - 19:00</td>
-                            </tr>
-                            <tr class="scheduleRow">
-                                <td>Feminino (Iniciantes) <span class="scheduleBadge">Faixa branca</span></td>
-                                <td>Ter/Qui</td>
-                                <td>18:00 - 19:00</td>
-                            </tr>
-                            <tr class="scheduleRow">
-                                <td>Intermediário <span class="scheduleBadge">Branca +2 graus</span></td>
-                                <td>Seg/Qua</td>
-                                <td>19:00 - 20:00</td>
-                            </tr>
-                            <tr class="scheduleRow">
-                                <td>Iniciantes <span class="scheduleBadge">Faixa branca</span></td>
-                                <td>Ter/Qui</td>
-                                <td>19:00 - 20:00</td>
-                            </tr>
-                            <tr class="scheduleRow">
-                                <td>Feminino (Iniciantes) <span class="scheduleBadge">Faixa branca</span></td>
-                                <td>Seg/Qua</td>
-                                <td>19:00 - 20:00</td>
-                            </tr>
-                            <tr class="scheduleRow">
-                                <td>Intermediário/Avançado <span class="scheduleBadge">Branca +2 / Azul+</span></td>
-                                <td>Sex</td>
-                                <td>19:00 - 20:00</td>
-                            </tr>
-                            <tr class="scheduleRow">
-                                <td>Avançado <span class="scheduleBadge">Azul ou mais</span></td>
-                                <td>Seg a Qui</td>
-                                <td>19:30 - 21:00</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            </div>
 
-                <div class="scheduleTable" id="kids" role="tabpanel" aria-labelledby="tab-kids" tabindex="0">
-                    <table class="scheduleSectionTimes text-center">
-                        <thead>
-                            <tr>
-                                <th scope="col">Aula</th>
-                                <th scope="col">Dias</th>
-                                <th scope="col">Horário</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="scheduleRow">
-                                <td>Baby Eagle <span class="scheduleBadge">3-4 anos</span></td>
-                                <td>Sáb</td>
-                                <td>08:00 - 09:00</td>
-                            </tr>
-                            <tr class="scheduleRow">
-                                <td>Little Eagle <span class="scheduleBadge">5-7 anos</span></td>
-                                <td>Sáb</td>
-                                <td>08:00 - 09:00</td>
-                            </tr>
-                            <tr class="scheduleRow">
-                                <td>Eagle Warrior <span class="scheduleBadge">8-11 anos</span></td>
-                                <td>Sáb</td>
-                                <td>08:00 - 09:00</td>
-                            </tr>
-                            <tr class="scheduleRow">
-                                <td>Eagle Youth <span class="scheduleBadge">12-16 anos</span></td>
-                                <td>Sáb</td>
-                                <td>08:00 - 09:00</td>
-                            </tr>
-                            <tr class="scheduleRow">
-                                <td>Little Eagle <span class="scheduleBadge">5-7 anos</span></td>
-                                <td>Seg/Qua</td>
-                                <td>09:00 - 10:00</td>
-                            </tr>
-                            <tr class="scheduleRow">
-                                <td>Eagle Warrior <span class="scheduleBadge">8-11 anos</span></td>
-                                <td>Seg/Qua</td>
-                                <td>09:00 - 10:00</td>
-                            </tr>
-                            <tr class="scheduleRow">
-                                <td>Baby Eagle <span class="scheduleBadge">3-4 anos</span></td>
-                                <td>Ter/Qui</td>
-                                <td>09:00 - 10:00</td>
-                            </tr>
-                            <tr class="scheduleRow">
-                                <td>Baby Eagle <span class="scheduleBadge">3-4 anos</span></td>
-                                <td>Seg/Qua</td>
-                                <td>17:00 - 18:00</td>
-                            </tr>
-                            <tr class="scheduleRow">
-                                <td>Eagle Youth <span class="scheduleBadge">12-16 anos</span></td>
-                                <td>Ter/Qui</td>
-                                <td>17:00 - 18:00</td>
-                            </tr>
-                            <tr class="scheduleRow">
-                                <td>Little Eagle <span class="scheduleBadge">5-7 anos</span></td>
-                                <td>Seg/Qua</td>
-                                <td>18:00 - 19:00</td>
-                            </tr>
-                            <tr class="scheduleRow">
-                                <td>Eagle Warrior <span class="scheduleBadge">8-11 anos</span></td>
-                                <td>Ter/Qui</td>
-                                <td>18:00 - 19:00</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="scheduleTable" id="nogi" role="tabpanel" aria-labelledby="tab-nogi" tabindex="0">
-                    <table class="scheduleSectionTimes text-center">
-                        <thead>
-                            <tr>
-                                <th scope="col">Aula</th>
-                                <th scope="col">Dias</th>
-                                <th scope="col">Horário</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="scheduleRow">
-                                <td>No-Gi <span class="scheduleBadge">Branca +2 graus</span></td>
-                                <td>Ter/Qui</td>
-                                <td>19:00 - 20:00</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
+            <div class="scheduleSectionNote">
+                <span class="scheduleSectionNoteIcon"><i class="fa-solid fa-clock" aria-hidden="true"></i></span>
+                <p><strong>Horários flexíveis</strong>Aulas todos os dias para encaixar na sua rotina.</p>
             </div>
 
         </div>

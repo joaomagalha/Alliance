@@ -116,8 +116,9 @@ function activateTab(tab) {
     t.setAttribute("tabindex", isActive ? "0" : "-1");
   });
   tables.forEach(t => t.classList.remove("active"));
-  document.getElementById(tab.dataset.tab).classList.add("active");
-  document.querySelector(".scheduleTables").scrollTop = 0;
+  const panel = document.getElementById(tab.dataset.tab);
+  panel.classList.add("active");
+  panel.scrollTop = 0; // o scroll interno é do painel (.scheduleTable), não do wrapper
 }
 
 tabs.forEach(tab => {

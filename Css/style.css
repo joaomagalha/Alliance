@@ -24,6 +24,19 @@
     --lightGreen: #00ff1e17;
     --greenPulse: #00C853;
 
+    /* Cores por categoria de aula — grade de horários (fonte: grade oficial da Alliance Moinho) */
+    --cat-iniciante: #4E9A51;
+    --cat-intermediario: #3F6FB0;
+    --cat-avancado: #C43D3D;
+    --cat-competicao: #E08A2E;
+    --cat-feminino: #D25E9A;
+    --cat-nogi: #6D51A3;
+    --cat-baby: #8E6FC0;
+    --cat-little: #E39A5B;
+    --cat-warrior: #6E9BC4;
+    --cat-youth: #46A79E;
+    --cat-kidsall: #DFA92E;
+
     /* Cor das Linhas */
     --lineGray: rgba(255, 255, 255, 0.15);
     --darkLineGray: rgba(51, 51, 51, 0.05);
@@ -1720,147 +1733,240 @@ details[open] .faqContent p {
 
 }
 
-.tab {
-    position: relative;
-    cursor: pointer;
-    transition: 0.3s;
-    padding: var(--8) var(--16);
-    text-transform: uppercase;
-    font-weight: bold;
-    color: var(--placeholderColor);
-    font-size: 1.2rem;
+/* ============================================================
+   Grade de Horários — Sugestão 2: abas por dia da semana +
+   lista vertical das aulas do dia. Tema claro, sem preto.
+   ============================================================ */
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip-path: inset(50%);
+    overflow: hidden;
+    white-space: nowrap;
 }
 
+/* Abas dos dias — no mobile: grade de 6 colunas iguais, sempre cabe na tela.
+   No tablet+ vira uma fila de pills centralizada. */
+.scheduleSectionDays {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: var(--4);
+    margin-bottom: var(--24);
+}
+
+.tab {
+    cursor: pointer;
+    padding: var(--8) var(--4);
+    border: 0.1rem solid var(--darkLineGray);
+    border-radius: 99rem;
+    background: var(--white);
+    color: var(--secondaryTextGray);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02rem;
+    text-align: center;
+    transition: background 0.25s, color 0.25s, border-color 0.25s;
+}
 .tab:hover {
     color: var(--gray);
+    border-color: var(--yellow);
 }
-
 .tab.active {
-  color: var(--gray);
-}
-
-.tab::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0%;
-  height: 0.2rem;
-  background: var(--yellow);
-  transition: 0.3s;
-}
-
-/* quando ativo */
-.tab.active::after {
-  width: 100%;
-}
-
-.scheduleSectionDays {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 0.1rem solid var(--darkLineGray);
-    margin-bottom: var(--16);
-}
-
-.scheduleSectionTimes {
-    display: flex;
-    flex-direction: column;
-    gap: var(--8);
-    width: 100%;
-}
-
-/* thead e tbody "somem" do layout: as <tr> viram filhas diretas do flex */
-.scheduleSectionTimes thead,
-.scheduleSectionTimes tbody {
-    display: contents;
-}
-
-/* toda linha (cabeçalho e dados) usa o grid de 3 colunas
-   align-items: center alinha Horário e Dias ao meio da célula
-   da Aula, que pode ter 2 linhas (nome + badge). */
-.scheduleSectionTimes tr {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-}
-
-.scheduleSectionTimes td,
-.scheduleSectionTimes th {
-    padding: var(--24) 0;
-    text-align: center;
-    font-size: 1.1rem;
-    letter-spacing: -0.028rem;
-}
-
-.scheduleSectionTimes thead th {
-    font-weight: bold;
+    background: var(--yellow);
+    border-color: var(--yellow);
     color: var(--gray);
 }
+
+/* Painel de um dia */
+.scheduleTable {
+    display: none;
+    max-height: 46rem;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+.scheduleTable.active { display: block; }
+.scheduleTables::-webkit-scrollbar { width: 0.6rem; }
+.scheduleTables::-webkit-scrollbar-thumb {
+    background: var(--yellow);
+    border-radius: 1rem;
+}
+
+/* Tabela: thead/tbody "somem", cada tr vira um grid de 3 colunas */
+.scheduleGrid {
+    width: 100%;
+    border-collapse: collapse;
+}
+.scheduleGrid thead,
+.scheduleGrid tbody { display: contents; }
+
+/* 3 colunas: horário | aula | categoria. A coluna da aula encolhe (minmax 0)
+   e o texto quebra por palavra, então a pill fica sempre ao lado sem espremer. */
+.scheduleGrid tr {
+    display: grid;
+    grid-template-columns: 4.2rem minmax(0, 1fr) auto;
+    align-items: center;
+    column-gap: var(--8);
+}
+
+.scheduleGrid thead tr {
+    padding: 0 var(--8) var(--8);
+    border-bottom: 0.1rem solid var(--darkLineGray);
+}
+.scheduleGrid thead th {
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    color: var(--secondaryTextGray);
+}
+.scheduleGrid thead th:last-child { text-align: right; }
 
 .scheduleRow {
-    padding: var(--8);
-    border-radius: var(--smallRadius);
+    padding: var(--16) var(--8);
+    border-bottom: 0.1rem solid var(--darkLineGray);
     font-weight: 400;
-    border: 0.05rem solid rgb(181, 181, 181);
+}
+.scheduleRow:last-child { border-bottom: 0; }
+
+.scheduleTime {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--gray);
 }
 
-.scheduleRow:nth-child(odd) {
-  background: transparent;
-  color: var(--gray);
+.scheduleClass {
+    display: flex;
+    align-items: center;
+    gap: var(--8);
+    min-width: 0;
 }
 
-.scheduleRow:nth-child(even) {
-  background:var(--lightYellow);
-  color: var(--yellow);
-  border: 0.05rem solid var(--yellow);
-
+.scheduleIcon {
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 99rem;
+    font-size: 1.2rem;
+    background: color-mix(in srgb, var(--cat, var(--yellow)) 15%, var(--white));
+    color: var(--cat, var(--yellowDark));
 }
 
-/* Badge inline com idade (Kids) ou nível de faixa (Adultos) — guia rápido
-   pro usuário entender pra quem é a aula sem precisar ler outro lugar. */
-.scheduleBadge {
-    display: block;
-    margin: 0.4rem auto 0;
-    width: fit-content;
-    padding: 0.15rem 0.7rem;
-    font-size: 0.95rem;
+.scheduleClassBody {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    min-width: 0;
+}
+.scheduleClassName {
+    font-size: 1.3rem;
     font-weight: 600;
     color: var(--gray);
+    line-height: 1.3;
+    overflow-wrap: break-word;
+}
+.scheduleClassMeta {
+    font-size: 1.05rem;
+    color: var(--secondaryTextGray);
+    line-height: 1.4;
+    overflow-wrap: break-word;
+}
+
+.scheduleCat { justify-self: end; }
+.scheduleCatPill {
+    display: inline-block;
+    padding: 0.2rem 0.7rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02rem;
+    color: var(--gray);
     background: var(--white);
-    border: 0.05rem solid var(--yellow);
+    border: 0.1rem solid var(--darkLineGray);
     border-radius: 99rem;
-    letter-spacing: 0;
     white-space: nowrap;
-    line-height: 1.6;
-    text-transform: none;
 }
 
-@media (min-width: 1024px) {
-    .scheduleBadge {
-        font-size: 1.1rem;
-        padding: 0.2rem 0.8rem;
+/* Cor por categoria de aula — alimenta o disco do ícone via --cat */
+.scheduleIcon[data-cat="iniciante"]     { --cat: var(--cat-iniciante); }
+.scheduleIcon[data-cat="intermediario"] { --cat: var(--cat-intermediario); }
+.scheduleIcon[data-cat="avancado"]      { --cat: var(--cat-avancado); }
+.scheduleIcon[data-cat="competicao"]    { --cat: var(--cat-competicao); }
+.scheduleIcon[data-cat="feminino"]      { --cat: var(--cat-feminino); }
+.scheduleIcon[data-cat="nogi"]          { --cat: var(--cat-nogi); }
+.scheduleIcon[data-cat="baby"]          { --cat: var(--cat-baby); }
+.scheduleIcon[data-cat="little"]        { --cat: var(--cat-little); }
+.scheduleIcon[data-cat="warrior"]       { --cat: var(--cat-warrior); }
+.scheduleIcon[data-cat="youth"]         { --cat: var(--cat-youth); }
+.scheduleIcon[data-cat="kidsall"]       { --cat: var(--cat-kidsall); }
+
+/* Nota de rodapé da seção — ícone no disco, texto centralizado embaixo */
+.scheduleSectionNote {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--12, 1.2rem);
+    max-width: 34rem;
+    margin: var(--32) auto 0;
+    padding-top: var(--24);
+    border-top: 0.1rem solid var(--darkLineGray);
+    text-align: center;
+}
+.scheduleSectionNoteIcon {
+    display: grid;
+    place-items: center;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 99rem;
+    background: var(--lightYellow);
+    border: 0.1rem solid var(--darkLineGray);
+    color: var(--yellow);
+    font-size: 1.6rem;
+}
+.scheduleSectionNote p {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: var(--secondaryTextGray);
+}
+.scheduleSectionNote strong {
+    display: block;
+    margin-bottom: 0.2rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--gray);
+}
+
+@media (min-width: 768px) {
+    .scheduleSectionDays {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--8);
     }
-}
-
-.scheduleTable {
-  display: none;
-  max-height: 40rem;
-  overflow-y: auto;
-
-  scrollbar-width: thin;
-}
-
-.scheduleTables::-webkit-scrollbar {
-  width: 0.6rem;
-}
-
-.scheduleTables::-webkit-scrollbar-thumb {
-  background: var(--yellow);
-  border-radius: 1rem;
-}
-
-.scheduleTable.active {
-  display: block;
+    .tab {
+        padding: var(--8) var(--24);
+        font-size: 1.2rem;
+    }
+    .scheduleGrid tr {
+        grid-template-columns: 8rem minmax(0, 1fr) auto;
+        column-gap: var(--24);
+    }
+    .scheduleRow { padding: var(--16); }
+    .scheduleClass { gap: var(--16); }
+    .scheduleTime { font-size: 1.5rem; }
+    .scheduleClassName { font-size: 1.5rem; }
+    .scheduleClassMeta { font-size: 1.2rem; }
+    .scheduleIcon { width: 4rem; height: 4rem; font-size: 1.6rem; }
+    .scheduleCatPill { font-size: 1.05rem; padding: 0.2rem 0.9rem; }
 }
 
 
