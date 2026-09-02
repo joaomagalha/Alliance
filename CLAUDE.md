@@ -71,13 +71,15 @@ Use these variables. **Don't hardcode hex values.**
 - `≥1024px` — desktop (3-col class cards, 4-col benefits, 3-col pricing with center-emphasis, larger type)
 - `≥1180px / 1440px / 1700px / 2000px` — hero height bumps; `--maxContent` grows at 1700/2000
 
-## JavaScript — what `Js/script.js` actually does (5 things, not 3)
+## JavaScript — what `Js/script.js` actually does
 
 1. **Preloader** — fades out splash screen after `load` with a min 1600 ms display; locks body scroll while visible.
 2. **Flashlight hover effect** — sets `--mouse-x` / `--mouse-y` CSS vars on `.pricingCard, .classCard, .benefitCard, .testimonialCard, .professor-card, .differentialCard` for the radial-gradient glow.
-3. **On-scroll reveal** — IntersectionObserver adds `.animate` to `.animate-on-scroll` and `.animate-on-scroll-list` (one-shot, `rootMargin: "0px 0px -10% 0px"`).
+3. **On-scroll reveal** — IntersectionObserver adds `.animate` to `.animate-on-scroll` and `.animate-on-scroll-list` (one-shot, `rootMargin: "0px 0px -10% 0px"`). The reveal is `animation-play-state: paused → running`; `.animate-on-scroll-list > *` stagger via per-`:nth-child` `animation-delay`.
 4. **FAQ accordion** — only one `<details class="faqSectionCard">` open at a time.
-5. **Schedule tab switcher** — `data-tab` on `.tab` targets `#<id>` tables; ARIA tablist with arrow-key navigation.
+5. **`initTablist(tablist, opts)`** — generic ARIA-APG tablist (roving `tabindex`, arrow/Home/End, automatic activation). Reads `[role="tab"]` + `aria-controls` → toggles the target panel's `.active` class + `hidden` attr. `opts.onActivate(panel)` runs on every activation (click or keyboard). Used twice:
+   - **Schedule** (`.scheduleSectionDays` → `.scheduleTable` panels): `onActivate` resets the panel's internal `scrollTop`.
+   - **Pricing categories** (`.pricingCategories` → `.pricingPanel` panels, Adulto/Infantil/Familiar): `onActivate` replays the card reveal — removes `.animate` from the panel's `.animate-on-scroll-list`, forces a reflow, re-adds it.
 6. **Mobile menu** — open/close hamburger, outside-click/scroll/Escape close, focus management, `inert` on hidden menu. **Guarded by `if (openBtn && closeBtn && mobileMenu)` because the menu only exists in `index.html`.**
 
 Target DOM via `data-*` attributes, not class names, for new JS behavior.
