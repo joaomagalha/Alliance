@@ -104,41 +104,67 @@ detalhes.forEach((item) => {
   });
 });
 
-const tabs = document.querySelectorAll(".tab");
-const tables = document.querySelectorAll(".scheduleTable");
-const tablist = document.querySelector(".scheduleSectionDays");
+/* ============================================================
+   Tablist genérico — usado nas abas da Grade de Horários e nas
+   de categoria dos Planos. Cada tab aponta pro painel via
+   aria-controls. Segue o padrão ARIA APG (ativação automática,
+   navegação por seta/Home/End, roving tabindex).
+   ============================================================ */
+function initTablist(tablist, opts = {}) {
+  const tabs = Array.from(tablist.querySelectorAll('[role="tab"]'));
+  if (!tabs.length) return;
 
-function activateTab(tab) {
-  tabs.forEach(t => {
-    const isActive = t === tab;
-    t.classList.toggle("active", isActive);
-    t.setAttribute("aria-selected", isActive ? "true" : "false");
-    t.setAttribute("tabindex", isActive ? "0" : "-1");
-  });
-  tables.forEach(t => t.classList.remove("active"));
-  const panel = document.getElementById(tab.dataset.tab);
-  panel.classList.add("active");
-  panel.scrollTop = 0; // o scroll interno é do painel (.scheduleTable), não do wrapper
-}
+  const activate = (tab) => {
+    tabs.forEach((t) => {
+      const on = t === tab;
+      t.classList.toggle("active", on);
+      t.setAttribute("aria-selected", on ? "true" : "false");
+      t.setAttribute("tabindex", on ? "0" : "-1");
+      const panel = document.getElementById(t.getAttribute("aria-controls"));
+      if (panel) {
+        panel.classList.toggle("active", on);
+        panel.toggleAttribute("hidden", !on);
+      }
+    });
+    if (opts.onActivate) {
+      const active = document.getElementById(tab.getAttribute("aria-controls"));
+      if (active) opts.onActivate(active);
+    }
+  };
 
-tabs.forEach(tab => {
-  tab.addEventListener("click", () => activateTab(tab));
-});
+  tabs.forEach((tab) => tab.addEventListener("click", () => activate(tab)));
 
-// navegação por teclado entre tabs (padrão ARIA APG — automatic activation)
-if (tablist) {
   tablist.addEventListener("keydown", (e) => {
-    const idx = Array.from(tabs).indexOf(document.activeElement);
+    const idx = tabs.indexOf(document.activeElement);
     if (idx === -1) return;
     let next = idx;
-    if (e.key === "ArrowRight")     next = (idx + 1) % tabs.length;
-    else if (e.key === "ArrowLeft") next = (idx - 1 + tabs.length) % tabs.length;
-    else if (e.key === "Home")      next = 0;
-    else if (e.key === "End")       next = tabs.length - 1;
+    if (e.key === "ArrowRight" || e.key === "ArrowDown") next = (idx + 1) % tabs.length;
+    else if (e.key === "ArrowLeft" || e.key === "ArrowUp") next = (idx - 1 + tabs.length) % tabs.length;
+    else if (e.key === "Home") next = 0;
+    else if (e.key === "End") next = tabs.length - 1;
     else return;
     e.preventDefault();
-    activateTab(tabs[next]);
+    activate(tabs[next]);
     tabs[next].focus();
+  });
+}
+
+const scheduleTablist = document.querySelector(".scheduleSectionDays");
+if (scheduleTablist) {
+  initTablist(scheduleTablist, { onActivate: (panel) => { panel.scrollTop = 0; } });
+}
+
+const pricingTablist = document.querySelector(".pricingCategories");
+if (pricingTablist) {
+  initTablist(pricingTablist, {
+    // Reinicia o efeito de revelação dos cards a cada troca de categoria.
+    onActivate: (panel) => {
+      const list = panel.querySelector(".animate-on-scroll-list");
+      if (!list) return;
+      list.classList.remove("animate");
+      void list.offsetWidth; // força reflow pra reiniciar a animação CSS
+      list.classList.add("animate");
+    },
   });
 }
 

@@ -1431,143 +1431,378 @@
 
     </section>
 
-    <section id="pricing" class="pricingSection" aria-labelledby="pricing-title"> 
+    <section id="pricing" class="pricingSection" aria-labelledby="pricing-title">
 
         <div class="pricingSectionText text-center animate-on-scroll">
-            
-            <h2 id="pricing-title">Invista na sua <br> <span class="textYellow">melhor versão</span></h2>
-            <p class="subtitle">Escolha o plano que se adapta à sua rotina e <br>objetivos. Sem taxas escondidas.</p>
+
+            <h2 id="pricing-title">Nossos <span class="textYellow">Planos</span></h2>
+            <p class="subtitle">Escolha a categoria que melhor <br>se adapta a você.</p>
 
         </div>
 
-        <ul class="pricingSectionContainer animate-on-scroll-list">
+        <div class="pricingCategories" role="tablist" aria-label="Categoria de plano">
 
+                <button class="tab active" role="tab" id="tab-pricing-adulto" aria-selected="true" aria-controls="pricing-adulto" tabindex="0"><i class="fa-solid fa-user" aria-hidden="true"></i>Adulto</button>
+                <button class="tab" role="tab" id="tab-pricing-infantil" aria-selected="false" aria-controls="pricing-infantil" tabindex="-1"><i class="fa-solid fa-child" aria-hidden="true"></i>Infantil</button>
+                <button class="tab" role="tab" id="tab-pricing-familiar" aria-selected="false" aria-controls="pricing-familiar" tabindex="-1"><i class="fa-solid fa-people-roof" aria-hidden="true"></i>Familiar</button>
 
-            <li class="pricingCard">
+        </div>
 
-                <div class="pricingCardTitle">
-                    <img width="32" height="30" src="Assets/Svg/logoCinza.svg" alt="" class="pricingSvg">
-                    <h3>Plano <span>Recorrente</span></h3>
+        <div class="pricingPanels">
 
-                </div>
+            <div class="pricingPanel active" id="pricing-adulto" role="tabpanel" aria-labelledby="tab-pricing-adulto">
+                <ul class="pricingSectionContainer animate-on-scroll-list">
 
-                <div class="pricingCardText">
-                    <p class="pricingOldValue"><s>R$ 350</s></p>
-                    <p class="pricingCardValue">R$ 250<span>/mês</span></p>
-                    <span class="pricingSavings">Economize R$ 100 por mês</span>
-                </div>
+                <li class="pricingCard" style="--plan: var(--cat-intermediario);">
 
-                <div class="pricingCardBenefits">
-
-                    <div>
-                        <i class="fa-solid fa-check textYellow"></i>
-                        <p class="textBase">Cancele quando quiser</p>
+                    <div class="pricingCardTitle">
+                        <img width="32" height="30" src="Assets/Svg/logoCinza.svg" alt="" class="pricingSvg">
+                        <h3>Plano <span>Anual</span></h3>
                     </div>
 
-                    <div>
-                        <i class="fa-solid fa-check textYellow"></i>
-                        <p class="textBase">Sem fidelidade</p>
+                    <div class="pricingCardText">
+                        <p class="pricingCardValue">R$ 247,50<span>/mês</span></p>
+                        <span class="pricingSavings">Economize</span>
                     </div>
 
-                    <div>
-                        <i class="fa-solid fa-check textYellow"></i>
-                        <p class="textBase">Via cartão de crédito</p>
+                    <div class="pricingCardBenefits">
+                        <div>
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            <p class="textBase">Fidelidade de 12 meses</p>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            <p class="textBase">Melhor preço por mês</p>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            <p class="textBase">Não compromete o limite do cartão</p>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            <p class="textBase">Pix, débito, crédito ou dinheiro</p>
+                        </div>
+                    </div>
+                    <p class="pricingCardNote">Cancelamento antes do fim da vigência: multa de 40% sobre o valor restante.</p>
+
+                    <a class="btn pricingBtn" aria-label="Matricular" href="https://wa.me/5565996768010?text=Oi%2C%20tenho%20interesse%20no%20Plano%20Anual%20%28Adulto%29%20da%20Alliance." target="_blank" rel="noopener noreferrer">Matricular</a>
+
+                </li>
+
+                <li class="pricingCard pricingCard--featured" style="--plan: var(--yellow);">
+
+                    <div class="pricingCardTitle">
+                        <img width="32" height="30" src="Assets/Svg/logoCinza.svg" alt="" class="pricingSvg">
+                        <h3>Plano <span>Mensal</span></h3>
                     </div>
 
-                    <div>
-                        <i class="fa-solid fa-check textYellow"></i>
-                        <p class="textBase">Renovação automática</p>
+                    <div class="pricingCardText">
+                        <p class="pricingCardValue">R$ 275,00<span>/mês</span></p>
+                        <span class="pricingSavings">Flexibilidade</span>
                     </div>
 
-                </div>
-
-                <a class="btn pricingBtn" aria-label="Matricular" href="https://wa.me/5565996768010?text=Oi%2C%20gostaria%20de%20cadastrar%20meu%20cart%C3%A3o%20no%20plano%20recorrente" target="_blank" rel="noopener noreferrer">Matricular</a>
-
-            </li>
-
-            <li class="pricingCard">
-
-                <div class="pricingCardTitle">
-                    <img width="32" height="30" src="Assets/Svg/logoCinza.svg" alt="" class="pricingSvg">
-                    <h3>Plano <span>Anual</span></h3>
-                </div>
-
-                <div class="pricingCardText">
-                    <p class="pricingOldValue"><s>R$ 350</s></p>
-                    <p class="pricingCardValue">R$ 225<span>/mês</span></p>
-                    <span class="pricingSavings">Economize R$ 125 por mês</span>
-                </div>
-
-                <div class="pricingCardBenefits">
-
-                    <div>
-                        <i class="fa-solid fa-check textYellow"></i>
-                        <p class="textBase">Maior economia</p>
+                    <div class="pricingCardBenefits">
+                        <div>
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            <p class="textBase">Renovação automática</p>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            <p class="textBase">Sem fidelidade, cancele quando quiser</p>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            <p class="textBase">Não compromete o limite do cartão</p>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            <p class="textBase">Treine todos os dias</p>
+                        </div>
                     </div>
 
-                    <div>
-                        <i class="fa-solid fa-check textYellow"></i>
-                        <p class="textBase">Fidelidade de 12 meses</p>
+                    <a class="btn pricingBtn" aria-label="Matricular" href="https://wa.me/5565996768010?text=Oi%2C%20tenho%20interesse%20no%20Plano%20Mensal%20%28Adulto%29%20da%20Alliance." target="_blank" rel="noopener noreferrer">Matricular</a>
+
+                </li>
+
+                <li class="pricingCard" style="--plan: var(--cat-competicao);">
+
+                    <div class="pricingCardTitle">
+                        <img width="32" height="30" src="Assets/Svg/logoCinza.svg" alt="" class="pricingSvg">
+                        <h3>Plano <span>Avulso</span></h3>
                     </div>
 
-                    <div>
-                        <i class="fa-solid fa-check textYellow"></i>
-                        <p class="textBase">Pix, débito, crédito ou dinheiro</p>
+                    <div class="pricingCardText">
+                        <p class="pricingCardValue">R$ 385,00<span>/mês</span></p>
+                        <span class="pricingSavings">Sem compromisso</span>
                     </div>
 
-                    <div>
-                        <i class="fa-solid fa-check textYellow"></i>
-                        <p class="textBase">Renovação automática</p>
+                    <div class="pricingCardBenefits">
+                        <div>
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            <p class="textBase">Sem fidelidade</p>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            <p class="textBase">Pague mês a mês</p>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            <p class="textBase">Cartão, PIX ou dinheiro</p>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-xmark xmark" aria-hidden="true"></i>
+                            <p class="textBase">Sem renovação automática</p>
+                        </div>
                     </div>
 
-                </div>
+                    <a class="btn pricingBtn" aria-label="Matricular" href="https://wa.me/5565996768010?text=Oi%2C%20tenho%20interesse%20no%20Plano%20Avulso%20%28Adulto%29%20da%20Alliance." target="_blank" rel="noopener noreferrer">Matricular</a>
 
-                <a class="btn pricingBtn" aria-label="Matricular" href="https://wa.me/5565996768010?text=Oi%2C%20tenho%20interesse%20no%20plano%20anual%20da%20academia" target="_blank" rel="noopener noreferrer">Matricular</a>
+                </li>
 
-            </li>
+                </ul>
+            </div>
+            <div class="pricingPanel" id="pricing-infantil" role="tabpanel" aria-labelledby="tab-pricing-infantil" hidden>
+                <ul class="pricingSectionContainer animate-on-scroll-list">
 
-            <li class="pricingCard">
+                <li class="pricingCard" style="--plan: var(--cat-intermediario);">
 
-                <div class="pricingCardTitle">
-                    <img width="32" height="30" src="Assets/Svg/logoCinza.svg" alt="" class="pricingSvg">
-                    <h3>Plano <span>Avulso</span></h3>
-
-                </div>
-
-                <div class="pricingCardText">
-                    <p class="pricingOldValue"><s>R$ 450</s></p>
-                    <p class="pricingCardValue">R$ 350<span>/mês</span></p>
-                    <span class="pricingSavings">Economize R$ 100 por mês</span>
-                </div>
-
-                <div class="pricingCardBenefits">
-
-                    <div>
-                        <i class="fa-solid fa-check textYellow"></i>
-                        <p class="textBase">Cancele quando quiser</p>
+                    <div class="pricingCardTitle">
+                        <img width="32" height="30" src="Assets/Svg/logoCinza.svg" alt="" class="pricingSvg">
+                        <h3>Plano <span>Anual</span></h3>
                     </div>
 
-                    <div>
-                        <i class="fa-solid fa-check textYellow"></i>
-                        <p class="textBase">Sem fidelidade</p>
+                    <div class="pricingCardText">
+                        <p class="pricingCardValue">R$ 297,00<span>/mês</span></p>
+                        <span class="pricingSavings">Economize</span>
                     </div>
 
-                    <div>
-                        <i class="fa-solid fa-check textYellow"></i>
-                        <p class="textBase">Pix, débito, crédito ou dinheiro</p>
+                    <div class="pricingCardBenefits">
+                        <div>
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            <p class="textBase">Fidelidade de 12 meses</p>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            <p class="textBase">Melhor preço por mês</p>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            <p class="textBase">Não compromete o limite do cartão</p>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            <p class="textBase">Pix, débito, crédito ou dinheiro</p>
+                        </div>
+                    </div>
+                    <p class="pricingCardNote">Cancelamento antes do fim da vigência: multa de 40% sobre o valor restante.</p>
+
+                    <a class="btn pricingBtn" aria-label="Matricular" href="https://wa.me/5565996768010?text=Oi%2C%20tenho%20interesse%20no%20Plano%20Anual%20%28Infantil%29%20da%20Alliance." target="_blank" rel="noopener noreferrer">Matricular</a>
+
+                </li>
+
+                <li class="pricingCard pricingCard--featured" style="--plan: var(--yellow);">
+
+                    <div class="pricingCardTitle">
+                        <img width="32" height="30" src="Assets/Svg/logoCinza.svg" alt="" class="pricingSvg">
+                        <h3>Plano <span>Mensal</span></h3>
                     </div>
 
-                    <div>
-                        <i class="fa-solid fa-xmark xmark"></i>
-                        <p class="textBase">Sem renovação automática</p>
+                    <div class="pricingCardText">
+                        <p class="pricingCardValue">R$ 330,00<span>/mês</span></p>
+                        <span class="pricingSavings">Flexibilidade</span>
                     </div>
 
-                </div>
+                    <div class="pricingCardBenefits">
+                        <div>
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            <p class="textBase">Renovação automática</p>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            <p class="textBase">Sem fidelidade, cancele quando quiser</p>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            <p class="textBase">Não compromete o limite do cartão</p>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            <p class="textBase">Treine todos os dias</p>
+                        </div>
+                    </div>
 
-                <a class="btn pricingBtn" aria-label="Matricular" href="https://wa.me/5565996768010?text=Oi%2C%20tenho%20interesse%20no%20plano%20avulso%20da%20academia" target="_blank" rel="noopener noreferrer">Matricular</a>
+                    <a class="btn pricingBtn" aria-label="Matricular" href="https://wa.me/5565996768010?text=Oi%2C%20tenho%20interesse%20no%20Plano%20Mensal%20%28Infantil%29%20da%20Alliance." target="_blank" rel="noopener noreferrer">Matricular</a>
 
-            </li>
+                </li>
 
+                <li class="pricingCard" style="--plan: var(--cat-competicao);">
+
+                    <div class="pricingCardTitle">
+                        <img width="32" height="30" src="Assets/Svg/logoCinza.svg" alt="" class="pricingSvg">
+                        <h3>Plano <span>Avulso</span></h3>
+                    </div>
+
+                    <div class="pricingCardText">
+                        <p class="pricingCardValue">R$ 440,00<span>/mês</span></p>
+                        <span class="pricingSavings">Sem compromisso</span>
+                    </div>
+
+                    <div class="pricingCardBenefits">
+                        <div>
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            <p class="textBase">Sem fidelidade</p>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            <p class="textBase">Pague mês a mês</p>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            <p class="textBase">Cartão, PIX ou dinheiro</p>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-xmark xmark" aria-hidden="true"></i>
+                            <p class="textBase">Sem renovação automática</p>
+                        </div>
+                    </div>
+
+                    <a class="btn pricingBtn" aria-label="Matricular" href="https://wa.me/5565996768010?text=Oi%2C%20tenho%20interesse%20no%20Plano%20Avulso%20%28Infantil%29%20da%20Alliance." target="_blank" rel="noopener noreferrer">Matricular</a>
+
+                </li>
+
+                </ul>
+            </div>
+            <div class="pricingPanel" id="pricing-familiar" role="tabpanel" aria-labelledby="tab-pricing-familiar" hidden>
+                <ul class="pricingSectionContainer animate-on-scroll-list">
+
+                <li class="pricingCard" style="--plan: var(--cat-intermediario);">
+
+                    <div class="pricingCardTitle">
+                        <img width="32" height="30" src="Assets/Svg/logoCinza.svg" alt="" class="pricingSvg">
+                        <h3>Plano <span>Anual</span></h3>
+                    </div>
+
+                    <div class="pricingCardText">
+                        <p class="pricingCardValue">R$ 247,50<span>/mês</span></p>
+                        <span class="pricingSavings">Economize</span>
+                    </div>
+
+                    <div class="pricingCardBenefits">
+                        <div>
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            <p class="textBase">Fidelidade de 12 meses</p>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            <p class="textBase">Melhor preço por mês</p>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            <p class="textBase">Não compromete o limite do cartão</p>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            <p class="textBase">Pix, débito, crédito ou dinheiro</p>
+                        </div>
+                    </div>
+                    <p class="pricingCardNote">Cancelamento antes do fim da vigência: multa de 40% sobre o valor restante.</p>
+
+                    <a class="btn pricingBtn" aria-label="Matricular" href="https://wa.me/5565996768010?text=Oi%2C%20tenho%20interesse%20no%20Plano%20Anual%20%28Familiar%29%20da%20Alliance." target="_blank" rel="noopener noreferrer">Matricular</a>
+
+                </li>
+
+                <li class="pricingCard pricingCard--featured" style="--plan: var(--yellow);">
+
+                    <div class="pricingCardTitle">
+                        <img width="32" height="30" src="Assets/Svg/logoCinza.svg" alt="" class="pricingSvg">
+                        <h3>Plano <span>Mensal</span></h3>
+                    </div>
+
+                    <div class="pricingCardText">
+                        <p class="pricingCardValue">R$ 275,00<span>/mês</span></p>
+                        <span class="pricingSavings">Flexibilidade</span>
+                    </div>
+
+                    <div class="pricingCardBenefits">
+                        <div>
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            <p class="textBase">Renovação automática</p>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            <p class="textBase">Sem fidelidade, cancele quando quiser</p>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            <p class="textBase">Não compromete o limite do cartão</p>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            <p class="textBase">Treine todos os dias</p>
+                        </div>
+                    </div>
+
+                    <a class="btn pricingBtn" aria-label="Matricular" href="https://wa.me/5565996768010?text=Oi%2C%20tenho%20interesse%20no%20Plano%20Mensal%20%28Familiar%29%20da%20Alliance." target="_blank" rel="noopener noreferrer">Matricular</a>
+
+                </li>
+
+                <li class="pricingCard" style="--plan: var(--cat-competicao);">
+
+                    <div class="pricingCardTitle">
+                        <img width="32" height="30" src="Assets/Svg/logoCinza.svg" alt="" class="pricingSvg">
+                        <h3>Plano <span>Avulso</span></h3>
+                    </div>
+
+                    <div class="pricingCardText">
+                        <p class="pricingCardValue">R$ 385,00<span>/mês</span></p>
+                        <span class="pricingSavings">Sem compromisso</span>
+                    </div>
+
+                    <div class="pricingCardBenefits">
+                        <div>
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            <p class="textBase">Sem fidelidade</p>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            <p class="textBase">Pague mês a mês</p>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            <p class="textBase">Cartão, PIX ou dinheiro</p>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-xmark xmark" aria-hidden="true"></i>
+                            <p class="textBase">Sem renovação automática</p>
+                        </div>
+                    </div>
+
+                    <a class="btn pricingBtn" aria-label="Matricular" href="https://wa.me/5565996768010?text=Oi%2C%20tenho%20interesse%20no%20Plano%20Avulso%20%28Familiar%29%20da%20Alliance." target="_blank" rel="noopener noreferrer">Matricular</a>
+
+                </li>
+
+                </ul>
+            </div>
+
+        </div>
+
+        <ul class="pricingPerks">
+                <li>
+                    <span class="pricingPerkIcon"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i></span>
+                    <span><strong>Acesso à academia</strong>Todos os dias da semana</span>
+                </li>
+                <li>
+                    <span class="pricingPerkIcon"><i class="fa-solid fa-user-group" aria-hidden="true"></i></span>
+                    <span><strong>Professores qualificados</strong>Aulas para todos os níveis</span>
+                </li>
+                <li>
+                    <span class="pricingPerkIcon"><i class="fa-solid fa-dumbbell" aria-hidden="true"></i></span>
+                    <span><strong>Estrutura completa</strong>Tatames, vestiários e mais</span>
+                </li>
+                <li>
+                    <span class="pricingPerkIcon"><i class="fa-solid fa-heart" aria-hidden="true"></i></span>
+                    <span><strong>Comunidade Alliance</strong>Respeito, disciplina e amizade</span>
+                </li>
         </ul>
 
     </section>

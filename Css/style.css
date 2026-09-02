@@ -1343,64 +1343,92 @@ details[open] .faqContent p {
   transform: translateY(0);
 }
 
-.pricingSection{
+/* ============================================================
+   Planos — abas por categoria (Adulto/Infantil/Familiar) + 3
+   planos. Mobile: accordion (<details>). Desktop: 3 cards lado
+   a lado, Mensal em destaque. Tema claro, tokens do site.
+   ============================================================ */
+.pricingSection {
     padding: var(--containerSuperiorMax) var(--containerLateralPadding) 0;
+    max-width: var(--maxContent);
+    margin: 0 auto;
 }
+.pricingSectionText h2 { color: var(--gray); }
 
-.pricingSectionText h2 {
-    color: var(--gray);
+/* Abas de categoria — grade de 3 no mobile, fila centralizada no desktop */
+.pricingCategories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--8);
+    max-width: 48rem;
+    margin: 0 auto var(--32);
 }
+.pricingCategories .tab {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--8);
+    padding: var(--8) var(--4);
+}
+.pricingCategories .tab i { font-size: 1.3rem; }
 
-.pricingSectionContainer{
+.pricingPanel { display: none; }
+.pricingPanel.active { display: block; }
+
+/* Lista de cards de uma categoria */
+.pricingSectionContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: var(--32);
     max-width: var(--maxContent);
     margin: 0 auto;
+    padding: 0;
+    list-style: none;
 }
 
-.pricingCard{
+.pricingCard {
     display: flex;
     position: relative;
     flex-direction: column;
     gap: var(--32);
-    padding: var(--32) var(--32);
+    padding: var(--32);
     box-shadow: var(--grayShadowLarge);
     border-radius: var(--16);
     background-color: var(--white);
     width: 100%;
     max-width: 37.4rem;
 }
-
-.pricingCard:nth-child(1) {
-    margin-top: var(--24);
+.pricingCard--featured {
+    box-shadow: 0 1.2rem 2.4rem 0 rgba(254, 188, 17, 0.22);
+    outline: 0.2rem solid var(--yellow);
+    outline-offset: -0.2rem;
 }
 
-
-.pricingSvg{
+.pricingSvg {
     height: 3rem;
     width: fit-content;
 }
-
-.pricingCardTitle{
+.pricingCardTitle {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
-.pricingCardTitle h3{
+.pricingCardTitle h3 {
     text-transform: uppercase;
     font-weight: 500;
     color: var(--placeholderColor);
     font-size: 1.6rem;
-}   
+}
+.pricingCardTitle span { color: var(--gray); }
 
-.pricingCardTitle span{
-    color: var(--gray);
-}   
-
-.pricingCardValue{
+.pricingCardText {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--8);
+}
+.pricingCardValue {
     font-size: 4.4rem;
     font-weight: 500;
     color: var(--gray);
@@ -1408,61 +1436,101 @@ details[open] .faqContent p {
     letter-spacing: -0.084rem;
     text-transform: uppercase;
 }
-
-.pricingCardValue span{
+.pricingCardValue span {
     font-size: 1.6rem;
     font-weight: 400;
     text-transform: lowercase;
     color: var(--placeholderColor);
 }
-
-.pricingOldValue{
-    font-size: 1.6rem;
-    color: var(--placeholderColor);
-    text-decoration: line-through;
-    font-weight: 400;
-
-}
-
-.pricingSavings{
+.pricingSavings {
     display: inline-block;
     padding: var(--8) var(--16);
-    background: var(--lightGreen);
-    color: var(--green);
-    font-weight: 600;
+    background: color-mix(in srgb, var(--plan, var(--yellow)) 14%, var(--white));
+    color: var(--plan, var(--yellowDark));
+    font-weight: 700;
     font-size: 1.1rem;
-    letter-spacing: -0.032rem;
+    letter-spacing: 0;
+    text-transform: uppercase;
     border-radius: var(--smallRadius);
 }
+.pricingCard--featured .pricingSavings { color: var(--yellowDark); }
 
-.pricingCardBenefits{
+.pricingCardBenefits {
     display: flex;
     flex-direction: column;
     gap: var(--16);
 }
-
 .pricingCardBenefits div {
     display: flex;
     align-items: center;
     gap: var(--16);
 }
-
-.pricingCardBenefits div i{
+.pricingCardBenefits div i {
     font-size: 1.8rem;
+    color: var(--plan, var(--yellow));
 }
+.pricingCard--featured .pricingCardBenefits div i { color: var(--yellowDark); }
+.xmark,
+.pricingCard--featured .pricingCardBenefits div i.xmark { color: var(--red); }
+.pricingCardBenefits div p { color: var(--secondaryTextGray); }
 
-.xmark{
-    color: var(--red);
-}
-
-.pricingCardBenefits div p{
+.pricingCardNote {
+    margin: calc(var(--16) * -1) 0;
+    font-size: 1rem;
     color: var(--secondaryTextGray);
+    line-height: 1.4;
+    padding: var(--8) var(--16);
+    background: var(--lightYellow);
+    border-radius: var(--smallRadius);
 }
 
-.pricingBtn{
+.pricingBtn.btn {
+    width: 100%;
     padding: var(--16);
     color: var(--white);
-    text-align: center;
+    background: var(--plan, var(--yellow));
+    box-shadow: none;
+}
+.pricingBtn.btn:hover {
+    box-shadow: 0 0.8rem 2rem 0 color-mix(in srgb, var(--plan, var(--yellow)) 35%, transparent);
+}
+
+/* Faixa de rodapé — 4 diferenciais, no estilo do rodapé da Grade de Horários */
+.pricingPerks {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--24);
+    max-width: var(--maxContent);
+    margin: var(--48) auto 0;
+    padding: var(--32) 0 0;
+    border-top: 0.1rem solid var(--darkLineGray);
+    list-style: none;
+}
+.pricingPerks li {
+    display: flex;
+    align-items: center;
+    gap: var(--16);
+}
+.pricingPerks li .pricingPerkIcon {
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 99rem;
+    background: var(--lightYellow);
+    border: 0.1rem solid var(--darkLineGray);
+    color: var(--yellow);
+    font-size: 1.6rem;
+}
+.pricingPerks strong {
+    display: block;
+    font-size: 1.15rem;
+    color: var(--gray);
+}
+.pricingPerks span {
+    font-size: 1rem;
+    color: var(--secondaryTextGray);
 }
 
 .locSection {
@@ -2089,21 +2157,35 @@ details[open] .faqContent p {
     align-items: start;
   }
 
-  /* Pricing — 2 cards em cima, 1 embaixo centralizado */
+  /* Planos — abas em fila centralizada; cards de largura fixa (~374px)
+     que se reorganizam: 3 lado a lado em tela larga, 2 + 1 no notebook,
+     1 empilhado no mobile. O card nunca afina. */
+  .pricingCategories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: none;
+  }
+  .pricingCategories .tab { padding: var(--8) var(--24); }
+
   .pricingSectionContainer {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: start;
-    justify-items: center;
+    grid-template-columns: repeat(auto-fit, 37.4rem);
+    justify-content: center;
+    align-items: stretch;
+    gap: var(--32);
+    max-width: none;
   }
-
-  .pricingCard:nth-child(2) {
-    margin-top: var(--24);
-}
-
-  .pricingCard:nth-child(3) {
-    grid-column: 1 / -1;
+  .pricingCard {
+    height: 100%; /* mantém o cap de 37.4rem da regra base — não afina */
   }
+  /* Mensal em destaque no meio, levemente elevado (como era antes) */
+  .pricingCard--featured { transform: translateY(-1.6rem); }
+  .pricingCardBenefits { flex: 1 1 auto; } /* empurra o botão pro rodapé do card */
+  .pricingBtn.btn { margin-top: auto; }
+
+  .pricingPerks { grid-template-columns: repeat(4, 1fr); }
+  .pricingPerks li { flex-direction: column; text-align: center; gap: var(--8); }
 
   /* Footer — grade 2 colunas no tablet */
   .footerSectionInner {
@@ -2119,6 +2201,16 @@ details[open] .faqContent p {
   }
 
   .footerLogo {
+    justify-self: center;
+  }
+}
+
+/* Planos — faixa de 2 colunas (antes dos 3 cards caberem lado a lado):
+   o 3º card sobra sozinho na linha de baixo; centraliza ele sob o vão
+   dos dois de cima em vez de deixar encostado na esquerda. */
+@media (min-width: 768px) and (max-width: 1265px) {
+  .pricingSectionContainer > .pricingCard:nth-child(3):last-child {
+    grid-column: 1 / -1;
     justify-self: center;
   }
 }
@@ -2181,11 +2273,6 @@ details[open] .faqContent p {
     font-size: 1.2rem;
   }
 
-  /* Preço: mantém o letter-spacing que antes herdava de h1 */
-  .pricingCardValue {
-    letter-spacing: -0.12rem;
-  }
-
   /* Espaçamento horizontal */
   :root {
     --containerLateralPadding: 8rem;
@@ -2243,15 +2330,6 @@ details[open] .faqContent p {
     flex-direction: column;
   }
 
-  /* Pricing — 3 colunas, mais popular no centro */
-  .pricingSectionContainer {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .pricingCard:nth-child(1) { grid-column: 2; grid-row: 1; }
-  .pricingCard:nth-child(2) { grid-column: 1; grid-row: 1; }
-  .pricingCard:nth-child(3) { grid-column: 3; grid-row: 1; }
-
   /* Footer — 3 colunas no desktop (o grid e o span já vêm do tablet) */
   .footerSectionInner {
     padding: var(--containerSuperiorMax) 0 var(--containerSuperiorMin);
@@ -2262,16 +2340,16 @@ details[open] .faqContent p {
     padding: 0 0 var(--containerSuperiorMax);
 }
 
-.pricingCard:nth-child(1) {
-    box-shadow: 0 1.2rem 2rem 0 rgba(254, 188, 17, 0.20);
-    
+.pricingCard--featured {
+    box-shadow: 0 1.2rem 2.4rem 0 rgba(254, 188, 17, 0.22);
 }
 
-.pricingCard:nth-child(2) {
-    margin-top: var(--56);
-}
-.pricingCard:nth-child(3) {
-    margin-top: var(--56);
+/* Planos: mais largura e menos respiro lateral só nesta seção, pra caber
+   3 cards fixos de 37.4rem lado a lado (3 × 37.4 + 2 × 3.2 gap ≈ 118.6rem). */
+.pricingSection {
+    max-width: 136rem;
+    padding-left: var(--40);
+    padding-right: var(--40);
 }
 
 }
