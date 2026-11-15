@@ -39,31 +39,12 @@ if (preloader) {
 }
 
 /* ============================================================
-   Hero video — fallback de autoplay. Alguns navegadores mobile
-   ignoram o atributo `autoplay` declarativo (timing, low power
-   mode, volta de background) mas aceitam play() via script.
-   Tenta de novo quando o vídeo fica pronto e quando a aba volta
-   a ficar visível.
-   ============================================================ */
-const heroVideo = document.querySelector(".heroBackgroundVideo");
-if (heroVideo) {
-  const tryPlay = () => heroVideo.play().catch(() => {});
-  tryPlay();
-  heroVideo.addEventListener("loadeddata", tryPlay);
-  heroVideo.addEventListener("canplay", tryPlay);
-  document.addEventListener("visibilitychange", () => {
-    if (!document.hidden && heroVideo.paused) tryPlay();
-  });
-}
-
-
-/* ============================================================
    Flashlight effect — atualiza CSS custom properties --mouse-x e
    --mouse-y nos cards quando o mouse passa, alimentando o radial
    gradient que segue o cursor.
    ============================================================ */
 const flashlightCards = document.querySelectorAll(
-  ".pricingCard, .classCard, .benefitCard, .testimonialCard, .professor-card, .differentialCard"
+  ".pricingCard, .classCard, .benefitCard, .testimonialCard, .faqSectionCard, .professor-card, .differentialCard"
 );
 flashlightCards.forEach((card) => {
   card.addEventListener("mousemove", (e) => {
@@ -85,24 +66,85 @@ if (animateTargets.length && "IntersectionObserver" in window) {
     });
   }, { threshold: 0, rootMargin: "0px 0px -10% 0px" });
   animateTargets.forEach((el) => io.observe(el));
+
+  // Itens do hero entram por escalonamento (delay-1..5) assim que a página carrega.
+  // Sem isso, os que ficam no rodapé do hero (como as estatísticas) esperam o scroll,
+  // pois o observer ignora os 10% de baixo da tela.
+  document.querySelectorAll(".heroSection .animate-on-scroll").forEach((el) => {
+    el.classList.add("animate");
+    io.unobserve(el);
+  });
 }
 
 
-const detalhes = document.querySelectorAll(".faqSectionCard");
+/* FAQ: acordeão com abertura e fechamento suaves (Web Animations API sobre o <details> nativo).
+   Um aberto por vez; o que fecha anima junto com o que abre. Sem JS, o <details> segue funcionando. */
+(() => {
+  const cards = [...document.querySelectorAll(".faqSectionCard")];
+  if (!cards.length) return;
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const EASE = "cubic-bezier(0.22, 1, 0.36, 1)";
+  const anims = new Map();
 
-detalhes.forEach((item) => {
-  item.addEventListener("toggle", () => {
-    
-    if (item.open) {
-      detalhes.forEach((outro) => {
-        if (outro !== item) {
-          outro.removeAttribute("open");
-        }
-      });
-    }
-
+  const parts = (card) => ({
+    box: card.querySelector(".faqContent"),
+    text: card.querySelector(".faqContent > *"),
   });
-});
+
+  const stop = (card) => {
+    const a = anims.get(card);
+    if (a) { a.forEach((x) => x.cancel()); anims.delete(card); }
+  };
+
+  const open = (card) => {
+    const { box, text } = parts(card);
+    // fechado de verdade parte de 0; se estava no meio do fechamento, continua do ponto atual
+    const from = card.classList.contains("is-closing") ? box.getBoundingClientRect().height : 0;
+    stop(card);
+    card.classList.remove("is-closing");
+    card.open = true;
+    if (reduce.matches) return;
+    const to = box.scrollHeight;
+    const a = [
+      box.animate([{ height: from + "px" }, { height: to + "px" }], { duration: 420, easing: EASE }),
+      text.animate([{ opacity: 0, transform: "translateY(-0.6rem)" }, { opacity: 1, transform: "none" }], { duration: 420, easing: EASE }),
+    ];
+    anims.set(card, a);
+    a[0].onfinish = () => anims.delete(card);
+  };
+
+  const close = (card) => {
+    const { box, text } = parts(card);
+    const from = box.getBoundingClientRect().height;
+    stop(card);
+    if (reduce.matches) { card.open = false; return; }
+    card.classList.add("is-closing"); // o visual de "fechado" (ícone, borda) começa junto com a animação
+    const a = [
+      box.animate([{ height: from + "px" }, { height: "0px" }], { duration: 360, easing: EASE, fill: "forwards" }),
+      text.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 240, easing: "ease-out", fill: "forwards" }),
+    ];
+    anims.set(card, a);
+    a[0].onfinish = () => {
+      card.open = false;
+      card.classList.remove("is-closing");
+      a.forEach((x) => x.cancel());
+      anims.delete(card);
+    };
+  };
+
+  cards.forEach((card) => {
+    card.querySelector("summary").addEventListener("click", (e) => {
+      e.preventDefault();
+      const opening = !card.open || card.classList.contains("is-closing");
+      if (opening) {
+        cards.forEach((other) => { if (other !== card && other.open && !other.classList.contains("is-closing")) close(other); });
+        open(card);
+      } else {
+        close(card);
+      }
+    });
+  });
+})();
 
 /* ============================================================
    Tablist genérico — usado nas abas da Grade de Horários e nas
@@ -295,62 +337,255 @@ document.querySelectorAll(".professor-card").forEach((card) => {
 
 
 /* ============================================================
-   Form → Formspree (envia email pra alliancemoinho@gmail.com).
-   HTML5 required já bloqueia envio sem campos obrigatórios.
-   Mensagem (textarea) é opcional. Estados visuais:
-     - Enviando: spinner azul/cinza
-     - Sucesso:  verde com check (volta após 4s)
-     - Erro:     vermelho com aviso (volta após 4s)
+   Agendamento da aula (formulário por etapas)
+   Aula → Dia → Dados → Revisão. Ao confirmar, abre o WhatsApp da Alliance
+   com a mensagem montada. Sem JS, o formulário aparece inteiro (sem etapas).
    ============================================================ */
-const contactForm = document.querySelector(".form");
-if (contactForm) {
-    const submitBtn  = contactForm.querySelector("button.btn");
-    const timeLabels = { morning: "Manhã", afternoon: "Tarde", evening: "Noite" };
+(() => {
+    const form = document.querySelector(".contactForm");
+    if (!form) return;
+    const card = form.closest(".contactCard");
+    const steps = [...form.querySelectorAll(".formStep")];
+    const segs = [...card.querySelectorAll(".stepBar i")];
+    const count = card.querySelector(".stepCount strong");
+    const btnBack = form.querySelector(".stepNav .stepBack");
+    const btnNext = form.querySelector(".stepNext");
+    const btnSubmit = form.querySelector(".stepSubmit");
+    const success = card.querySelector(".formSuccess");
+    const again = card.querySelector(".successAgain");
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const labels = {
+        tipo: { introdutoria: "Aula introdutória", experimental: "Aula experimental" },
+        quem: { mim: "Para mim", filho: "Para meu filho ou filha" },
+        time: { morning: "Manhã", afternoon: "Tarde", evening: "Noite" },
+    };
+    let current = 0;
 
-    // Bloqueia escolha de datas passadas (mín = hoje)
-    const dateInput = contactForm.querySelector('input[type="date"]');
-    if (dateInput) dateInput.min = new Date().toISOString().split("T")[0];
+    form.classList.add("is-stepped");
 
-    contactForm.addEventListener("submit", (e) => {
-        e.preventDefault();
+    // data mínima = hoje (fuso local)
+    const dateInput = form.querySelector("#date");
+    const today = new Date();
+    const iso = new Date(today.getTime() - today.getTimezoneOffset() * 60000).toISOString().split("T")[0];
+    dateInput.min = iso;
 
-        const data = new FormData(contactForm);
-        const name    = (data.get("name")    || "").trim();
-        const email   = (data.get("email")   || "").trim();
-        const phone   = (data.get("phone")   || "").trim();
-        const date    = data.get("date");
-        const time    = timeLabels[data.get("time")] || data.get("time");
-        const message = (data.get("message") || "").trim();
-
-        const formattedDate = date
-            ? new Date(`${date}T00:00:00`).toLocaleDateString("pt-BR")
-            : "";
-
-        const lines = [
-            "Olá! Gostaria de agendar minha aula experimental.",
-            "",
-            `*Nome:* ${name}`,
-            `*Email:* ${email}`,
-            `*Telefone:* ${phone}`,
-            `*Data:* ${formattedDate}`,
-            `*Período:* ${time}`,
-        ];
-        if (message) lines.push("", `*Observação:* ${message}`);
-
-        const url = `https://wa.me/${ALLIANCE_PHONE}?text=${encodeURIComponent(lines.join("\n"))}`;
-        window.open(url, "_blank", "noopener,noreferrer");
-
-        const originalHTML = submitBtn.innerHTML;
-        submitBtn.classList.add("btn--success");
-        submitBtn.innerHTML = '<i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Abrindo WhatsApp…';
-        submitBtn.disabled = true;
-
-        setTimeout(() => {
-            submitBtn.classList.remove("btn--success");
-            submitBtn.innerHTML = originalHTML;
-            submitBtn.disabled = false;
-            contactForm.reset();
-        }, 4000);
+    // máscara do WhatsApp: (65) 99999-9999
+    const phone = form.querySelector("#phone");
+    phone.addEventListener("input", () => {
+        const d = phone.value.replace(/\D/g, "").slice(0, 11);
+        let out = d;
+        if (d.length > 2) out = `(${d.slice(0, 2)}) ${d.slice(2)}`;
+        if (d.length > 7) out = `(${d.slice(0, 2)}) ${d.slice(2, 7)}-${d.slice(7)}`;
+        phone.value = out;
     });
-}
 
+    // "para meu filho ou filha": rótulo de responsável + campo da criança
+    const nameLabel = form.querySelector('label[for="name"]');
+    const childField = form.querySelector(".childField");
+    form.querySelectorAll('input[name="quem"]').forEach((r) => r.addEventListener("change", () => {
+        const filho = form.quem.value === "filho";
+        nameLabel.textContent = filho ? nameLabel.dataset.labelFilho : nameLabel.dataset.labelMim;
+        childField.hidden = !filho;
+    }));
+
+    const showError = (id, show, field) => {
+        const el = form.querySelector("#" + id);
+        if (el) el.hidden = !show;
+        if (field) field.setAttribute("aria-invalid", show ? "true" : "false");
+        return !show;
+    };
+
+    const validate = (n) => {
+        let ok = true;
+        if (n === 0) {
+            ok = showError("err-tipo", !form.tipo.value) && ok;
+            ok = showError("err-quem", !form.quem.value) && ok;
+        }
+        if (n === 1) {
+            ok = showError("err-date", !dateInput.value || dateInput.value < iso, dateInput) && ok;
+            ok = showError("err-time", !form.time.value) && ok;
+        }
+        if (n === 2) {
+            const name = form.querySelector("#name");
+            const email = form.querySelector("#email");
+            ok = showError("err-name", !name.value.trim(), name) && ok;
+            ok = showError("err-phone", phone.value.replace(/\D/g, "").length < 10, phone) && ok;
+            const emailOk = showError("err-email", !!email.value.trim() && !email.checkValidity(), email);
+            if (!emailOk) form.querySelector(".moreFields").open = true; // erro no e-mail: abre o bloco para mostrar
+            ok = emailOk && ok;
+        }
+        if (!ok) {
+            const first = steps[n].querySelector('[aria-invalid="true"], input:not([type="hidden"])');
+            const firstErr = steps[n].querySelector(".fieldError:not([hidden])");
+            (steps[n].querySelector('[aria-invalid="true"]') || firstErr?.previousElementSibling?.querySelector("input") || first)?.focus?.();
+        }
+        return ok;
+    };
+
+    const data = () => {
+        const f = new FormData(form);
+        const get = (k) => (f.get(k) || "").toString().trim();
+        const date = get("date");
+        return {
+            tipo: labels.tipo[get("tipo")] || "",
+            tipoKey: get("tipo"),
+            quem: labels.quem[get("quem")] || "",
+            quemKey: get("quem"),
+            name: get("name"),
+            child: get("child"),
+            phone: get("phone"),
+            email: get("email"),
+            date: date ? new Date(`${date}T00:00:00`).toLocaleDateString("pt-BR", { weekday: "long", day: "2-digit", month: "long" }) : "",
+            dateShort: date ? new Date(`${date}T00:00:00`).toLocaleDateString("pt-BR") : "",
+            time: labels.time[get("time")] || "",
+            message: get("message"),
+        };
+    };
+
+    const esc = (t) => t.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+    // resumo do que já foi escolhido, no topo da etapa de dados
+    const buildSummary = () => {
+        const d = data();
+        const dia = d.date.split(",")[0];
+        card.querySelector(".summaryText").textContent = `${d.tipo} · ${dia.slice(0, 3)}, ${d.dateShort.slice(0, 5)} · ${d.time}`;
+    };
+
+    const message = () => {
+        const d = data();
+        const lines = [
+            `Olá! Gostaria de agendar minha ${d.tipo.toLowerCase()}.`,
+            "",
+            `*Para quem:* ${d.quem}`,
+            `*${d.quemKey === "filho" ? "Responsável" : "Nome"}:* ${d.name}`,
+        ];
+        if (d.quemKey === "filho" && d.child) lines.push(`*Criança:* ${d.child}`);
+        lines.push(`*WhatsApp:* ${d.phone}`);
+        if (d.email) lines.push(`*Email:* ${d.email}`);
+        lines.push(`*Data:* ${d.dateShort}`, `*Período:* ${d.time}`);
+        if (d.message) lines.push("", `*Observação:* ${d.message}`);
+        return `https://wa.me/${ALLIANCE_PHONE}?text=${encodeURIComponent(lines.join("\n"))}`;
+    };
+
+    const render = (n, dir = 1) => {
+        const prev = steps[current];
+        const next = steps[n];
+        if (n === steps.length - 1) buildSummary();
+        const startH = form.offsetHeight;
+        steps.forEach((s, i) => s.classList.toggle("is-active", i === n));
+        segs.forEach((g, i) => g.classList.toggle("is-on", i <= n));
+        count.textContent = n + 1;
+        btnBack.hidden = n === 0;
+        btnNext.hidden = n === steps.length - 1;
+        btnSubmit.hidden = n !== steps.length - 1;
+        if (!reduce.matches && prev !== next) {
+            const endH = form.offsetHeight;
+            form.animate([{ height: startH + "px" }, { height: endH + "px" }], { duration: 380, easing: "cubic-bezier(0.22, 1, 0.36, 1)" });
+            next.animate([{ opacity: 0, transform: `translateX(${dir * 2.4}rem)` }, { opacity: 1, transform: "none" }], { duration: 380, easing: "cubic-bezier(0.22, 1, 0.36, 1)" });
+        }
+        current = n;
+        next.querySelector(".stepTitle").focus({ preventScroll: true });
+    };
+
+    btnNext.addEventListener("click", () => { if (validate(current)) render(current + 1, 1); });
+    btnBack.addEventListener("click", () => render(current - 1, -1));
+    form.addEventListener("click", (e) => {
+        if (e.target.closest(".summaryEdit")) render(0, -1);
+    });
+    // Enter avança (menos na observação, onde quebra linha)
+    form.addEventListener("keydown", (e) => {
+        if (e.key !== "Enter" || e.target.tagName === "TEXTAREA" || e.target.tagName === "BUTTON") return;
+        e.preventDefault();
+        if (current < steps.length - 1) btnNext.click(); else form.requestSubmit(btnSubmit);
+    });
+    // limpar o erro assim que a pessoa corrige
+    form.addEventListener("change", () => validateSoft());
+    form.addEventListener("input", () => validateSoft());
+    const validateSoft = () => {
+        form.querySelectorAll(".fieldError:not([hidden])").forEach((err) => {
+            const id = err.id;
+            const fixed =
+                (id === "err-tipo" && form.tipo.value) || (id === "err-quem" && form.quem.value) ||
+                (id === "err-time" && form.time.value) || (id === "err-date" && dateInput.value >= iso) ||
+                (id === "err-name" && form.querySelector("#name").value.trim()) ||
+                (id === "err-phone" && phone.value.replace(/\D/g, "").length >= 10) ||
+                (id === "err-email" && (!form.querySelector("#email").value.trim() || form.querySelector("#email").checkValidity()));
+            if (fixed) { err.hidden = true; err.closest(".formStep").querySelector('[aria-describedby="' + id + '"]')?.setAttribute("aria-invalid", "false"); }
+        });
+    };
+
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        for (let n = 0; n < steps.length; n++) { if (!validate(n)) { render(n, -1); validate(n); return; } }
+        const url = message();
+        window.open(url, "_blank", "noopener,noreferrer");
+        again.href = url;
+        form.hidden = true;
+        card.querySelector(".stepHead").hidden = true;
+        success.hidden = false;
+        success.focus({ preventScroll: true });
+    });
+
+    card.querySelector(".successReset").addEventListener("click", () => {
+        form.reset();
+        childField.hidden = true;
+        nameLabel.textContent = nameLabel.dataset.labelMim;
+        success.hidden = true;
+        form.hidden = false;
+        card.querySelector(".stepHead").hidden = false;
+        form.querySelector(".moreFields").open = false;
+        current = 0;
+        render(0, -1);
+    });
+
+    render(0);
+    // não roubar o foco ao carregar a página
+    steps[0].querySelector(".stepTitle").blur();
+})();
+
+
+
+/* ==========================================================
+   Navbar: transparente no topo, vidro fosco ao rolar
+   ========================================================== */
+(() => {
+    const header = document.querySelector(".header");
+    if (!header) return;
+    let ticking = false;
+    const update = () => {
+        header.classList.toggle("isScrolled", window.scrollY > 24);
+        ticking = false;
+    };
+    window.addEventListener("scroll", () => {
+        if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }, { passive: true });
+    update();
+})();
+
+
+/* ==========================================================
+   Estatísticas: contagem de 0 até o valor, uma vez, ao aparecer
+   ========================================================== */
+(() => {
+    const card = document.getElementById("statsBand");
+    if (!card) return;
+    const nums = card.querySelectorAll("[data-count]");
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce || !("IntersectionObserver" in window)) return; // valor final já está no HTML
+    nums.forEach((n) => { n.textContent = "0"; });
+    const run = () => {
+        const dur = 1100;
+        const start = performance.now();
+        const tick = (now) => {
+            const p = Math.min((now - start) / dur, 1);
+            const e = 1 - Math.pow(1 - p, 3);
+            nums.forEach((n) => { n.textContent = String(Math.round(Number(n.dataset.count) * e)); });
+            if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+    };
+    const io = new IntersectionObserver((entries) => {
+        if (entries.some((en) => en.isIntersecting)) { io.disconnect(); run(); }
+    }, { threshold: 0.4 });
+    io.observe(card);
+})();

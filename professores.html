@@ -71,12 +71,22 @@
 
     </header>
 
-    <section class="heroSection heroSection--withImage flex items-end container justify-start" style="--heroBgImage: url('Assets/Imagens/imagemProfessores/fotoFaixasPretas.webp')">
+    <section class="heroSection heroSection--split">
 
-        <div class="heroSectionText">
+        <div class="heroSplitInner">
+
+        <figure class="heroSplitPhoto animate-on-scroll delay-2">
+            <img src="Assets/Imagens/imagemProfessores/professores-hero-900.webp"
+                 width="900" height="675" fetchpriority="high"
+                 alt="Professores da Alliance Moinho reunidos em frente ao emblema da Alliance">
+        </figure>
+
+        <div class="heroSectionText heroSplitText">
             <div class="heroKicker animate-on-scroll delay-1"><i class="fa-solid fa-users" aria-hidden="true"></i><span>Nossa equipe</span></div>
             <h1 class="smallLineHeight font-bold animate-on-scroll delay-2">Quem guia sua <br>evolução no tatame</h1>
             <p class="smallLineHeight textH3 animate-on-scroll delay-3">Conheça os professores responsáveis por transmitir a técnica, os valores e a filosofia da Alliance Cuiabá.</p>
+        </div>
+
         </div>
 
     </section>
@@ -421,188 +431,77 @@
 
         </section>
 
-        <section class="teacherSection container">
-
-            <div class="teacherSectionText animate-on-scroll">
-
-                <h2>Conheça nossos <br><span class="textYellow">instrutores</span></h2>
-                <p class="subtitle">Nossa equipe é formada por instrutores<br> certificados pela metodologia Alliance.</p>
-
-            </div>
-
-            <ul role="list" class="professorCards animate-on-scroll-list">
-
-                    <li class="professor-card">
-                    <div class="professor-photo">
-                    <img loading="lazy" decoding="async" width="400" height="600" src="Assets/Imagens/imagemProfessores/instrutorGedney.webp" alt="Instrutor Gedney Cebalho">
-                    <span class="badge badge-status">
-                        <span class="dot"></span>
-                        Disponível
-                    </span>
-                    </div>
-                    <div class="professor-info">
-                    <div class="professor-header">
-                        <h3 class="professor-name">Gedney Cebalho</h3>
-                        <div class="professor-rating">
-                            <span class="belt-icon belt-blue" aria-label="Faixa azul"></span>
-                        </div>
-                    </div>
-                    <div class="professor-tags">
-                        <span class="tag tag-primary">Faixa azul</span>
-                        <span class="tag tag-secondary">2 anos de experiência</span>
-                    </div>
-                    <button class="btn btn-primary" aria-label="Agendar aula particular com Gedney Cebalho">
-                        Agendar particular
-                    </button>
-                    <div class="btn-secondary-group">
-                        <button class="btn-secondary" aria-label="Ver valores com Gedney Cebalho">
-                        <i class="fa-brands fa-whatsapp"></i>
-                        Valores
-                        </button>
-                        <a class="btn-secondary btn-icon-only" aria-label="Instagram de Gedney Cebalho" href="https://www.instagram.com/gedney_jj/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
-                    </div>
-
-                    </div>
-                </li>
-                <li class="professor-card">
-                    <div class="professor-photo">
-                    <img loading="lazy" decoding="async" width="400" height="600" src="Assets/Imagens/imagemProfessores/istrutorAlberto.webp" alt="Instrutor Alberto Nogueira">
-                    <span class="badge badge-status">
-                        <span class="dot"></span>
-                        Disponível
-                    </span>
-                    </div>
-                    <div class="professor-info">
-                    <div class="professor-header">
-                        <h3 class="professor-name">Alberto Nogueira</h3>
-                        <div class="professor-rating">
-                            <span class="belt-icon belt-blue" aria-label="Faixa azul"></span>
-                        </div>
-                    </div>
-                    <div class="professor-tags">
-                        <span class="tag tag-primary">Faixa azul</span>
-                        <span class="tag tag-secondary">5 anos de experiência</span>
-                    </div>
-                    <button class="btn btn-primary" aria-label="Agendar aula particular com Alberto Nogueira">
-                        Agendar particular
-                    </button>
-                    <div class="btn-secondary-group">
-                        <button class="btn-secondary" aria-label="Ver valores com Alberto Nogueira">
-                        <i class="fa-brands fa-whatsapp"></i>
-                        Valores
-                        </button>
-                        <a class="btn-secondary btn-icon-only" aria-label="Instagram de Alberto Nogueira" href="https://www.instagram.com/alberto.nogueeira/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
-                    </div>
-
-                    </div>
-                </li>
-
-            </ul>
-
-        </section>
-
     </main>
 
     <footer class="footerSection">
 
-        <div class="footerSectionInner">
+        <div class="footInner">
 
-            <div class="footerSchedule">
+            <div class="footBrand">
+                <div class="footBrandId">
+                    <img width="48" height="45" src="Assets/Svg/logoBranca.svg" alt="" class="footLogo">
+                    <div>
+                        <p class="footName">Alliance Jiu Jitsu Moinho</p>
+                        <p class="footTagline textBase">Uma academia moderna de Jiu-Jitsu no coração de Cuiabá.</p>
+                    </div>
+                </div>
+                <div class="footBrandActions">
+                    <div class="footSocial">
+                        <a href="https://www.instagram.com/alliancemoinho/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Alliance Moinho"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                        <a href="https://wa.me/5565996768010?text=Oi%2C%20queria%20saber%20mais%20sobre%20como%20vocês%20funcionam." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp da Alliance Moinho"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+                    </div>
+                    <a class="btn footCta" href="index.html#contact">Agendar aula grátis <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                </div>
+            </div>
 
-                <h3>Agendamento</h3>
+            <div class="footCols">
 
-                <div class="footerScheduleLinks">
-                    <a href="https://wa.me/5565996768010?text=Oi%2C%20gostaria%20de%20agendar%20uma%20aula%20introdutória." target="_blank" rel="noopener noreferrer">Agendar Aula Introdutória</a>
-                    <a href="https://wa.me/5565996768010?text=Oi%2C%20gostaria%20de%20agendar%20uma%20aula%20experimental." target="_blank" rel="noopener noreferrer">Agendar Aula Experimental</a>
+                <nav class="footCol" aria-label="Rodapé">
+                    <h3 class="footTitle">Navegação</h3>
+                    <a href="index.html#header">Início</a>
+                    <a href="index.html#class">Aulas</a>
+                    <a href="index.html#teachers">Professores</a>
+                    <a href="index.html#schedule">Grade Horária</a>
+                    <a href="index.html#pricing">Planos</a>
+                    <a href="index.html#faq">Dúvidas</a>
+                </nav>
+
+                <div class="footCol">
+                    <h3 class="footTitle">Contato</h3>
+                    <address class="footList">
+                        <a href="https://wa.me/5565996768010?text=Oi%2C%20queria%20saber%20mais%20sobre%20como%20vocês%20funcionam." target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i>(65) 99676-8010</a>
+                        <a href="https://www.instagram.com/alliancemoinho/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram" aria-hidden="true"></i>@alliancemoinho</a>
+                        <a href="mailto:alliancemoinho@gmail.com"><i class="fa-regular fa-envelope" aria-hidden="true"></i>alliancemoinho@gmail.com</a>
+                    </address>
+                </div>
+
+                <div class="footCol">
+                    <h3 class="footTitle">Visite a academia</h3>
+                    <address class="footList">
+                        <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Av. Archimedes Pereira Lima, 2500<br>Santa Cruz, Cuiabá - MT, 78068-335</span>
+                        <span><i class="fa-regular fa-clock" aria-hidden="true"></i>Seg a Sex: 6h00 às 21h00<br>Sábados: 7h00 às 11h00</span>
+                    </address>
+                </div>
+
+                <div class="footCol">
+                    <h3 class="footTitle">Baixe o app</h3>
+                    <div class="footStores">
+                        <a class="footStore" href="https://play.google.com/store/apps/details?id=cloud.onegym.alliance&amp;pcampaignid=web_share" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-google-play" aria-hidden="true"></i>
+                            <span><small class="textSmall">Disponível no</small>Google Play</span>
+                        </a>
+                        <a class="footStore" href="https://apps.apple.com/br/app/alliance-jiu-jitsu/id1667527311" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-apple" aria-hidden="true"></i>
+                            <span><small class="textSmall">Baixar na</small>App Store</span>
+                        </a>
+                    </div>
                 </div>
 
             </div>
 
-            <div class="footerContact"> 
-
-                <h3>Contatos</h3>
-
-                <div class="footerContactLinks">
-
-                    <a href="https://wa.me/5565996768010?text=Oi%2C%20queria%20saber%20mais%20sobre%20como%20vocês%20funcionam." target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-whatsapp"></i>
-                        <p class="textBase">(65) 99676-8010</p>
-                    </a>
-        
-                    <a href="https://www.instagram.com/alliancemoinho/" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-instagram"></i>
-                        <p class="textBase">alliancemoinho</p>
-                    </a>
-        
-                    <a href="mailto:alliancemoinho@gmail.com" rel="noopener noreferrer">
-                        <i class="fa-regular fa-envelope"></i>
-                        <p class="textBase">alliancemoinho@gmail.com</p>
-                    </a>
-
-                </div>
-
-            </div>
-
-            <div class="footerAddress">
-
-                <h3>Endereço</h3>
-
-                <p class="textBase">
-                    Av. Archimedes Pereira Lima, 2500 <br>
-                    - Santa Cruz, Cuiabá - MT, 78068-335
-                </p>
-
-            </div>
-
-            <div class="footerHour">
-
-                <h3>Horário de Funcionamento</h3>
-
-                <p class="textBase">Seg a Sex: 6h00 às 21h00 </p>
-                <p class="textBase">Sábados: 7h00 às 11h00</p>
-
-            </div>
-
-            <div class="footerDownload">
-
-                <h3>Baixe o App</h3>
-
-                <div class="footerDownloadLinks">
-
-                    <a class="android" href="https://play.google.com/store/apps/details?id=cloud.onegym.alliance&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">
-        
-                        <i class="fa-brands fa-google-play"></i>
-                        <div class="androidText">
-                            <p class="downloadLabel">Download on the</p>
-                            <p class="textSmall">Google Play</p>
-                        </div>
-        
-                    </a>
-        
-                    <a class="ios" href="https://apps.apple.com/br/app/alliance-jiu-jitsu/id1667527311" target="_blank" rel="noopener noreferrer">
-        
-                        <i class="fa-brands fa-apple"></i>
-                        <div class="androidText">
-                            <p class="downloadLabel">Download on the</p>
-                            <p class="textSmall">App Store</p>
-                        </div>
-        
-                    </a>
-
-                </div>
-
-            </div>
-
-            <img width="362" height="306" src="Assets/Svg/allianceAguiaLogo.svg" alt="" class="footerLogo">
-
-            <span class="footerLine"></span>
-
-            <div class="footerContainerInfo">
-
-                <p class="footerCopy textSmall">© 2026 Alliance Jiu Jitsu Moinho.<br> Todos os direitos reservados.</p>
-        
-                <p class="footerDeveloper textSmall">Desenvolvido por <br><a href="https://www.instagram.com/comp__co/" target="_blank" rel="noopener noreferrer" class="textSmall">comp co</a></p>
-
+            <div class="footBottom textSmall">
+                <p>© 2026 Alliance Jiu Jitsu Moinho. Todos os direitos reservados.</p>
+                <a class="footMaker" href="https://www.instagram.com/comp__co/" target="_blank" rel="noopener noreferrer" aria-label="Site feito pela comp. (abre o Instagram)"><img src="Assets/Imagens/comp-logo-clara.png" alt="comp." width="74" height="11"></a>
             </div>
 
         </div>

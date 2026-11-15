@@ -74,12 +74,24 @@
 
     </header>
 
-    <section class="heroSection heroSection--withImage flex items-end container justify-start" style="--heroBgImage: url('Assets/Imagens/cardIniciantes/iniciantes.webp'); --heroBgPos: center">
-        
-        <div class="heroSectionText">
+    <section class="heroSection heroSection--split">
+
+        <div class="heroSplitInner">
+
+        <figure class="heroSplitPhoto animate-on-scroll delay-2">
+            <img src="Assets/Imagens/cardIniciantes/iniciantes-hero-1600.webp"
+                 srcset="Assets/Imagens/cardIniciantes/iniciantes-hero-900.webp 900w, Assets/Imagens/cardIniciantes/iniciantes-hero-1600.webp 1600w"
+                 sizes="(min-width: 1024px) 640px, 100vw"
+                 width="1600" height="1200" fetchpriority="high"
+                 alt="Turma de alunos da Alliance Moinho reunida no tatame">
+        </figure>
+
+        <div class="heroSectionText heroSplitText">
             <div class="heroKicker animate-on-scroll delay-1"><i class="fa-solid fa-fire" aria-hidden="true"></i><span>Comece sua evolução</span></div>
             <h1 class="smallLineHeight font-bold animate-on-scroll delay-2">Seu primeiro passo <br>define sua jornada</h1>
             <p class="smallLineHeight textH3 animate-on-scroll delay-3">Aqui você é orientado com atenção, respeito e um método que transforma insegurança em confiança.</p>
+        </div>
+
         </div>
 
     </section>
@@ -134,89 +146,98 @@
 
         </section>
 
-        <span class="sectionLine"></span>
 
         <section id="faq" class="faqSection container" aria-labelledby="faq-title">
 
-            <div class="faqSectionText text-center animate-on-scroll">
-                
-                <h2 id="faq-title">Dúvidas de quem <br><span class="textYellow">está começando</span></h2>
-                <p class="subtitle">É normal ter dúvidas. O importante é não deixar que <br>elas impeçam você de começar.</p>
+            <div class="faqLayout">
 
-            </div>
+                <div class="faqAside animate-on-scroll">
+                    <h2 id="faq-title">Dúvidas de quem <br><span class="textYellow">está começando</span></h2>
+                    <p class="subtitle">É normal ter dúvidas. O importante é não deixar que <br>elas impeçam você de começar.</p>
 
-            <div class="faqSectionContainer animate-on-scroll-list">
-                
-                <details class="faqSectionCard">
-
-                    <summary class="faqSectionSummary"> 
-                        <h3 class="textBase">Preciso estar em forma para começar?</h3>
-                        <i class="fa-solid fa-angle-down"></i>
-                    </summary>
-
-                    <span class="faqLine"></span>
-                    <div class="faqContent">
-                        <p class="faqSectionSummaryOpen textBase"> Não. Você pode começar independentemente do seu condicionamento físico atual. As aulas são adaptadas ao seu ritmo, permitindo evolução gradual com segurança e acompanhamento.</p>
+                    <div class="faqHelp">
+                        <p class="textBase"><strong>Ainda tem dúvida?</strong> Fale com a gente pelo WhatsApp.</p>
+                        <a class="faqHelpBtn" href="https://wa.me/5565996768010?text=Oi%2C%20queria%20saber%20mais%20sobre%20como%20vocês%20funcionam." target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Falar no WhatsApp</a>
                     </div>
-                </details>
+                </div>
+
+                <div class="faqSectionContainer animate-on-scroll-list">
 
                 <details class="faqSectionCard">
                     <summary class="faqSectionSummary">
-                        <h3 class="textBase">Tenho risco de me machucar?</h3>
-                        <i class="fa-solid fa-angle-down"></i>
+                        <span class="faqNum textSmall" aria-hidden="true">01</span>
+                        <h3>Preciso estar em forma para começar?</h3>
+                        <span class="faqIcon" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
                     </summary>
-
-                    <span class="faqLine"></span>
                     <div class="faqContent">
-                        <p class="faqSectionSummaryOpen textBase">O risco é mínimo. Nossos treinos priorizam técnica, controle e respeito entre os alunos, criando um ambiente seguro para aprender e evoluir no tatame.</p>
+                        <div>
+                            <span class="faqLine"></span>
+                            <p class="faqSectionSummaryOpen textBase">Não. Você pode começar independentemente do seu condicionamento físico atual. As aulas são adaptadas ao seu ritmo, permitindo evolução gradual com segurança e acompanhamento.</p>
+                        </div>
                     </div>
                 </details>
-
                 <details class="faqSectionCard">
                     <summary class="faqSectionSummary">
-                        <h3 class="textBase">Sou muito velho para iniciar?</h3>
-                        <i class="fa-solid fa-angle-down"></i>
+                        <span class="faqNum textSmall" aria-hidden="true">02</span>
+                        <h3>Tenho risco de me machucar?</h3>
+                        <span class="faqIcon" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
                     </summary>
-                    
-                    <span class="faqLine"></span>
                     <div class="faqContent">
-                        <p class="faqSectionSummaryOpen textBase">Não existe idade certa para começar. O Jiu-Jitsu pode ser praticado em diferentes fases da vida, sempre respeitando seus limites e evolução.</p>
+                        <div>
+                            <span class="faqLine"></span>
+                            <p class="faqSectionSummaryOpen textBase">O risco é mínimo. Nossos treinos priorizam técnica, controle e respeito entre os alunos, criando um ambiente seguro para aprender e evoluir no tatame.</p>
+                        </div>
                     </div>
                 </details>
-
                 <details class="faqSectionCard">
                     <summary class="faqSectionSummary">
-                        <h3 class="textBase">Preciso comprar kimono antes da aula?</h3>
-                        <i class="fa-solid fa-angle-down"></i>
+                        <span class="faqNum textSmall" aria-hidden="true">03</span>
+                        <h3>Sou muito velho para iniciar?</h3>
+                        <span class="faqIcon" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
                     </summary>
-
-                    <span class="faqLine"></span>
                     <div class="faqContent">
-                        <p class="faqSectionSummaryOpen textBase">Não. Você pode fazer sua primeira aula sem precisar investir em equipamentos logo no início. Nossa equipe irá orientar você em cada etapa.</p>
+                        <div>
+                            <span class="faqLine"></span>
+                            <p class="faqSectionSummaryOpen textBase">Não existe idade certa para começar. O Jiu-Jitsu pode ser praticado em diferentes fases da vida, sempre respeitando seus limites e evolução.</p>
+                        </div>
                     </div>
                 </details>
-
                 <details class="faqSectionCard">
                     <summary class="faqSectionSummary">
-                        <h3 class="textBase">Nunca lutei, vou atrapalhar o treino?</h3>
-                        <i class="fa-solid fa-angle-down"></i>
+                        <span class="faqNum textSmall" aria-hidden="true">04</span>
+                        <h3>Preciso comprar kimono antes da aula?</h3>
+                        <span class="faqIcon" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
                     </summary>
-
-                    <span class="faqLine"></span>
                     <div class="faqContent">
-                        <p class="faqSectionSummaryOpen textBase">Não mesmo. Recebemos iniciantes diariamente e conduzimos cada aluno com acompanhamento técnico, atenção e um ambiente acolhedor para aprender desde o início.</p>
+                        <div>
+                            <span class="faqLine"></span>
+                            <p class="faqSectionSummaryOpen textBase">Não. Você pode fazer sua primeira aula sem precisar investir em equipamentos logo no início. Nossa equipe irá orientar você em cada etapa.</p>
+                        </div>
                     </div>
                 </details>
+                <details class="faqSectionCard">
+                    <summary class="faqSectionSummary">
+                        <span class="faqNum textSmall" aria-hidden="true">05</span>
+                        <h3>Nunca lutei, vou atrapalhar o treino?</h3>
+                        <span class="faqIcon" aria-hidden="true"><i class="fa-solid fa-plus"></i></span>
+                    </summary>
+                    <div class="faqContent">
+                        <div>
+                            <span class="faqLine"></span>
+                            <p class="faqSectionSummaryOpen textBase">Não mesmo. Recebemos iniciantes diariamente e conduzimos cada aluno com acompanhamento técnico, atenção e um ambiente acolhedor para aprender desde o início.</p>
+                        </div>
+                    </div>
+                </details>
+
+                </div>
 
             </div>
 
         </section>
 
-        <span class="sectionLine"></span>
-
         <section class="pageCtaSection" aria-labelledby="cta-title">
-            <h2 id="cta-title">Pronto para dar o <span class="textYellow">primeiro passo?</span></h2>
-            <p>Agende sua aula experimental gratuita e comece do zero com quem sabe ensinar.</p>
+            <h2 id="cta-title">Pronto para dar o <br><span class="textYellow">primeiro passo?</span></h2>
+            <p class="subtitle">Agende sua aula experimental gratuita e comece do zero com quem sabe ensinar.</p>
             <a class="btn" href="https://wa.me/5565996768010?text=Oi%2C%20gostaria%20de%20agendar%20uma%20aula%20experimental%20para%20iniciantes." target="_blank" rel="noopener noreferrer" aria-label="Agendar aula experimental para iniciantes pelo WhatsApp">
                 Quero minha aula grátis <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
             </a>
@@ -226,105 +247,73 @@
 
     <footer class="footerSection">
 
-        <div class="footerSectionInner">
+        <div class="footInner">
 
-            <div class="footerSchedule">
+            <div class="footBrand">
+                <div class="footBrandId">
+                    <img width="48" height="45" src="Assets/Svg/logoBranca.svg" alt="" class="footLogo">
+                    <div>
+                        <p class="footName">Alliance Jiu Jitsu Moinho</p>
+                        <p class="footTagline textBase">Uma academia moderna de Jiu-Jitsu no coração de Cuiabá.</p>
+                    </div>
+                </div>
+                <div class="footBrandActions">
+                    <div class="footSocial">
+                        <a href="https://www.instagram.com/alliancemoinho/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Alliance Moinho"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                        <a href="https://wa.me/5565996768010?text=Oi%2C%20queria%20saber%20mais%20sobre%20como%20vocês%20funcionam." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp da Alliance Moinho"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+                    </div>
+                    <a class="btn footCta" href="index.html#contact">Agendar aula grátis <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                </div>
+            </div>
 
-                <h3>Agendamento</h3>
+            <div class="footCols">
 
-                <div class="footerScheduleLinks">
-                    <a href="https://wa.me/5565996768010?text=Oi%2C%20gostaria%20de%20agendar%20uma%20aula%20introdutória." target="_blank" rel="noopener noreferrer">Agendar Aula Introdutória</a>
-                    <a href="https://wa.me/5565996768010?text=Oi%2C%20gostaria%20de%20agendar%20uma%20aula%20experimental." target="_blank" rel="noopener noreferrer">Agendar Aula Experimental</a>
+                <nav class="footCol" aria-label="Rodapé">
+                    <h3 class="footTitle">Navegação</h3>
+                    <a href="index.html#header">Início</a>
+                    <a href="index.html#class">Aulas</a>
+                    <a href="index.html#teachers">Professores</a>
+                    <a href="index.html#schedule">Grade Horária</a>
+                    <a href="index.html#pricing">Planos</a>
+                    <a href="index.html#faq">Dúvidas</a>
+                </nav>
+
+                <div class="footCol">
+                    <h3 class="footTitle">Contato</h3>
+                    <address class="footList">
+                        <a href="https://wa.me/5565996768010?text=Oi%2C%20queria%20saber%20mais%20sobre%20como%20vocês%20funcionam." target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i>(65) 99676-8010</a>
+                        <a href="https://www.instagram.com/alliancemoinho/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram" aria-hidden="true"></i>@alliancemoinho</a>
+                        <a href="mailto:alliancemoinho@gmail.com"><i class="fa-regular fa-envelope" aria-hidden="true"></i>alliancemoinho@gmail.com</a>
+                    </address>
                 </div>
 
-
-            </div>
-
-            <div class="footerContact"> 
-
-                <h3>Contatos</h3>
-
-                <div class="footerContactLinks">
-
-                    <a href="https://wa.me/5565996768010?text=Oi%2C%20queria%20saber%20mais%20sobre%20como%20vocês%20funcionam." target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-whatsapp"></i>
-                        <p class="textBase">(65) 99676-8010</p>
-                    </a>
-        
-                    <a href="https://www.instagram.com/alliancemoinho/" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-instagram"></i>
-                        <p class="textBase">alliancemoinho</p>
-                    </a>
-        
-                    <a href="mailto:alliancemoinho@gmail.com" rel="noopener noreferrer">
-                        <i class="fa-regular fa-envelope"></i>
-                        <p class="textBase">alliancemoinho@gmail.com</p>
-                    </a>
-
+                <div class="footCol">
+                    <h3 class="footTitle">Visite a academia</h3>
+                    <address class="footList">
+                        <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>Av. Archimedes Pereira Lima, 2500<br>Santa Cruz, Cuiabá - MT, 78068-335</span>
+                        <span><i class="fa-regular fa-clock" aria-hidden="true"></i>Seg a Sex: 6h00 às 21h00<br>Sábados: 7h00 às 11h00</span>
+                    </address>
                 </div>
 
-            </div>
-
-            <div class="footerAddress">
-
-                <h3>Endereço</h3>
-
-                <p class="textBase">
-                    Av. Archimedes Pereira Lima, 2500 <br>
-                    - Santa Cruz, Cuiabá - MT, 78068-335
-                </p>
-
-            </div>
-
-            <div class="footerHour">
-
-                <h3>Horário de Funcionamento</h3>
-
-                <p class="textBase">Seg a Sex: 6h00 às 21h00 </p>
-                <p class="textBase">Sábados: 7h00 às 11h00</p>
-
-            </div>
-
-            <div class="footerDownload">
-
-                <h3>Baixe o App</h3>
-
-                <div class="footerDownloadLinks">
-
-                    <a class="android" href="https://play.google.com/store/apps/details?id=cloud.onegym.alliance&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">
-        
-                        <i class="fa-brands fa-google-play"></i>
-                        <div class="androidText">
-                            <p class="downloadLabel">Download on the</p>
-                            <p class="textSmall">Google Play</p>
-                        </div>
-        
-                    </a>
-        
-                    <a class="ios" href="https://apps.apple.com/br/app/alliance-jiu-jitsu/id1667527311" target="_blank" rel="noopener noreferrer">
-        
-                        <i class="fa-brands fa-apple"></i>
-                        <div class="androidText">
-                            <p class="downloadLabel">Download on the</p>
-                            <p class="textSmall">App Store</p>
-                        </div>
-        
-                    </a>
-
+                <div class="footCol">
+                    <h3 class="footTitle">Baixe o app</h3>
+                    <div class="footStores">
+                        <a class="footStore" href="https://play.google.com/store/apps/details?id=cloud.onegym.alliance&amp;pcampaignid=web_share" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-google-play" aria-hidden="true"></i>
+                            <span><small class="textSmall">Disponível no</small>Google Play</span>
+                        </a>
+                        <a class="footStore" href="https://apps.apple.com/br/app/alliance-jiu-jitsu/id1667527311" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-apple" aria-hidden="true"></i>
+                            <span><small class="textSmall">Baixar na</small>App Store</span>
+                        </a>
+                    </div>
                 </div>
 
             </div>
 
-            <img width="362" height="306" src="Assets/Svg/allianceAguiaLogo.svg" alt="" class="footerLogo">
-
-            <span class="footerLine"></span>
-
-            <div class="footerContainerInfo">
-
-                <p class="footerCopy textSmall">© 2026 Alliance Jiu Jitsu Moinho.<br> Todos os direitos reservados.</p>
-        
-                <p class="footerDeveloper textSmall">Desenvolvido por <br><a href="https://www.instagram.com/comp__co/" target="_blank" rel="noopener noreferrer" class="textSmall">comp co</a></p>
-
+            <div class="footBottom textSmall">
+                <p>© 2026 Alliance Jiu Jitsu Moinho. Todos os direitos reservados.</p>
+                <a class="footMaker" href="https://www.instagram.com/comp__co/" target="_blank" rel="noopener noreferrer" aria-label="Site feito pela comp. (abre o Instagram)"><img src="Assets/Imagens/comp-logo-clara.png" alt="comp." width="74" height="11"></a>
             </div>
 
         </div>

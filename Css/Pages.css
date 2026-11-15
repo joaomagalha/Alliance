@@ -1,28 +1,41 @@
 .differentialCards {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--32);
+    counter-reset: diff;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: stretch;
+    gap: var(--24);
     max-width: var(--maxContent);
-    margin: 0 auto
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
 }
 
+/* card claro, alinhado à esquerda, no acabamento dos cartões brancos do site (João, 14/11) */
 .differentialCard {
+    counter-increment: diff;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
     gap: var(--16);
     width: 100%;
     background-color: var(--white);
-    padding: var(--24);
-    min-height: 32rem;
-    height: auto;
+    padding: var(--32) var(--24);
+    border: 0.1rem solid rgba(51, 51, 51, 0.07);
     border-radius: var(--mediumRadius);
-    box-shadow: var(--grayShadowLarge);
+    box-shadow: 0 0.1rem 0.2rem rgba(40, 25, 5, 0.04), 0 1.2rem 3.2rem rgba(40, 25, 5, 0.06);
+}
 
+/* número da etapa, no padrão do número dos cards da home */
+.differentialCard::before {
+    content: counter(diff, decimal-leading-zero);
+    color: var(--yellow);
+    font-size: var(--t-pequeno);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
 }
 
 .benefitsSectionText h2 {
@@ -30,22 +43,29 @@
 }
 
 .differentialCardTitle {
-    font-weight: bold;
-    text-transform: uppercase;
+    order: 2;
+    margin: 0;
+    font-weight: 700;
+    text-transform: none;
     color: var(--gray);
 }
 
+/* risco curto amarelo, como a faixa dos cards da home; fica entre o número e o título */
 .differentialCardLine {
-    width: 30%;
-    height: 0.1rem;
+    order: 1;
+    display: block;
+    width: 2.4rem;
+    height: 0.3rem;
+    border-radius: 0.3rem;
     background-color: var(--yellow);
-
+    transition: width 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .differentialCardSubtitle {
-    max-width: 25rem;
-    font-weight: 300;
-    color: var(--secondaryTextGray);
+    order: 3;
+    margin: 0;
+    font-weight: 400;
+    color: var(--grayMid);
 }
 
 .sectionLine {
@@ -55,21 +75,7 @@
     background: rgba(254, 188, 17, 0.50);
 }
 
-.faqSection {
-    background: inherit;
-}
-
-.faqSectionText h2 {
-    color: var(--gray);
-}
-
-.faqSectionText p {
-    color: var(--secondaryTextGray);
-}
-
-.faqSectionCard{
-    box-shadow: var(--grayShadowSmall);
-}
+/* FAQ das páginas internas usa o mesmo do index (superfície escura + vidro, em style.css) */
 
 .professorCards {
     display: flex;
@@ -90,7 +96,15 @@
 }
 
 .differentialCard {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s ease;
+}
+
+@media (hover: hover) {
+    .differentialCard:hover {
+        transform: translateY(-0.4rem);
+        box-shadow: 0 0.1rem 0.2rem rgba(40, 25, 5, 0.04), 0 1.8rem 4rem rgba(40, 25, 5, 0.1);
+    }
+    .differentialCard:hover .differentialCardLine { width: 4rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -130,7 +144,7 @@
     /* ===== BADGES NA FOTO ===== */
     .badge {
       position: absolute;
-      font-size: 1.1rem;
+      font-size: var(--t-pequeno);
       padding: 0.6rem 1rem;
       border-radius: 99.9rem;
       font-weight: 600;
@@ -176,7 +190,7 @@
     }
 
     .professor-name {
-      font-size: 1.7rem;
+      font-size: var(--t-h3);
       font-weight: 700;
       color: var(--gray);
     }
@@ -185,7 +199,7 @@
       display: flex;
       align-items: center;
       gap: 0.4rem;
-      font-size: 1.3rem;
+      font-size: var(--t-pequeno);
       color: var(--gray);
       flex-shrink: 0;
     }
@@ -227,7 +241,7 @@
     }
 
     .tag {
-      font-size: 1.1rem;
+      font-size: var(--t-pequeno);
       padding: 0.4rem 0.9rem;
       border-radius: 0.5rem;
       font-weight: 500;
@@ -251,7 +265,7 @@
       padding: 1.2rem;
       border-radius: 0.8rem;
       font-weight: 600;
-      font-size: 1.4rem;
+      font-size: var(--t-h3);
       cursor: pointer;
       transition: all 0.2s ease;
       font-family: inherit;
@@ -282,7 +296,7 @@
       border: 0.1rem solid var(--placeholderColor);
       padding: 0.9rem;
       border-radius: 0.7rem;
-      font-size: 1.2rem;
+      font-size: var(--t-corpo);
       cursor: pointer;
       color: var(--secondaryTextGray);
       transition: all 0.2s ease;
@@ -299,7 +313,7 @@
     }
 
     .btn i {
-      font-size: 1.5rem;
+      font-size: 1.5rem; /* tipografia-ok: ícone */
     }   
 
     .teacherSection {
@@ -317,9 +331,7 @@
 @media (min-width: 768px) {
 
     .differentialCards {
-        display: grid;
         grid-template-columns: repeat(2, 1fr);
-        align-items: start;
     }
 
     /* Tablet — cards de professor em 2 colunas */
@@ -339,6 +351,10 @@
 }
 
 @media (min-width: 1024px) {
+
+    .differentialCards {
+        grid-template-columns: repeat(4, 1fr);
+    }
 
     /* Desktop — cards de professor em 3 colunas */
     .professorCards {
@@ -388,22 +404,124 @@
 
 .pageCtaSection {
     text-align: center;
-    padding: var(--48) var(--containerLateralPadding);
-    background: var(--grayGradient);
+    padding: var(--containerSuperiorMax) var(--containerLateralPadding);
+    background: var(--white);
 }
 
+/* faixa branca entre o FAQ escuro e o footer escuro (João, 14/11) */
 .pageCtaSection h2 {
-    color: var(--white);
-    margin-bottom: var(--8);
+    color: var(--gray);
+    margin-bottom: var(--16);
 }
 
-.pageCtaSection p {
-    color: var(--whiteOpacity);
+.pageCtaSection .subtitle {
     margin-bottom: var(--32);
+}
+
+/* botão na largura do conteúdo, igual ao do footer (o .btn das internas é 100%) */
+.pageCtaSection .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--8);
+    width: auto;
+    padding-left: var(--32);
+    padding-right: var(--32);
+    border-radius: var(--smallRadius);
+    color: var(--white);
+    text-shadow: var(--onYellowShadow);
+}
+
+/* sombra curta e neutra no lugar do halo amarelo, que manchava o fundo branco */
+.pageCtaSection .btn { box-shadow: 0 0.4rem 1.2rem rgba(120, 80, 0, 0.16); }
+@media (hover: hover) {
+    .pageCtaSection .btn:hover { box-shadow: 0 0.8rem 2rem rgba(120, 80, 0, 0.2); }
 }
 
 @media (min-width: 1024px) {
     #headerPageMenu {
         display: flex;
     }
+}
+
+
+/* =================================
+   Professores: refino dos cards (João, 14/11)
+   Acabamento dos cartões claros do site, faixa fiel (ponteira vermelha na preta),
+   filete da foto na cor da faixa, botões secundários com ícone amarelo e hover.
+   ================================= */
+.professor-card {
+    border: 0.1rem solid rgba(51, 51, 51, 0.07);
+    border-radius: var(--largeRadius);
+    box-shadow: 0 0.1rem 0.2rem rgba(40, 25, 5, 0.04), 0 1.2rem 3.2rem rgba(40, 25, 5, 0.06);
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s ease;
+}
+
+.professor-photo img { transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1); }
+
+/* sem filete na base da foto (João, 14/11) */
+.professor-photo::after { content: none; }
+
+/* faixa: cantos suaves e ponteira perto da ponta, como a faixa real */
+.belt-icon {
+    width: 3.2rem;
+    height: 0.8rem;
+    border-radius: 0.2rem;
+    overflow: hidden;
+}
+.belt-icon::after {
+    left: auto;
+    right: 0.6rem;
+    width: 1rem;
+    height: 100%;
+}
+.belt-black { --belt-color: #1E1E1E; --belt-stripe: #C8102E; }
+
+/* selo "Disponível" */
+.badge-status {
+    background: rgba(20, 20, 20, 0.55);
+    -webkit-backdrop-filter: blur(0.8rem);
+    backdrop-filter: blur(0.8rem);
+}
+.badge-status .dot { animation-duration: 3s; }
+
+/* tags em pílula */
+.tag {
+    border-radius: 99rem;
+    padding: 0.4rem 1rem;
+}
+.tag-secondary { background: rgba(51, 51, 51, 0.06); }
+
+.professor-info { padding: var(--24); }
+.professor-name { margin: 0; }
+
+/* botões secundários */
+.btn-secondary {
+    border-color: rgba(51, 51, 51, 0.12);
+    color: var(--gray);
+    text-decoration: none;
+}
+.btn-secondary i { color: var(--yellow); }
+
+@media (hover: hover) {
+    .professor-card:hover {
+        transform: translateY(-0.4rem);
+        box-shadow: 0 0.1rem 0.2rem rgba(40, 25, 5, 0.04), 0 1.8rem 4rem rgba(40, 25, 5, 0.1);
+    }
+    .professor-card:hover .professor-photo img { transform: scale(1.04); }
+    .btn-secondary:hover {
+        border-color: var(--yellow);
+        background: var(--lightYellow);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .professor-card, .professor-photo img { transition: none; }
+    .professor-card:hover { transform: none; }
+    .professor-card:hover .professor-photo img { transform: none; }
+    .badge-status .dot { animation: none; }
+}
+
+/* desktop: card que sobra sozinho na última linha fica no centro */
+@media (min-width: 1024px) {
+    .professorCards > .professor-card:last-child:nth-child(3n+1) { grid-column: 2; }
 }
