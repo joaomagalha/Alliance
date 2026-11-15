@@ -647,8 +647,12 @@ body:has(.mobileMenu.active)::after {
 
 /* Hero da home no celular: formato retrato, fachada no alto e texto sobre a porta */
 @media (max-width: 767px) {
-    .heroSection--home {
-        height: 80rem;
+    /* cabe na tela visível (inclusive no navegador do Instagram) e deixa respiro entre o botão e a plaquinha (João, 14/11) */
+    .heroSection--home.heroSection--home {
+        height: min(80rem, 100vh);
+        height: min(80rem, 100svh);
+        min-height: 60rem;
+        padding-bottom: 8.8rem;
     }
 }
 
