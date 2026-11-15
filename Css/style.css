@@ -3513,12 +3513,31 @@ details[open]:not(.is-closing) .faqIcon {
         linear-gradient(180deg, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0) 22%, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.4) 100%);
 }
 
+/* celular: foto em cima (céu, prédio e letreiro livres, escada pela metade) se dissolvendo no escuro;
+   o texto fica todo no escuro, nunca sobre o letreiro (João, 14/11) */
 @media (max-width: 767px) {
-    .heroSection--home .heroOverlay {
-        background:
-            linear-gradient(0deg, rgba(10, 8, 6, 0.78) 0%, rgba(10, 8, 6, 0.6) 38%, rgba(10, 8, 6, 0.18) 62%, transparent 78%),
-            linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 20%);
+    .heroSection--home {
+        background: var(--surfaceDark);
     }
+    .heroSection--home .heroBackgroundImage {
+        top: 0;
+        bottom: auto;
+        height: 60%;
+        object-fit: cover;
+        object-position: center bottom;
+        transform: none;
+        -webkit-mask-image: linear-gradient(to bottom, #000 70%, transparent 100%);
+        mask-image: linear-gradient(to bottom, #000 70%, transparent 100%);
+    }
+    .heroSection--home .heroOverlay {
+        /* só um véu leve no topo, pro logo e o menu lerem sobre o céu */
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.28) 0%, rgba(0, 0, 0, 0) 16%);
+    }
+}
+
+/* celular baixo: a foto encolhe um pouco pra terminar antes do texto, como no iPhone */
+@media (max-width: 767px) and (max-height: 700px) {
+    .heroSection--home .heroBackgroundImage { height: 52%; }
 }
 
 .heroSection--home .heroSectionText h1 {
